@@ -41,7 +41,7 @@ test.describe('Example Event Generator CRUD Operations', () => {
         });
 
         //Assertions against newly created object which define standard behavior
-        await expect(page.waitForURL(/.*&view=table/)).toBeTruthy();
+        expect(page.waitForURL(/.*&view=table/)).toBeTruthy();
         await expect(page.locator('.l-browse-bar__object-name')).toContainText(newObjectName);
     });
 });
