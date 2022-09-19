@@ -737,7 +737,7 @@ body.desktop {
             &:hover {
                 &:after {
                     background-color: $colorSplitterHover !important;
-                    transiiton: background-color, 150ms;
+                    transition: background-color, 150ms;
                 }
             }
         }
