@@ -29,7 +29,7 @@
             &:before {
                 color: $colorKeyFg;
                 content: $glyph-icon-check;
-                font-family: symbolsfont;
+                font-family: symbolsfont, sans-serif;
                 font-size: 0.6em;
             }
         }
