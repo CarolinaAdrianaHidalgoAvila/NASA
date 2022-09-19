@@ -22,11 +22,12 @@
 /*global module*/
 
 const matcher = /\/openmct.js$/;
+const __webpack_public_path__ ;
 if (document.currentScript) {
     let src = document.currentScript.src;
     if (src && matcher.test(src)) {
         // eslint-disable-next-line no-undef
-        let __webpack_public_path__ = src.replace(matcher, '') + '/';
+         __webpack_public_path__ = src.replace(matcher, '') + '/';
     }
 }
 
