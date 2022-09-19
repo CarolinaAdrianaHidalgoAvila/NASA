@@ -184,7 +184,7 @@ describe("the inspector", () => {
 
         selection = mockMultiSelectionNonSpecificStyles;
         stylesViewComponent = createViewComponent(StylesView, selection, openmct);
-        savedStylesViewComponent = createViewComponent(SavedStylesView, selection, openmct);
+        savedStylesViewComponent = createViewComponent(SavedStylesView,selection, openmct);
 
         return stylesViewComponent.$nextTick().then(() => {
             const styleEditorComponentIndex = stylesViewComponent.$children[0].$children.length - 1;
@@ -196,7 +196,7 @@ describe("the inspector", () => {
         });
     });
 
-    function createViewComponent(component) {
+    function createViewComponent(component, selection, openmct) {
         const element = document.createElement('div');
         const child = document.createElement('div');
         element.appendChild(child);
