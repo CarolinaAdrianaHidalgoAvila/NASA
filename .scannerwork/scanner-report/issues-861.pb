@@ -1,3 +1,0 @@
-€
-
-javascriptS1488]Immediately return this expression instead of assigning it to the temporary variable "color". 2JJ 0@
