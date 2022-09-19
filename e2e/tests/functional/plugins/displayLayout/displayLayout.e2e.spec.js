@@ -55,7 +55,7 @@ test.describe('Testing Display Layout @unstable', () => {
         // On getting data, check if the value found in the  Display Layout is the most recent value
         // from the Sine Wave Generator
         const getTelemValuePromise = await subscribeToTelemetry(page, sineWaveObject.uuid);
-        const formattedTelemetryValue = await getTelemValuePromise;
+        const formattedTelemetryValue = getTelemValuePromise;
         const displayLayoutValuePromise = await page.waitForSelector(`text="${formattedTelemetryValue}"`);
         const displayLayoutValue = await displayLayoutValuePromise.textContent();
         const trimmedDisplayValue = displayLayoutValue.trim();
@@ -86,7 +86,7 @@ test.describe('Testing Display Layout @unstable', () => {
 
         // On getting data, check if the value found in the Display Layout is the most recent value
         // from the Sine Wave Generator
-        const formattedTelemetryValue = await getTelemValuePromise;
+        const formattedTelemetryValue = getTelemValuePromise;
         const displayLayoutValuePromise = await page.waitForSelector(`text="${formattedTelemetryValue}"`);
         const displayLayoutValue = await displayLayoutValuePromise.textContent();
         const trimmedDisplayValue = displayLayoutValue.trim();
