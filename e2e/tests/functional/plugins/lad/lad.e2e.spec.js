@@ -55,7 +55,7 @@ test.describe('Testing LAD table @unstable', () => {
         // On getting data, check if the value found in the LAD table is the most recent value
         // from the Sine Wave Generator
         const getTelemValuePromise = await subscribeToTelemetry(page, sineWaveObject.uuid);
-        const subscribeTelemValue = await getTelemValuePromise;
+        const subscribeTelemValue = getTelemValuePromise;
         const ladTableValuePromise = await page.waitForSelector(`text="${subscribeTelemValue}"`);
         const ladTableValue = await ladTableValuePromise.textContent();
 
@@ -85,7 +85,7 @@ test.describe('Testing LAD table @unstable', () => {
 
         // On getting data, check if the value found in the LAD table is the most recent value
         // from the Sine Wave Generator
-        const subscribeTelemValue = await getTelemValuePromise;
+        const subscribeTelemValue = getTelemValuePromise;
         const ladTableValuePromise = await page.waitForSelector(`text="${subscribeTelemValue}"`);
         const ladTableValue = await ladTableValuePromise.textContent();
 
