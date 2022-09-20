@@ -195,7 +195,7 @@ export default class PlotSeries extends Model {
     fetch(options) {
         let strategy;
 
-        if (this.model.interpolate !== 'none') {
+        if (String(this.model.interpolate) !== 'none') {
             strategy = 'minmax';
         }
 
