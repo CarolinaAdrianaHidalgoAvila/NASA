@@ -160,7 +160,7 @@ div.c-table {
             &:after {
                 color: $colorIconAlias;
                 content: $glyph-icon-arrow-tall-up;
-                font-family: symbolsfont;
+                font-family: symbolsfont, sans-serif;
                 font-size: 8px;
                 display: inline-block;
                 margin-left: $interiorMarginSm;

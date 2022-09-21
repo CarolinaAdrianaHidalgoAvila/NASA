@@ -1,6 +1,6 @@
 @mixin legacyMessage() {
     flex: 0 1 auto;
-    font-family: symbolsfont;
+    font-family: symbolsfont, sans-serif;
     font-size: $messageIconD; // Singleton message in a dialog
     margin-right: $interiorMarginLg;
 }

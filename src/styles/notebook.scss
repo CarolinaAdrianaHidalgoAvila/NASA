@@ -265,7 +265,7 @@
 .is-status--notebook-default {
     &:after {
         color: $colorFilter;
-        font-family: symbolsfont;
+        font-family: symbolsfont, sans-serif;
         font-size: 0.9em;
     }
 
@@ -616,7 +616,7 @@
     .tool-controls,
     .ptro-input {
         // Lot of resets for crappy CSS in Painterro
-        font-family: inherit;
+        font-family: inherit, sans-serif;
         font-size: $fs !important;
         height: $h !important;
         margin: 0;
@@ -629,7 +629,7 @@
         background: none;
         color: $colorBodyFg;
         top: auto;
-        font-family: inherit;
+        font-family: inherit, sans-serif;
         padding: 0;
     }
 

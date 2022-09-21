@@ -152,7 +152,7 @@ $plotLimitDashWidthWatch: $plotLimitDashWidthWarning - $plotLimitDashWidthOffset
     [class*='icon'] {
         &:before {
             display: block;
-            font-family: symbolsfont;
+            font-family: symbolsfont, sans-serif;
             font-size: 0.9em;
         }
     }

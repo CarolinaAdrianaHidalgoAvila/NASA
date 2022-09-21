@@ -13,7 +13,7 @@
         .c-object-label__type-icon {
             &:after {
                 color: $colorStatusAlert;
-                font-family: symbolsfont;
+                font-family: symbolsfont, sans-serif;
                 content: $glyph-icon-draft;
                 margin-left: $interiorMarginSm;
             }
@@ -63,7 +63,7 @@
             content: $glyph-icon-asterisk;
             display: block;
             margin-left: $interiorMargin;
-            font-family: symbolsfont;
+            font-family: symbolsfont, sans-serif;
         }
     }
 }

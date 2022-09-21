@@ -38,7 +38,7 @@
     &:before {
         color: $ic;
         display: inline-block;
-        font-family: symbolsfont;
+        font-family: symbolsfont, sans-serif;
         font-size: 0.8em;
         margin-right: $interiorMarginSm;
         @if $glyph != null {
@@ -73,7 +73,7 @@
         &:before {
             color: $fg;
             display: inline-block;
-            font-family: symbolsfont;
+            font-family: symbolsfont, sans-serif;
             margin-right: $interiorMarginSm;
             @if $glyph != null {
                 content: $glyph;
@@ -113,7 +113,7 @@ tr {
 /*************************************************** STATUS */
 [class*='s-status-icon'] {
     &:before {
-        font-family: symbolsfont;
+        font-family: symbolsfont, sans-serif;
         margin-right: $interiorMargin;
     }
 }

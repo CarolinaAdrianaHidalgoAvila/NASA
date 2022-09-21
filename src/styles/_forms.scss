@@ -423,7 +423,7 @@
     &:before {
         content: $glyph-icon-alert-triangle;
         display: inline-block;
-        font-family: symbolsfont;
+        font-family: symbolsfont, sans-serif;
         margin-right: $interiorMarginSm;
     }
 }

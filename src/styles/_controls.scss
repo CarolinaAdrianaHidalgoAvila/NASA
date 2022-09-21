@@ -102,7 +102,7 @@ button {
     &--menu {
         &:after {
             content: $glyph-icon-arrow-down;
-            font-family: symbolsfont;
+            font-family: symbolsfont, sans-serif;
             opacity: 0.5;
         }
     }
@@ -155,7 +155,7 @@ button {
         transition: transform $transOutTime;
         &:before {
             content: $glyph-icon-arrow-down;
-            font-family: symbolsfont;
+            font-family: symbolsfont, sans-serif;
         }
 
         &.is-collapsed {
@@ -253,7 +253,7 @@ button {
 
     &:before {
         content: $glyph-icon-arrow-down;
-        font-family: symbolsfont;
+        font-family: symbolsfont, sans-serif;
         font-size: 0.7em;
     }
 }
@@ -281,7 +281,7 @@ button {
             $s: .65;
             content: $glyph-icon-arrow-right-equilateral;
             display: block;
-            font-family: symbolsfont;
+            font-family: symbolsfont, sans-serif;
             font-size: 1rem * $s;
         }
     }

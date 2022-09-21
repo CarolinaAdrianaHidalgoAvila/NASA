@@ -5,7 +5,7 @@
     color: $colorFilterFg;
 
     &:before {
-        font-family: symbolsfont-12px;
+        font-family: symbolsfont-12px, sans-serif;
         content: $glyph-icon-filter;
         margin-right: $interiorMarginSm;
     }

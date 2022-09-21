@@ -40,7 +40,7 @@
     position: relative;
 
     &:before {
-        font-family: symbolsfont;
+        font-family: symbolsfont, sans-serif;
         color: $c;
         content: $glyph-icon-brackets;
         font-size: $d;

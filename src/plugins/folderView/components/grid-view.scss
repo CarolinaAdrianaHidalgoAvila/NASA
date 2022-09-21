@@ -74,7 +74,7 @@
             &:before {
                 color: $colorFilter;
                 content: $glyph-icon-asterisk;
-                font-family: symbolsfont;
+                font-family: symbolsfont, sans-serif;
             }
         }
     }
@@ -86,7 +86,7 @@
             &:before {
                 color: $colorStatusAlert;
                 content: $glyph-icon-draft;
-                font-family: symbolsfont;
+                font-family: symbolsfont, sans-serif;
             }
         }
     }
