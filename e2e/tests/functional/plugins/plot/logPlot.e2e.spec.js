@@ -144,7 +144,7 @@ async function makeOverlayPlot(page, myItemsFolderName) {
  * @param {import('@playwright/test').Page} page
  */
 async function testRegularTicks(page) {
-    const yTicks = await page.locator('.gl-plot-y-tick-label');
+    const yTicks = page.locator('.gl-plot-y-tick-label');
     expect(await yTicks.count()).toBe(7);
     await expect(yTicks.nth(0)).toHaveText('-2');
     await expect(yTicks.nth(1)).toHaveText('0');
@@ -159,7 +159,7 @@ async function testRegularTicks(page) {
  * @param {import('@playwright/test').Page} page
  */
 async function testLogTicks(page) {
-    const yTicks = await page.locator('.gl-plot-y-tick-label');
+    const yTicks = page.locator('.gl-plot-y-tick-label');
     expect(await yTicks.count()).toBe(28);
     await expect(yTicks.nth(0)).toHaveText('-2.98');
     await expect(yTicks.nth(1)).toHaveText('-2.50');
@@ -197,7 +197,7 @@ async function testLogTicks(page) {
 async function enableEditMode(page) {
     // turn on edit mode
     await page.locator('text=Unnamed Overlay Plot Snapshot >> button').nth(3).click();
-    await expect(await page.locator('text=Snapshot Save and Finish Editing Save and Continue Editing >> button').nth(1)).toBeVisible();
+    await expect(page.locator('text=Snapshot Save and Finish Editing Save and Continue Editing >> button').nth(1)).toBeVisible();
 }
 
 /**

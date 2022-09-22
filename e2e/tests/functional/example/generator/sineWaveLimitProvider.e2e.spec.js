@@ -45,7 +45,7 @@ test.describe('Sine Wave Generator', () => {
         await expect(page.locator('.c-form-row__state-indicator').first()).toHaveClass(/req/);
 
         // Verify that the Notes row does not have a required indicator
-        await expect(page.locator('.c-form__section div:nth-child(3) .form-row .c-form-row__state-indicator')).not.toContain('.req');
+        expect(page.locator('.c-form__section div:nth-child(3) .form-row .c-form-row__state-indicator')).not.toContain('.req');
         await page.locator('textarea[type="text"]').fill('Optional Note Text');
 
         // Period
@@ -91,7 +91,7 @@ test.describe('Sine Wave Generator', () => {
         await page.locator('.field.control.l-input-sm input').first().press('ArrowUp');
 
         const value = await page.locator('.field.control.l-input-sm input').first().inputValue();
-        await expect(value).toBe('6');
+        expect(value).toBe('6');
 
         //Click text=OK
         await Promise.all([
