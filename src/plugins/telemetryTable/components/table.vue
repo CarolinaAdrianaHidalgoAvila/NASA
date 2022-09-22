@@ -157,6 +157,7 @@
             <table class="c-table__headers c-telemetry-table__headers">
                 <thead>
                     <tr class="c-telemetry-table__headers__labels">
+                        <th scope= " auto">header</th>
                         <table-column-header
                             v-for="(title, key, headerIndex) in headers"
                             :key="key"
@@ -227,6 +228,7 @@
                 class="c-table__body c-telemetry-table__body js-telemetry-table__content"
                 :style="{ height: totalHeight + 'px'}"
             >
+            <th scope=" auto">content</th>
                 <tbody>
                     <telemetry-table-row
                         v-for="(row, rowIndex) in visibleRows"
