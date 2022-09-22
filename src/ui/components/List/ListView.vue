@@ -4,6 +4,7 @@
     <caption>Table component List from src/ui</caption>
         <thead class="c-table__header">
             <tr>
+                <th scope=" auto">Header</th>
                 <list-header
                     v-for="headerItem in headerItems"
                     :key="headerItem.property"

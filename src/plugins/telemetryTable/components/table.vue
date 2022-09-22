@@ -158,6 +158,7 @@
                 <caption>Table component from TelemetryTable 1</caption>
                 <thead>
                     <tr class="c-telemetry-table__headers__labels">
+                        <th scope= " auto">header</th>
                         <table-column-header
                             v-for="(title, key, headerIndex) in headers"
                             :key="key"
@@ -229,6 +230,7 @@
                 :style="{ height: totalHeight + 'px'}"
                 details="Table component from TelemetryTable 2"
             >
+            <th scope=" auto">content</th>
                 <tbody>
                     <telemetry-table-row
                         v-for="(row, rowIndex) in visibleRows"
