@@ -114,7 +114,7 @@ test.describe('Move & link item tests', () => {
 
         // See if it's possible to put the folder in the Telemetry object during creation (Soft Assert)
         await page.locator(`form[name="mctForm"] >> text=${telemetryTable}`).click();
-        let okButton = await page.locator('button.c-button.c-button--major:has-text("OK")');
+        let okButton = page.locator('button.c-button.c-button--major:has-text("OK")');
         let okButtonStateDisabled = await okButton.isDisabled();
         expect.soft(okButtonStateDisabled).toBeTruthy();
 
@@ -138,7 +138,7 @@ test.describe('Move & link item tests', () => {
         // See if it's possible to put the folder in the Telemetry object after creation
         await page.locator(`text=Location Open MCT ${myItemsFolderName} >> span`).nth(3).click();
         await page.locator(`form[name="mctForm"] >> text=${telemetryTable}`).click();
-        let okButton2 = await page.locator('button.c-button.c-button--major:has-text("OK")');
+        let okButton2 = page.locator('button.c-button.c-button--major:has-text("OK")');
         let okButtonStateDisabled2 = await okButton2.isDisabled();
         expect(okButtonStateDisabled2).toBeTruthy();
     });

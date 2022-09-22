@@ -67,6 +67,7 @@
                 title="Click anywhere in the plot to unlock."
             > Cursor locked to point</div>
             <table>
+                <caption>Table from Plugins/plot/legend.vue</caption>
                 <thead>
                     <tr>
                         <th>Name</th>
