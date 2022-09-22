@@ -62,7 +62,7 @@
             &:before {
                 color: $colorFilter;
                 content: $glyph-icon-notebook-page;
-                font-family: symbolsfont;
+                font-family: symbolsfont, sans-serif;
             }
         }
     }

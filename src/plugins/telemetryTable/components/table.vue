@@ -767,13 +767,9 @@ export default {
             let newHeaderKeys = Object.keys(this.headers);
             let moveFromKey = newHeaderKeys[from];
 
-            if (to < from) {
-                newHeaderKeys.splice(from, 1);
-                newHeaderKeys.splice(to, 0, moveFromKey);
-            } else {
-                newHeaderKeys.splice(from, 1);
-                newHeaderKeys.splice(to, 0, moveFromKey);
-            }
+            newHeaderKeys.splice(from, 1);
+            newHeaderKeys.splice(to, 0, moveFromKey);
+            
 
             let newHeaders = newHeaderKeys.reduce((headers, headerKey) => {
                 headers[headerKey] = this.headers[headerKey];

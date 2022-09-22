@@ -7,7 +7,6 @@
     $majorOffset: 35%;
     content: '';
     display: block;
-    position: absolute;
     @include grippy($c: $editFrameSelectedMovebarColorFg, $dir: $dir);
     @if $dir == 'x' {
         top: $minorOffset; right: $majorOffset; bottom: $minorOffset; left: $majorOffset;
