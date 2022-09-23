@@ -1,5 +1,6 @@
 <template>
-<li class="c-tree__item-h">
+<ul>
+    <li class="c-tree__item-h">
     <div
         class="c-tree__item menus-to-left"
         @click="toggleExpanded"
@@ -57,6 +58,7 @@
         </ul>
     </div>
 </li>
+</ul>
 </template>
 
 <script>
