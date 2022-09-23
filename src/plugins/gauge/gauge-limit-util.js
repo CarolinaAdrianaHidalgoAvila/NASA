@@ -7,8 +7,7 @@ const GAUGE_LIMITS = {
 
 export const DIAL_VALUE_DEG_OFFSET = 45;
 
-// type: low, high
-// quadrant: low, mid, high, max
+
 export function getLimitDegree(type, quadrant) {
     if (quadrant === 'max') {
         return GAUGE_LIMITS.q4 + DIAL_VALUE_DEG_OFFSET;

@@ -27,7 +27,6 @@
  */
 
 const { test, expect } = require('./baseFixtures');
-// const { createDomainObjectWithDefaults } = require('./appActions');
 const path = require('path');
 
 /**
@@ -42,7 +41,7 @@ const path = require('path');
  * Used to create a new domain object as a part of getOrCreateDomainObject.
  * @type {Map<string, string>}
  */
-// const createdObjects = new Map();
+
 
 /**
  * **NOTE: This feature is a work-in-progress and should not currently be used.**
@@ -55,25 +54,7 @@ const path = require('path');
  * @param {ObjectCreateOptions} options
  * @returns {Promise<string>} uuid of the domain object
  */
-// async function getOrCreateDomainObject(page, options) {
-//     const { type, name } = options;
-//     const objectName = name ? `${type}:${name}` : type;
 
-//     if (createdObjects.has(objectName)) {
-//         return createdObjects.get(objectName);
-//     }
-
-//     await createDomainObjectWithDefaults(page, type, name);
-
-//     // Once object is created, get the uuid from the url
-//     const uuid = await page.evaluate(() => {
-//         return window.location.href.match(/[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}/)[0];
-//     });
-
-//     createdObjects.set(objectName, uuid);
-
-//     return uuid;
-// }
 
 /**
  * **NOTE: This feature is a work-in-progress and should not currently be used.**
@@ -94,7 +75,7 @@ const path = require('path');
  * ```
  * @type {ObjectCreateOptions}
  */
-// const objectCreateOptions = null;
+
 
 /**
  * The default theme for VIPER and Open MCT is the 'espresso' theme. Overriding this value with 'snow' in our playwright config.js
@@ -123,39 +104,22 @@ const theme = 'espresso';
 const myItemsFolderName = "My Items";
 
 exports.test = test.extend({
-    // This should follow in the Project's configuration. Can be set to 'snow' in playwright config.js
+   
     theme: [theme, { option: true }],
-    // eslint-disable-next-line no-shadow
+   
     page: async ({ page, theme }, use) => {
-        // eslint-disable-next-line playwright/no-conditional-in-test
+      
         if (theme === 'snow') {
-            //inject snow theme
+           
             await page.addInitScript({ path: path.join(__dirname, './helper', './useSnowTheme.js') });
         }
 
         await use(page);
     },
     myItemsFolderName: [myItemsFolderName, { option: true }],
-    // eslint-disable-next-line no-shadow
+  
     openmctConfig: async ({ myItemsFolderName }, use) => {
         await use({ myItemsFolderName });
     }
-    // objectCreateOptions: [objectCreateOptions, {option: true}],
-    // eslint-disable-next-line no-shadow
-    // domainObject: [async ({ page, objectCreateOptions }, use) => {
-    //     // FIXME: This is a false-positive caused by a bug in the eslint-plugin-playwright rule.
-    //     // eslint-disable-next-line playwright/no-conditional-in-test
-    //     if (objectCreateOptions === null) {
-    //         await use(page);
-
-    //         return;
-    //     }
-
-    //     //Go to baseURL
-    //     await page.goto('./', { waitUntil: 'networkidle' });
-
-    //     const uuid = await getOrCreateDomainObject(page, objectCreateOptions);
-    //     await use({ uuid });
-    // }, { auto: true }]
 });
 exports.expect = expect;

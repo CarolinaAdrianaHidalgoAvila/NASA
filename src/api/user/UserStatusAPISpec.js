@@ -63,32 +63,7 @@ describe("The User Status API", () => {
                 expect(userProvider.setPollQuestion).toHaveBeenCalledWith('This is a poll question');
             });
         });
-        // fit('emits an event when the poll question changes', () => {
-        //     const pollQuestionChangeCallback = jasmine.createSpy('pollQuestionChangeCallback');
-        //     let pollQuestionListener;
-
-        //     userProvider.canSetPollQuestion.and.returnValue(Promise.resolve(true));
-        //     userProvider.on.and.callFake((eventName, listener) => {
-        //         if (eventName === 'pollQuestionChange') {
-        //             pollQuestionListener = listener;
-        //         }
-        //     });
-
-        //     openmct.user.on('pollQuestionChange', pollQuestionChangeCallback);
-
-        //     openmct.user.setProvider(userProvider);
-
-        //     return openmct.user.status.setPollQuestion('This is a poll question').then(() => {
-        //         expect(pollQuestionListener).toBeDefined();
-        //         pollQuestionListener();
-        //         expect(pollQuestionChangeCallback).toHaveBeenCalled();
-
-        //         const pollQuestion = pollQuestionChangeCallback.calls.mostRecent().args[0];
-        //         expect(pollQuestion.question).toBe('This is a poll question');
-
-        //         openmct.user.off('pollQuestionChange', pollQuestionChangeCallback);
-        //     });
-        // });
+       
         it('cannot be set if the user is not permitted', () => {
             openmct.user.setProvider(userProvider);
             userProvider.canSetPollQuestion.and.returnValue(Promise.resolve(false));

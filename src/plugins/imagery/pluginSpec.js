@@ -195,7 +195,6 @@ describe("The Imagery View Layouts", () => {
             disconnect() {}
         });
 
-        //spyOn(openmct.telemetry, 'request').and.returnValue(Promise.resolve([]));
         spyOn(openmct.objects, 'get').and.returnValue(Promise.resolve(imageryObject));
 
         originalRouterPath = openmct.router.path;

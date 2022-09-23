@@ -28,20 +28,6 @@ import { getLatestTimestamp } from './utils/time';
 import AllTelemetryCriterion from "./criterion/AllTelemetryCriterion";
 import {TRIGGER_CONJUNCTION, TRIGGER_LABEL} from "./utils/constants";
 
-/*
-* conditionConfiguration = {
-*   id: uuid,
-*   trigger: 'any'/'all'/'not','xor',
-*   criteria: [
-*       {
-*           telemetry: '',
-*           operation: '',
-*           input: [],
-*           metadata: ''
-*       }
-*   ]
-* }
-*/
 export default class Condition extends EventEmitter {
 
     /**
