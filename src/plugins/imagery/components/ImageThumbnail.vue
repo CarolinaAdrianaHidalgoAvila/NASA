@@ -38,7 +38,9 @@
         <img
             class="c-thumb__image"
             :src="image.url"
+
             alt="c-thumb__image"
+
         >
     </a>
     <div class="c-thumb__timestamp">{{ image.formattedTime }}</div>
