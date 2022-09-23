@@ -82,6 +82,7 @@
                     }"
                     :data-openmct-image-timestamp="time"
                     :data-openmct-object-keystring="keyString"
+                    alt="c-imagery__main-image__image"
                 >
                 <div
                     v-if="imageUrl"
