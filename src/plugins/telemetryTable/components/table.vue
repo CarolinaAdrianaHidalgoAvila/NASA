@@ -230,6 +230,7 @@
                 :style="{ height: totalHeight + 'px'}"
                 details="Table component from TelemetryTable 2"
             >
+            <caption>Table component fromm TelemetryTable</caption>
             <th scope=" auto">content</th>
                 <tbody>
                     <telemetry-table-row
