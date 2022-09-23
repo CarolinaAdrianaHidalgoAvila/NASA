@@ -81,13 +81,13 @@ test.describe.skip('Memory Performance tests', () => {
         const client = await page.context().newCDPSession(page);
         await client.send('HeapProfiler.enable');
         await client.send('HeapProfiler.startSampling');
-        // await client.send('HeapProfiler.collectGarbage');
+        
         await client.send('Performance.enable');
 
         let performanceMetricsBefore = await client.send('Performance.getMetrics');
         console.log(performanceMetricsBefore.metrics);
 
-        //await client.send('Performance.disable');
+  
 
         //Open Large view
         await page.locator('button:has-text("Large View")').click();
@@ -108,12 +108,12 @@ test.describe.skip('Memory Performance tests', () => {
         await page.waitForSelector('.c-imagery__main-image__background-image', { state: 'visible'});
 
         await client.send('HeapProfiler.collectGarbage');
-        //await client.send('Performance.enable');
+     
 
         let performanceMetricsAfter = await client.send('Performance.getMetrics');
         console.log(performanceMetricsAfter.metrics);
 
-        //await client.send('Performance.disable');
+     
 
     });
 });

@@ -24,18 +24,7 @@ import { evaluateResults } from './evaluator';
 import { TRIGGER } from './constants';
 
 describe('evaluate results', () => {
-    // const allTrue = [true, true, true, true, true];
-    // const oneTrue = [false, false, false, false, true];
-    // const multipleTrue = [false, true, false, true, false];
-    // const noneTrue = [false, false, false, false, false];
-    // const allTrueWithUndefined = [true, true, true, undefined, true];
-    // const oneTrueWithUndefined = [undefined, undefined, undefined, undefined, true];
-    // const multipleTrueWithUndefined = [true, undefined, true, undefined, true];
-    // const allUndefined = [undefined, undefined, undefined, undefined, undefined];
-    // const singleTrue = [true];
-    // const singleFalse = [false];
-    // const singleUndefined = [undefined];
-    // const empty = [];
+    
 
     const tests = [
         {
@@ -116,14 +105,7 @@ describe('evaluate results', () => {
             not: true,
             xor: false
         }
-        // , {
-        //     name: 'empty',
-        //     values: [],
-        //     any: false,
-        //     all: false,
-        //     not: true,
-        //     xor: false
-        // }
+       
     ];
 
     describe(`based on trigger ${TRIGGER.ANY}`, () => {
@@ -162,43 +144,5 @@ describe('evaluate results', () => {
         });
     });
 
-    // it('should evaluate to true if trigger is NOT', () => {
-    //     const results = {
-    //         result: false,
-    //         result1: false,
-    //         result2: false
-    //     };
-    //     const result = computeConditionByLimit(results, 0);
-    //     expect(result).toBeTrue();
-    // });
-
-    // it('should evaluate to false if trigger is NOT', () => {
-    //     const results = {
-    //         result: true,
-    //         result1: false,
-    //         result2: false
-    //     };
-    //     const result = computeConditionByLimit(results, 0);
-    //     expect(result).toBeFalse();
-    // });
-
-    // it('should evaluate to true if trigger is XOR', () => {
-    //     const results = {
-    //         result: false,
-    //         result1: true,
-    //         result2: false
-    //     };
-    //     const result = computeConditionByLimit(results, 1);
-    //     expect(result).toBeTrue();
-    // });
-
-    // it('should evaluate to false if trigger is XOR', () => {
-    //     const results = {
-    //         result: false,
-    //         result1: true,
-    //         result2: true
-    //     };
-    //     const result = computeConditionByLimit(results, 1);
-    //     expect(result).toBeFalse();
-    // });
+    
 });

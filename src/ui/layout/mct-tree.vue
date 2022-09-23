@@ -234,7 +234,8 @@ export default {
             this.$nextTick(this.showCurrentPathInTree);
         },
         resetTreeNavigation() {
-            [...this.openTreeItems].reverse().map(this.closeTreeItemByPath);
+           let listaTreeItems = [...this.openTreeItems]
+           listaTreeItems.reverse().map(this.closeTreeItemByPath);
         },
         searchValue() {
             if (this.searchValue !== '' && !this.activeSearch) {

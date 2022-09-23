@@ -1,6 +1,6 @@
 <template>
 <div class="l-iframe abs">
-    <iframe :src="url"></iframe>
+    <iframe :src="url" title="WEB PAGE ¡¡"></iframe>
 </div>
 </template>
 

@@ -5,7 +5,7 @@
         class="c-ne__embed__snap-thumb"
         @click="openSnapshot()"
     >
-        <img :src="thumbnailImage" alt="#">
+        <img :src="thumbnailImage" alt="thumbnailImage">
     </div>
     <div class="c-ne__embed__info">
         <div class="c-ne__embed__name">

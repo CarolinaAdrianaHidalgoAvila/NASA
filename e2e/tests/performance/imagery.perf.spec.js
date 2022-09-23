@@ -167,7 +167,7 @@ test.describe('Performance tests', () => {
         await page.locator('[aria-label="Close"]').click();
         await page.evaluate(() => window.performance.mark("view-large-close-button"));
 
-        //await client.send('HeapProfiler.enable');
+       
         await client.send('HeapProfiler.collectGarbage');
 
         let performanceMetrics = await client.send('Performance.getMetrics');

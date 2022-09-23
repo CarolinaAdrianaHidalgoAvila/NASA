@@ -29,8 +29,6 @@ const { test, expect } = require('../../../../pluginFixtures');
 test.describe('Log plot tests', () => {
     test('Log Plot ticks are functionally correct in regular and log mode and after refresh', async ({ page, openmctConfig }) => {
         const { myItemsFolderName } = openmctConfig;
-
-        //Test.slow decorator is currently broken. Needs to be fixed in https://github.com/nasa/openmct/issues/5374
         test.slow();
 
         await makeOverlayPlot(page, myItemsFolderName);
@@ -46,8 +44,7 @@ test.describe('Log plot tests', () => {
         await testLogTicks(page);
     });
 
-    // Leaving test as 'TODO' for now.
-    // NOTE: Not eligible for community contributions.
+   
     test.fixme('Verify that log mode option is reflected in import/export JSON', async ({ page, openmctConfig }) => {
         const { myItemsFolderName } = openmctConfig;
 
@@ -56,13 +53,7 @@ test.describe('Log plot tests', () => {
         await enableLogMode(page);
         await saveOverlayPlot(page);
 
-        // TODO ...export, delete the overlay, then import it...
-
-        //await testLogTicks(page);
-
-        // TODO, the plot is slightly at different position that in the other test, so this fails.
-        // ...We can fix it by copying all steps from the first test...
-        // await testLogPlotPixels(page);
+       
     });
 });
 
@@ -287,9 +278,9 @@ async function testLogPlotPixels(page) {
             const data = ctx.getImageData(pixel[0], pixel[1], 1, 1).data;
 
             // #43b0ffff <-- openmct cyanish-blue with 100% opacity
-            // if (data[0] !== 0x43 || data[1] !== 0xb0 || data[2] !== 0xff || data[3] !== 0xff) {
+            
             if (data[0] === 0 && data[1] === 0 && data[2] === 0 && data[3] === 0) {
-                // If any pixel is empty, it means we didn't hit a plot point.
+              
                 return false;
             }
         }
