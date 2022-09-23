@@ -1,6 +1,7 @@
 <template>
 <div class="c-inspect-properties__section c-filter-settings">
-    <li
+    <ul>
+        <li
         v-for="(filter, index) in filterField.filters"
         :key="index"
         class="c-inspect-properties__row c-filter-settings__setting"
@@ -60,6 +61,7 @@
             </template>
         </div>
     </li>
+    </ul>
 </div>
 </template>
 
