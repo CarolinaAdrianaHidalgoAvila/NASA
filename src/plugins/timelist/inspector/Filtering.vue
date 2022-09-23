@@ -1,5 +1,6 @@
 <template>
-<li class="c-inspect-properties__row">
+<ul>
+    <li class="c-inspect-properties__row">
     <div
         v-if="canEdit"
         class="c-inspect-properties__hint span-all"
@@ -28,6 +29,7 @@
         {{ filterValue }}
     </div>
 </li>
+</ul>
 </template>
 
 <script>

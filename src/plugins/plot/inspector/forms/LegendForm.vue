@@ -1,6 +1,7 @@
 <template>
 <div>
-    <li class="grid-row">
+    <ul>
+        <li class="grid-row">
         <div
             class="grid-cell label"
             title="The position of the legend relative to the plot display area."
@@ -94,6 +95,7 @@
 
         </div>
     </li>
+    </ul>
 </div>
 </template>
 <script>

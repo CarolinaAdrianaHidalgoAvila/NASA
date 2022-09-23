@@ -21,7 +21,8 @@
  *****************************************************************************/
 
 <template>
-<li
+<ul>
+    <li
     draggable="true"
     @dragstart="emitDragStartEvent"
     @dragenter="onDragenter"
@@ -46,6 +47,7 @@
         />
     </div>
 </li>
+</ul>
 </template>
 
 <script>

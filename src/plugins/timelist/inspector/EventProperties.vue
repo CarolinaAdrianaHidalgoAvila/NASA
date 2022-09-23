@@ -1,5 +1,6 @@
 <template>
-<li class="c-inspect-properties__row">
+<ul>
+    <li class="c-inspect-properties__row">
     <div
         class="c-inspect-properties__label"
         title="Options for future events."
@@ -44,6 +45,7 @@
         {{ activitiesOptions[index] }} <span v-if="index > 1">{{ duration }} {{ durationOptions[durationIndex] }}</span>
     </div>
 </li>
+</ul>
 </template>
 
 <script>
