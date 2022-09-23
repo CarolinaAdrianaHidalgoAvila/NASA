@@ -121,7 +121,7 @@ test.describe('Performance tests', () => {
         await page.waitForSelector('.c-imagery__main-image__background-image', { state: 'visible'});
 
         //Get background-image url from background-image css prop
-        const backgroundImage = await page.locator('.c-imagery__main-image__background-image');
+        const backgroundImage = page.locator('.c-imagery__main-image__background-image');
         let backgroundImageUrl = await backgroundImage.evaluate((el) => {
             return window.getComputedStyle(el).getPropertyValue('background-image').match(/url\(([^)]+)\)/)[1];
         });

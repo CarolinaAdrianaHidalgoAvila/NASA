@@ -98,7 +98,7 @@ export default class ImportAsJSONAction {
                 const newModel = tree[keystring];
                 delete newModel.persisted;
 
-                newObj = await this._instantiate(newModel);
+                newObj = this._instantiate(newModel);
                 this._deepInstantiate(newObj, tree, seen);
             }, this);
         }
@@ -158,7 +158,7 @@ export default class ImportAsJSONAction {
         const rootModel = tree.openmct[rootId];
         delete rootModel.persisted;
 
-        const rootObj = await this._instantiate(rootModel);
+        const rootObj = this._instantiate(rootModel);
         if (this.openmct.composition.checkPolicy(domainObject, rootObj)) {
             this._deepInstantiate(rootObj, tree.openmct, []);
 

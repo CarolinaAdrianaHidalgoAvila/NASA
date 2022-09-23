@@ -105,7 +105,7 @@ test.describe("Search Tests @unstable", () => {
         await waitForSearchCompletion(page);
 
         // Get the search results
-        const searchResults = await page.locator(searchResultSelector);
+        const searchResults = page.locator(searchResultSelector);
 
         // Verify that no results are found
         expect(await searchResults.count()).toBe(0);
@@ -162,12 +162,12 @@ test.describe("Search Tests @unstable", () => {
         await waitForSearchCompletion(page);
 
         // Get the search results
-        const searchResults = await page.locator(searchResultSelector);
+        const searchResults = page.locator(searchResultSelector);
 
         // Verify that the search result/s correctly match the search query
         expect(await searchResults.count()).toBe(2);
-        await expect(await searchResults.first()).toHaveText(folderName);
-        await expect(await searchResults.last()).toHaveText(folderName2);
+        await expect(searchResults.first()).toHaveText(folderName);
+        await expect(searchResults.last()).toHaveText(folderName2);
     });
 });
 

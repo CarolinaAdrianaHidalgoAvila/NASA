@@ -155,6 +155,7 @@
             :style="{ 'max-width': widthWithScroll}"
         >
             <table class="c-table__headers c-telemetry-table__headers">
+                <caption>Table component from TelemetryTable 1</caption>
                 <thead>
                     <tr class="c-telemetry-table__headers__labels">
                         <th scope= " auto">header</th>
@@ -227,6 +228,7 @@
             <table
                 class="c-table__body c-telemetry-table__body js-telemetry-table__content"
                 :style="{ height: totalHeight + 'px'}"
+                details="Table component from TelemetryTable 2"
             >
             <th scope=" auto">content</th>
                 <tbody>
@@ -254,6 +256,7 @@
             class="c-telemetry-table__sizing js-telemetry-table__sizing"
             :style="sizingTableWidth"
         >
+        <caption>Table component from TelemetryTable 3</caption>
             <sizing-row
                 :is-editing="isEditing"
                 @change-height="setRowHeight"

@@ -60,7 +60,7 @@ test.describe('Testing Display Layout @unstable', () => {
         const displayLayoutValue = await displayLayoutValuePromise.textContent();
         const trimmedDisplayValue = displayLayoutValue.trim();
 
-        await expect(trimmedDisplayValue).toBe(formattedTelemetryValue);
+        expect(trimmedDisplayValue).toBe(formattedTelemetryValue);
     });
     test('alpha-numeric widget telemetry value exactly matches latest telemetry value received in fixed time', async ({ page }) => {
         // Create a Display Layout
@@ -91,7 +91,7 @@ test.describe('Testing Display Layout @unstable', () => {
         const displayLayoutValue = await displayLayoutValuePromise.textContent();
         const trimmedDisplayValue = displayLayoutValue.trim();
 
-        await expect(trimmedDisplayValue).toBe(formattedTelemetryValue);
+        expect(trimmedDisplayValue).toBe(formattedTelemetryValue);
     });
     test('items in a display layout can be removed with object tree context menu when viewing the display layout', async ({ page }) => {
         // Create a Display Layout

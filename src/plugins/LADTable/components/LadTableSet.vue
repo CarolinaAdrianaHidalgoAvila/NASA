@@ -22,6 +22,7 @@
 
 <template>
 <table class="c-table c-lad-table">
+ <caption>Table component from LadTableSet</caption>
     <thead>
         <tr>
             <th>Name</th>

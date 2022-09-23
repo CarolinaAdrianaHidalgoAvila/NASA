@@ -23,6 +23,7 @@
 <template>
 <div class="c-lad-table-wrapper u-style-receiver js-style-receiver">
     <table class="c-table c-lad-table">
+        <caption>Table component from LadTable</caption>
         <thead>
             <tr>
                 <th>Name</th>

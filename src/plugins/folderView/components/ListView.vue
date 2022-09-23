@@ -1,6 +1,7 @@
 <template>
 <div class="c-table c-table--sortable c-list-view c-list-view--sticky-header c-list-view--selectable">
     <table class="c-table__body">
+        <caption>Component Table of ListView.vue from folderView</caption>
         <thead class="c-table__header">
             <tr>
                 <th
