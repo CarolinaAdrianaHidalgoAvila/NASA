@@ -26,7 +26,7 @@ const { test, expect } = require('../../../../baseFixtures');
 
 test.describe('Remote Clock', () => {
     // eslint-disable-next-line require-await
-    test.fixme('blocks historical requests until first tick is received', async ({ page }) => {
+    test.fixme('blocks historical requests until first tick is received', async ({ _page }) => {
         test.info().annotations.push({
             type: 'issue',
             description: 'https://github.com/nasa/openmct/issues/5221'

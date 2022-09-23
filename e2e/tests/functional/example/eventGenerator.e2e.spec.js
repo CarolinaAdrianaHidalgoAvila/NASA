@@ -48,11 +48,11 @@ test.describe('Example Event Generator CRUD Operations', () => {
 
 test.describe('Example Event Generator Telemetry Event Verficiation', () => {
 
-    test.fixme('telemetry is coming in for test event', async ({ page }) => {
+    test.fixme('telemetry is coming in for test event', async ({ _page }) => {
     // Go to object created in step one
     // Verify the telemetry table is filled with > 1 row
     });
-    test.fixme('telemetry is sorted by time ascending', async ({ page }) => {
+    test.fixme('telemetry is sorted by time ascending', async ({ _page }) => {
     // Go to object created in step one
     // Verify the telemetry table has a class with "is-sorting asc"
     });

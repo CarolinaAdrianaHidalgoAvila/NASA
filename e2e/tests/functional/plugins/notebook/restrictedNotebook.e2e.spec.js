@@ -39,7 +39,7 @@ test.describe('Restricted Notebook', () => {
         await expect(page.locator('.l-browse-bar__object-name')).toContainText(`Unnamed ${CUSTOM_NAME}`);
     });
 
-    test('Can be deleted if there are no locked pages @addInit', async ({ page, openmctConfig }) => {
+    test('Can be deleted if there are no locked pages @addInit', async ({ page, _openmctConfig }) => {
         await openObjectTreeContextMenu(page, notebook.url);
 
         const menuOptions = page.locator('.c-menu ul');

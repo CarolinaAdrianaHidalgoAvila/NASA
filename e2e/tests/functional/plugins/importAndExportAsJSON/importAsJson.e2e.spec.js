@@ -29,20 +29,20 @@ This test suite is dedicated to tests which verify the basic operations surround
 const { test, expect } = require('../../../../baseFixtures');
 
 test.describe('ExportAsJSON', () => {
-    test.fixme('Verify that domain object can be importAsJSON from Tree', async ({ page }) => {
+    test.fixme('Verify that domain object can be importAsJSON from Tree', async ({ _page }) => {
         //Verify that an testdata JSON file can be imported from Tree
         //Verify correctness of imported domain object
     });
-    test.fixme('Verify that domain object can be importAsJSON from 3 dot menu on folder', async ({ page }) => {
+    test.fixme('Verify that domain object can be importAsJSON from 3 dot menu on folder', async ({ _page }) => {
         //Verify that an testdata JSON file can be imported from 3 dot menu on folder domain object
         //Verify correctness of imported domain object
     });
-    test.fixme('Verify that a nested Objects can be importAsJSON', async ({ page }) => {
+    test.fixme('Verify that a nested Objects can be importAsJSON', async ({ _page }) => {
         // Testdata with hierarchy
         // ImportAsJSON on Tree
         // Verify Hierarchy
     });
-    test.fixme('Verify that the ImportAsJSON dropdown does not appear for the item X', async ({ page }) => {
+    test.fixme('Verify that the ImportAsJSON dropdown does not appear for the item X', async ({ _page }) => {
         // Other than non-persistible objects
     });
 });

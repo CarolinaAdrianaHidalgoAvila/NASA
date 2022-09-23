@@ -92,9 +92,9 @@ test.describe('Persistence operations @addInit', () => {
 });
 
 test.describe('Form Correctness by Object Type', () => {
-    test.fixme('Verify correct behavior of number object (SWG)', async ({page}) => {});
-    test.fixme('Verify correct behavior of number object Timer', async ({page}) => {});
-    test.fixme('Verify correct behavior of number object Plan View', async ({page}) => {});
-    test.fixme('Verify correct behavior of number object Clock', async ({page}) => {});
-    test.fixme('Verify correct behavior of number object Hyperlink', async ({page}) => {});
+    test.fixme('Verify correct behavior of number object (SWG)', async ({_page}) => {});
+    test.fixme('Verify correct behavior of number object Timer', async ({_page}) => {});
+    test.fixme('Verify correct behavior of number object Plan View', async ({_page}) => {});
+    test.fixme('Verify correct behavior of number object Clock', async ({_page}) => {});
+    test.fixme('Verify correct behavior of number object Hyperlink', async ({_page}) => {});
 });

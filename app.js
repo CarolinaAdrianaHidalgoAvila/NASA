@@ -42,7 +42,7 @@ app.use('/proxyUrl', function proxyRequest(req, res, next) {
 
 class WatchRunPlugin {
     apply(compiler) {
-        compiler.hooks.emit.tapAsync('WatchRunPlugin', (compilation, callback) => {
+        compiler.hooks.emit.tapAsync('WatchRunPlugin', (_compilation, callback) => {
             console.log('Begin compile at ' + new Date());
             callback();
         });
@@ -81,7 +81,7 @@ if (__DEV__) {
 }
 
 // Expose index.html for development users.
-app.get('/', function (req, res) {
+app.get('/', function (_req, res) {
     fs.createReadStream('index.html').pipe(res);
 });
 

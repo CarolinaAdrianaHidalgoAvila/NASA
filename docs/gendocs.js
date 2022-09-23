@@ -71,7 +71,7 @@ GLOBAL.window = GLOBAL.window ||  GLOBAL; // nomnoml expects window to be define
             outputPath,
             source = "";
 
-        transform._transform = function (chunk, encoding, done) {
+        transform._transform = function (chunk, _encoding, done) {
             if (!isBuilding) {
                 if (chunk.trim().indexOf("```nomnoml") === 0) {
                     var outputFilename = prefix + '-' + counter + '.png';
@@ -109,7 +109,7 @@ GLOBAL.window = GLOBAL.window ||  GLOBAL; // nomnoml expects window to be define
     function gfmifier(renderTOC) {
         var transform = new stream.Transform({ objectMode: true }),
             markdown = "";
-        transform._transform = function (chunk, encoding, done) {
+        transform._transform = function (chunk, _encoding, done) {
             markdown += chunk;
             done();
         };
@@ -165,7 +165,7 @@ GLOBAL.window = GLOBAL.window ||  GLOBAL; // nomnoml expects window to be define
     // Convert all markdown files.
     // First, pull out nomnoml diagrams.
     // Then, convert remaining Markdown to HTML.
-    glob(options['in'] + "/**/*.md", {}, function (err, files) {
+    glob(options['in'] + "/**/*.md", {}, function (_err, files) {
         files.forEach(function (file) {
             var destination = file.replace(options['in'], options.out)
                 .replace(/md$/, "html"),
@@ -175,7 +175,7 @@ GLOBAL.window = GLOBAL.window ||  GLOBAL; // nomnoml expects window to be define
                 //on regex provided as command line option
                 renderTOC = file.match(options['suppress-toc'] || "") === null;
 
-            mkdirp(destPath, function (err) {
+            mkdirp(destPath, function (_err) {
                 fs.createReadStream(file, { encoding: 'utf8' })
                     .pipe(split())
                     .pipe(nomnomlifier(destPath, prefix))
@@ -188,7 +188,7 @@ GLOBAL.window = GLOBAL.window ||  GLOBAL; // nomnoml expects window to be define
     });
 
     // Also copy over all HTML, CSS, or PNG files
-    glob(options['in'] + "/**/*.@(html|css|png)", {}, function (err, files) {
+    glob(options['in'] + "/**/*.@(html|css|png)", {}, function (_err, files) {
         files.forEach(function (file) {
             var destination = file.replace(options['in'], options.out),
                 destPath = path.dirname(destination),

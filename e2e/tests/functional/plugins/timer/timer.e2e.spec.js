@@ -30,7 +30,7 @@ test.describe('Timer', () => {
         timer = await createDomainObjectWithDefaults(page, { type: 'timer' });
     });
 
-    test('Can perform actions on the Timer', async ({ page, openmctConfig }) => {
+    test('Can perform actions on the Timer', async ({ page, _openmctConfig }) => {
         test.info().annotations.push({
             type: 'issue',
             description: 'https://github.com/nasa/openmct/issues/4313'
