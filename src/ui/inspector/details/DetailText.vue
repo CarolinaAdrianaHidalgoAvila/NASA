@@ -21,7 +21,8 @@
  *****************************************************************************/
 
 <template>
-<li class="c-inspect-properties__row">
+<ul>
+    <li class="c-inspect-properties__row">
     <div class="c-inspect-properties__label">
         {{ detail.name }}
     </div>
@@ -29,6 +30,7 @@
         {{ detail.value }}
     </div>
 </li>
+</ul>
 </template>
 
 <script>
