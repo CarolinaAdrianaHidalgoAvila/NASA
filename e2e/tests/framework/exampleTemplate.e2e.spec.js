@@ -103,18 +103,6 @@ test.describe('Renaming Timer Object', () => {
         // Assert that the name has changed in the browser bar to the second value
         await expect(page.locator('.l-browse-bar__object-name')).toContainText(newObjectName2);
     });
-
-    /**
-     * If you run out of time to write new tests, please stub in the missing tests
-     * in-place with a test.fixme and BDD-style test steps.
-     * Someone will carry the baton!
-     */
-    test.fixme('Can Rename Timer Object from Tree', async ({ page }) => {
-        //Create a new object
-        //Copy this object
-        //Delete first object
-        //Expect copied object to persist
-    });
 });
 
 /**

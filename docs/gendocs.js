@@ -175,7 +175,7 @@ GLOBAL.window = GLOBAL.window ||  GLOBAL; // nomnoml expects window to be define
                 //on regex provided as command line option
                 renderTOC = file.match(options['suppress-toc'] || "") === null;
 
-            mkdirp(destPath, function (_err) {
+            mkdirp(destPath, function (_er) {
                 fs.createReadStream(file, { encoding: 'utf8' })
                     .pipe(split())
                     .pipe(nomnomlifier(destPath, prefix))
@@ -188,7 +188,7 @@ GLOBAL.window = GLOBAL.window ||  GLOBAL; // nomnoml expects window to be define
     });
 
     // Also copy over all HTML, CSS, or PNG files
-    glob(options['in'] + "/**/*.@(html|css|png)", {}, function (_err, files) {
+    glob(options['in'] + "/**/*.@(html|css|png)", {}, function (_e, files) {
         files.forEach(function (file) {
             var destination = file.replace(options['in'], options.out),
                 destPath = path.dirname(destination),
@@ -199,7 +199,7 @@ GLOBAL.window = GLOBAL.window ||  GLOBAL; // nomnoml expects window to be define
                 streamOptions.encoding = 'utf8';
             }
 
-            mkdirp(destPath, function (err) {
+            mkdirp(destPath, function (_error) {
                 fs.createReadStream(file, streamOptions)
                     .pipe(fs.createWriteStream(destination, streamOptions));
             });

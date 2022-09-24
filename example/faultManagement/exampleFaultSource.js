@@ -29,12 +29,10 @@ export default function (staticFaults = false) {
         const faultsData = utils.randomFaults(staticFaults);
 
         openmct.faults.addProvider({
-            request(domainObject, options) {
+            request(_domainObject, _options) {
                 return Promise.resolve(faultsData);
             },
-            subscribe(domainObject, callback) {
-                return () => {};
-            },
+            
             supportsRequest(domainObject) {
                 return domainObject.type === 'faultManagement';
             },

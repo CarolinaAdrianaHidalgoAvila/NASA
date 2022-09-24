@@ -92,9 +92,19 @@ test.describe('Persistence operations @addInit', () => {
 });
 
 test.describe('Form Correctness by Object Type', () => {
-    test.fixme('Verify correct behavior of number object (SWG)', async ({_page}) => {});
-    test.fixme('Verify correct behavior of number object Timer', async ({_page}) => {});
-    test.fixme('Verify correct behavior of number object Plan View', async ({_page}) => {});
-    test.fixme('Verify correct behavior of number object Clock', async ({_page}) => {});
-    test.fixme('Verify correct behavior of number object Hyperlink', async ({_page}) => {});
+    test.fixme('Verify correct behavior of number object (SWG)', async ({page}) => {
+        let timer;
+        await page.goto('./', { waitUntil: 'networkidle' });
+        timer = await createDomainObjectWithDefaults(page, { type: 'Timer' });
+        await expect(page.locator('.l-browse-bar__object-name')).toContainText(timer.name);
+
+});
+    test.fixme('Verify correct behavior of number object Timer', async ({_page}) => {  console.log('number object Timer');
+});
+    test.fixme('Verify correct behavior of number object Plan View', async ({_page}) => {  console.log('Plan View');
+});
+    test.fixme('Verify correct behavior of number object Clock', async ({_page}) => {  console.log('clock');
+});
+    test.fixme('Verify correct behavior of number object Hyperlink', async ({_page}) => {  console.log('Hiperlink');
+});
 });

@@ -41,7 +41,7 @@ app.use('/proxyUrl', function proxyRequest(req, res, next) {
 });
 
 class WatchRunPlugin {
-    apply(compiler) {
+    apply() {
         compiler.hooks.emit.tapAsync('WatchRunPlugin', (_compilation, callback) => {
             console.log('Begin compile at ' + new Date());
             callback();

@@ -107,7 +107,7 @@ exports.test = test.extend({
    
     theme: [theme, { option: true }],
    
-    page: async ({ page, theme }, use) => {
+    page: async ({ page }, use) => {
       
         if (theme === 'snow') {
            
@@ -118,7 +118,7 @@ exports.test = test.extend({
     },
     myItemsFolderName: [myItemsFolderName, { option: true }],
   
-    openmctConfig: async ({ myItemsFolderName }, use) => {
+    openmctConfig: async (use) => {
         await use({ myItemsFolderName });
     }
 });
