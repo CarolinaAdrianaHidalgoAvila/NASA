@@ -181,54 +181,42 @@ async function getLowestSeverity(page) {
  * @param {import('@playwright/test').Page} page
  */
 async function getFaultResultCount(page) {
-    const count = await page.locator('.c-faults-list-view-item-body > .c-fault-mgmt__list').count();
-
-    return count;
+    return page.locator('.c-faults-list-view-item-body > .c-fault-mgmt__list').count();
 }
 
 /**
  * @param {import('@playwright/test').Page} page
  */
 function getFault(page, rowNumber) {
-    const fault = page.locator(`.c-faults-list-view-item-body > .c-fault-mgmt__list >> nth=${rowNumber - 1}`);
-
-    return fault;
+   return page.locator(`.c-faults-list-view-item-body > .c-fault-mgmt__list >> nth=${rowNumber - 1}`);
 }
 
 /**
  * @param {import('@playwright/test').Page} page
  */
 function getFaultByName(page, name) {
-    const fault = page.locator(`.c-fault-mgmt__list-faultname:has-text("${name}")`);
-
-    return fault;
+   return page.locator(`.c-fault-mgmt__list-faultname:has-text("${name}")`);
 }
 
 /**
  * @param {import('@playwright/test').Page} page
  */
 async function getFaultName(page, rowNumber) {
-    const faultName = await page.locator(`.c-fault-mgmt__list-faultname >> nth=${rowNumber - 1}`).textContent();
-
-    return faultName;
+   return page.locator(`.c-fault-mgmt__list-faultname >> nth=${rowNumber - 1}`).textContent();
 }
 
 /**
  * @param {import('@playwright/test').Page} page
  */
 async function getFaultSeverity(page, rowNumber) {
-    const faultSeverity = await page.locator(`.c-faults-list-view-item-body .c-fault-mgmt__list-severity >> nth=${rowNumber - 1}`).getAttribute('title');
-
-    return faultSeverity;
+   return page.locator(`.c-faults-list-view-item-body .c-fault-mgmt__list-severity >> nth=${rowNumber - 1}`).getAttribute('title');
 }
 
 /**
  * @param {import('@playwright/test').Page} page
  */
 async function getFaultNamespace(page, rowNumber) {
-    const faultNamespace = await page.locator(`.c-fault-mgmt__list-path >> nth=${rowNumber - 1}`).textContent();
-
-    return faultNamespace;
+    return page.locator(`.c-fault-mgmt__list-path >> nth=${rowNumber - 1}`).textContent();
 }
 
 /**

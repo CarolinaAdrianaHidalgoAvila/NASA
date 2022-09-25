@@ -136,13 +136,13 @@ export default class FormsAPI extends EventEmitter {
         const formElement = vm.$el;
         if (element) {
             element.append(formElement);
-        } else {
-            overlay = self.openmct.overlays.overlay({
-                element: vm.$el,
-                size: 'small',
-                onDestroy: () => vm.$destroy()
-            });
-        }
+        } 
+        overlay = self.openmct.overlays.overlay({
+            element: vm.$el,
+            size: 'small',
+            onDestroy: () => vm.$destroy()
+         });
+
 
         function onFormPropertyChange(data) {
             self.emit('onFormPropertyChange', data);
@@ -166,9 +166,10 @@ export default class FormsAPI extends EventEmitter {
             return () => {
                 if (element) {
                     formElement.remove();
-                } else {
+                } 
+                
                     overlay.dismiss();
-                }
+                
 
                 if (callback) {
                     callback(changes);
