@@ -27,7 +27,7 @@ define([
     './CompositionCollection'
 ], function (
     _,
-    EventEmitter,
+    _EventEmitter,
     DefaultCompositionProvider,
     CompositionCollection
 ) {
@@ -86,7 +86,7 @@ define([
      * placing one object in another's composition.
      *
      * Open MCT's policy model requires consensus, so any one policy may
-     * reject composition by returning false. As such, policies should
+     * _reject composition by returning false. As such, policies should
      * generally be written to return true in the default case.
      *
      * @callback CompositionPolicy

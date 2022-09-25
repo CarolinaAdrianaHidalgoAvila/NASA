@@ -65,7 +65,7 @@ class GlobalTimeContext extends TimeContext {
      * @param {number} timestamp A time from which bounds will be calculated
      * using current offsets.
      */
-    tick(timestamp) {
+    tick(_timestamp) {
         super.tick.call(this, ...arguments);
 
         // If a bounds change results in a TOI outside of the current

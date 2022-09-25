@@ -126,17 +126,17 @@ describe("The Duplicate Action plugin", () => {
         });
 
         it("the duplicate child object's name (when not changing) should be the same as the original object", async () => {
-            let duplicatedObjectIdentifier = anotherParentObject.composition[0];
-            let duplicatedObject = await openmct.objects.get(duplicatedObjectIdentifier);
+            let duplicatedObjectidentifier = anotherParentObject.composition[0];
+            let duplicatedObject = await openmct.objects.get(duplicatedObjectidentifier);
             let duplicateObjectName = duplicatedObject.name;
 
             expect(duplicateObjectName).toEqual(parentObject.name);
         });
 
         it("the duplicate child object's identifier should be new", () => {
-            let duplicatedObjectIdentifier = anotherParentObject.composition[0];
+            let duplicatedObjectidentifier = anotherParentObject.composition[0];
 
-            expect(duplicatedObjectIdentifier.key).not.toEqual(parentObject.identifier.key);
+            expect(duplicatedObjectidentifier.key).not.toEqual(parentObject.identifier.key);
         });
     });
 

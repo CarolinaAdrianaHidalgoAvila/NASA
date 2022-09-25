@@ -35,11 +35,11 @@ export default function BarGraphViewProvider(openmct) {
         key: BAR_GRAPH_VIEW,
         name: 'Bar Graph',
         cssClass: 'icon-telemetry',
-        canView(domainObject, objectPath) {
+        canView(domainObject, _objectPath) {
             return domainObject && domainObject.type === BAR_GRAPH_KEY;
         },
 
-        canEdit(domainObject, objectPath) {
+        canEdit(domainObject, _objectPath) {
             return domainObject && domainObject.type === BAR_GRAPH_KEY;
         },
 

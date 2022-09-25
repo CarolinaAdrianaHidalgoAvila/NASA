@@ -1,9 +1,9 @@
 import { v4 as uuid } from 'uuid';
 
 class Frame {
-    constructor(domainObjectIdentifier, size) {
+    constructor(domainObjectidentifier, size) {
         this.id = uuid();
-        this.domainObjectIdentifier = domainObjectIdentifier;
+        this.domainObjectidentifier = domainObjectidentifier;
         this.size = size;
 
         this.noFrame = false;

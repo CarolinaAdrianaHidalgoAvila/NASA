@@ -85,7 +85,7 @@ export default {
         }
     },
     methods: {
-        toggleCollapse: function (e) {
+        toggleCollapse: function (_e) {
             if (this.collapsed) {
                 this.handleExpand();
                 this.removeHideParam(this.hideParam);
@@ -163,7 +163,7 @@ export default {
             this.$emit('start-resizing');
             this.trackSize();
         },
-        end: function (event) {
+        end: function (_event) {
             document.body.removeEventListener('mousemove', this.updatePosition);
             document.body.removeEventListener('mouseup', this.end);
             this.resizing = false;

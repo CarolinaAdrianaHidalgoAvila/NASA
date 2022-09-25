@@ -184,9 +184,9 @@ define([
             }
 
             loader = {};
-            loader.promise = new Promise(function (resolve, reject) {
+            loader.promise = new Promise(function (resolve, _reject) {
                 loader.resolve = resolve;
-                loader.reject = reject;
+                loader._reject = _reject;
             });
 
             composition.load.and.callFake(function () {

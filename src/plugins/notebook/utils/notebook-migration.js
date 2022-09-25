@@ -32,7 +32,7 @@ export function notebookImageMigration(openmct, domainObject) {
                         const object = createNotebookImageDomainObject(fullSizeImageURL);
                         const notebookImageDomainObject = updateNamespaceOfDomainObject(object, domainObject.identifier.namespace);
                         embed.snapshot = {
-                            fullSizeImageObjectIdentifier: notebookImageDomainObject.identifier,
+                            fullSizeImageObjectidentifier: notebookImageDomainObject.identifier,
                             thumbnailImage: { src: thumbnailImageURL || '' }
                         };
 

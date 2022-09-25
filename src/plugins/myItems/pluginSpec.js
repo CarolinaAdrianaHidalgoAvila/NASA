@@ -25,19 +25,19 @@ import {
     resetApplicationState
 } from 'utils/testing';
 import {
-    createMyItemsIdentifier,
+    createMyItemsidentifier,
     MY_ITEMS_KEY
-} from './createMyItemsIdentifier';
+} from './createMyItemsidentifier';
 
 const MISSING_NAME = `Missing: ${MY_ITEMS_KEY}`;
 const DEFAULT_NAME = 'My Items';
 const FANCY_NAME = 'Fancy Items';
-const myItemsIdentifier = createMyItemsIdentifier();
+const myItemsidentifier = createMyItemsidentifier();
 
 describe("the plugin", () => {
     let openmct;
     let missingObj = {
-        identifier: myItemsIdentifier,
+        identifier: myItemsidentifier,
         type: 'unknown',
         name: MISSING_NAME
     };
@@ -61,7 +61,7 @@ describe("the plugin", () => {
             const rootCompostionCollection = openmct.composition.get(root);
             const rootCompostion = await rootCompostionCollection.load();
             let myItems = rootCompostion.filter((domainObject) => {
-                return openmct.objects.areIdsEqual(domainObject.identifier, myItemsIdentifier);
+                return openmct.objects.areIdsEqual(domainObject.identifier, myItemsidentifier);
             })[0];
 
             expect(myItems.name).toBe(DEFAULT_NAME);
@@ -75,18 +75,18 @@ describe("the plugin", () => {
 
             beforeEach(async () => {
                 mockNotFoundProvider = {
-                    get: () => Promise.reject(new Error('Not found')),
+                    get: () => Promise._reject(new Error('Not found')),
                     create: () => Promise.resolve(missingObj),
                     update: () => Promise.resolve(missingObj)
                 };
 
                 activeProvider = mockNotFoundProvider;
                 spyOn(openmct.objects, 'getProvider').and.returnValue(activeProvider);
-                myItemsObject = await openmct.objects.get(myItemsIdentifier);
+                myItemsObject = await openmct.objects.get(myItemsidentifier);
             });
 
             it('missing objects', () => {
-                let idsMatch = openmct.objects.areIdsEqual(myItemsObject.identifier, myItemsIdentifier);
+                let idsMatch = openmct.objects.areIdsEqual(myItemsObject.identifier, myItemsidentifier);
 
                 expect(myItemsObject).toBeDefined();
                 expect(idsMatch).toBeTrue();
@@ -112,7 +112,7 @@ describe("the plugin", () => {
         });
 
         it('when installed, uses the passed in name', async () => {
-            let myItems = await openmct.objects.get(myItemsIdentifier);
+            let myItems = await openmct.objects.get(myItemsidentifier);
 
             expect(myItems.name).toBe(FANCY_NAME);
             expect(myItems).toBeDefined();

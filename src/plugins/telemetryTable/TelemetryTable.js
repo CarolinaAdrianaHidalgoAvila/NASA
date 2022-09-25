@@ -253,16 +253,16 @@ define([
             });
         }
 
-        removeTelemetryObject(objectIdentifier) {
-            const keyString = this.openmct.objects.makeKeyString(objectIdentifier);
+        removeTelemetryObject(objectidentifier) {
+            const keyString = this.openmct.objects.makeKeyString(objectidentifier);
 
-            this.configuration.removeColumnsForObject(objectIdentifier, true);
+            this.configuration.removeColumnsForObject(objectidentifier, true);
             this.tableRows.removeRowsByObject(keyString);
 
             this.removeTelemetryCollection(keyString);
             delete this.telemetryObjects[keyString];
 
-            this.emit('object-removed', objectIdentifier);
+            this.emit('object-removed', objectidentifier);
         }
 
         clearData() {

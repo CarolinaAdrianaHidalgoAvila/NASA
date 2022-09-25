@@ -59,7 +59,7 @@ class ActionsAPI extends EventEmitter {
         this._groupOrder = groupArray;
     }
 
-    _getCachedActionCollection(objectPath, view) {
+    _getCachedActionCollection(_objectPath, view) {
         return this._actionCollections.get(view);
     }
 

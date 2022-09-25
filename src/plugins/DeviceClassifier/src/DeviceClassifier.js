@@ -43,7 +43,7 @@ import DeviceMatchers from "./DeviceMatchers";
 export default (agent, document) => {
     const body = document.body;
 
-    Object.keys(DeviceMatchers).forEach((key, index, array) => {
+    Object.keys(DeviceMatchers).forEach((key, _index, _array) => {
         if (DeviceMatchers[key](agent)) {
             body.classList.add(key);
         }

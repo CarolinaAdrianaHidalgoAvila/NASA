@@ -52,7 +52,7 @@ describe('Open MCT Layout:', () => {
             createLayout();
             await Vue.nextTick();
 
-            Object.entries(components).forEach(([name, component]) => {
+            Object.entries(components).forEach(([_name, component]) => {
                 expect(
                     component.pane
                 ).toBeTruthy();
@@ -69,7 +69,7 @@ describe('Open MCT Layout:', () => {
             createLayout();
             await Vue.nextTick();
 
-            Object.entries(components).forEach(([name, component]) => {
+            Object.entries(components).forEach(([_name, component]) => {
                 expect(
                     isCollapsed(component.pane)
                 ).toBeTrue();
@@ -81,7 +81,7 @@ describe('Open MCT Layout:', () => {
             toggleCollapseButtons();
             await Vue.nextTick();
 
-            Object.entries(components).forEach(([name, component]) => {
+            Object.entries(components).forEach(([_name, component]) => {
                 expect(
                     openmct.router.getSearchParam(component.param)
                 ).toEqual('true');
@@ -99,7 +99,7 @@ describe('Open MCT Layout:', () => {
             toggleExpandButtons();
             await Vue.nextTick();
 
-            Object.entries(components).forEach(([name, component]) => {
+            Object.entries(components).forEach(([_name, component]) => {
                 expect(
                     openmct.router.getSearchParam(component.param)
                 ).not.toEqual('true');
@@ -152,19 +152,19 @@ describe('Open MCT Layout:', () => {
     }
 
     function setHideParams() {
-        Object.entries(components).forEach(([name, component]) => {
+        Object.entries(components).forEach(([_name, component]) => {
             openmct.router.setSearchParam(component.param, true);
         });
     }
 
     function toggleCollapseButtons() {
-        Object.entries(components).forEach(([name, component]) => {
+        Object.entries(components).forEach(([_name, component]) => {
             component.collapseButton.click();
         });
     }
 
     function toggleExpandButtons() {
-        Object.entries(components).forEach(([name, component]) => {
+        Object.entries(components).forEach(([_name, component]) => {
             component.expandButton.click();
         });
     }

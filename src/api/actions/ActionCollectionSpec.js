@@ -89,7 +89,7 @@ describe('The ActionCollection', () => {
                 group: 'action',
                 priority: 9,
                 showInStatusBar: true,
-                appliesTo: (objectPath, view = {}) => {
+                appliesTo: (_objectPath, view = {}) => {
                     if (view.getViewContext) {
                         let viewContext = view.getViewContext();
 

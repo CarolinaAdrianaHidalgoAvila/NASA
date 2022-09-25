@@ -1,12 +1,12 @@
 import objectUtils from 'objectUtils';
 
 const NOTEBOOK_LOCAL_STORAGE = 'notebook-storage';
-let currentNotebookObjectIdentifier = null;
+let currentNotebookObjectidentifier = null;
 let unlisten = null;
 
 function defaultNotebookObjectChanged(newDomainObject) {
     if (newDomainObject.location !== null) {
-        currentNotebookObjectIdentifier = newDomainObject.identifier;
+        currentNotebookObjectidentifier = newDomainObject.identifier;
 
         return;
     }
@@ -20,8 +20,8 @@ function defaultNotebookObjectChanged(newDomainObject) {
 }
 
 function observeDefaultNotebookObject(openmct, notebookStorage, domainObject) {
-    if (currentNotebookObjectIdentifier
-            && objectUtils.makeKeyString(currentNotebookObjectIdentifier) === objectUtils.makeKeyString(notebookStorage.identifier)) {
+    if (currentNotebookObjectidentifier
+            && objectUtils.makeKeyString(currentNotebookObjectidentifier) === objectUtils.makeKeyString(notebookStorage.identifier)) {
         return;
     }
 
@@ -42,7 +42,7 @@ function saveDefaultNotebook(notebookStorage) {
 }
 
 export function clearDefaultNotebook() {
-    currentNotebookObjectIdentifier = null;
+    currentNotebookObjectidentifier = null;
     removeListener();
 
     window.localStorage.setItem(NOTEBOOK_LOCAL_STORAGE, null);

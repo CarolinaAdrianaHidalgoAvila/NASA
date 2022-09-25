@@ -39,7 +39,7 @@ export default function (staticFaults = false) {
             supportsSubscribe(domainObject) {
                 return domainObject.type === 'faultManagement';
             },
-            acknowledgeFault(fault, { comment = '' }) {
+            acknowledgeFault(fault, { _comment = '' }) {
                 utils.acknowledgeFault(fault);
 
                 return Promise.resolve({

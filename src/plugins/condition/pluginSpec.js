@@ -955,7 +955,7 @@ describe('the plugin', function () {
                 },
                 "selectedConditionId": "0558fa77-9bdc-4142-9f9a-7a28fe95182e",
                 "defaultConditionId": "0558fa77-9bdc-4142-9f9a-7a28fe95182e",
-                "conditionSetIdentifier": {
+                "conditionSetidentifier": {
                     "namespace": "",
                     "key": "035c589c-d98f-429e-8b89-d76bd8d22b29"
                 }

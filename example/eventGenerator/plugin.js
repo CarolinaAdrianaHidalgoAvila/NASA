@@ -22,7 +22,7 @@
 import EventTelmetryProvider from './EventTelemetryProvider';
 import EventMetadataProvider from './EventMetadataProvider';
 
-export default function EventGeneratorPlugin(options) {
+export default function EventGeneratorPlugin(_options) {
     return function install(openmct) {
         openmct.types.addType("eventGenerator", {
             name: "Event Message Generator",

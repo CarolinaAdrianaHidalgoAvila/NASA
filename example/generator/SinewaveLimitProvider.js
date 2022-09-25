@@ -81,7 +81,7 @@ define([
         return domainObject.type === 'generator';
     };
 
-    SinewaveLimitProvider.prototype.getLimitEvaluator = function (domainObject) {
+    SinewaveLimitProvider.prototype.getLimitEvaluator = function (_domainObject) {
         return {
             evaluate: function (datum, valueMetadata) {
                 var range = valueMetadata && valueMetadata.key;
@@ -105,7 +105,7 @@ define([
         };
     };
 
-    SinewaveLimitProvider.prototype.getLimits = function (domainObject) {
+    SinewaveLimitProvider.prototype.getLimits = function (_domainObject) {
 
         return {
             limits: function () {

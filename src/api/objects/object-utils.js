@@ -27,10 +27,10 @@ define([
 ) {
 
     /**
-     * Utility for checking if a thing is an Open MCT Identifier.
+     * Utility for checking if a thing is an Open MCT identifier.
      * @private
      */
-    function isIdentifier(thing) {
+    function isidentifier(thing) {
         return typeof thing === 'object'
             && Object.prototype.hasOwnProperty.call(thing, 'key')
             && Object.prototype.hasOwnProperty.call(thing, 'namespace');
@@ -45,7 +45,7 @@ define([
     }
 
     /**
-     * Convert a keyString into an Open MCT Identifier, ex:
+     * Convert a keyString into an Open MCT identifier, ex:
      * 'scratch:root' ==> {namespace: 'scratch', key: 'root'}
      *
      * Idempotent.
@@ -54,7 +54,7 @@ define([
      * @returns identifier
      */
     function parseKeyString(keyString) {
-        if (isIdentifier(keyString)) {
+        if (isidentifier(keyString)) {
             return keyString;
         }
 
@@ -82,7 +82,7 @@ define([
     }
 
     /**
-     * Convert an Open MCT Identifier into a keyString, ex:
+     * Convert an Open MCT identifier into a keyString, ex:
      * {namespace: 'scratch', key: 'root'} ==> 'scratch:root'
      *
      * Idempotent
@@ -111,7 +111,7 @@ define([
 
     /**
      * Convert a new domain object into an old format model, removing the
-     * identifier and converting the composition array from Open MCT Identifiers
+     * identifier and converting the composition array from Open MCT identifiers
      * to old format keyStrings.
      *
      * @param domainObject
@@ -130,7 +130,7 @@ define([
     /**
      * Convert an old format domain object model into a new format domain
      * object.  Adds an identifier using the provided keyString, and converts
-     * the composition array to utilize Open MCT Identifiers.
+     * the composition array to utilize Open MCT identifiers.
      *
      * @param model
      * @param keyString
@@ -147,10 +147,10 @@ define([
     }
 
     /**
-     * Compare two Open MCT Identifiers, returning true if they are equal.
+     * Compare two Open MCT identifiers, returning true if they are equal.
      *
      * @param identifier
-     * @param otherIdentifier
+     * @param otheridentifier
      * @returns Boolean true if identifiers are equal.
      */
     function identifierEquals(a, b) {
@@ -176,7 +176,7 @@ define([
     }
 
     return {
-        isIdentifier: isIdentifier,
+        isidentifier: isidentifier,
         toOldFormat: toOldFormat,
         toNewFormat: toNewFormat,
         makeKeyString: makeKeyString,

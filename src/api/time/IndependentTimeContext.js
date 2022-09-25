@@ -42,7 +42,7 @@ class IndependentTimeContext extends TimeContext {
         this.globalTimeContext.on('refreshContext', this.refreshContext);
     }
 
-    bounds(newBounds) {
+    bounds(_newBounds) {
         if (this.upstreamTimeContext) {
             return this.upstreamTimeContext.bounds(...arguments);
         } else {
@@ -50,7 +50,7 @@ class IndependentTimeContext extends TimeContext {
         }
     }
 
-    tick(timestamp) {
+    tick(_timestamp) {
         if (this.upstreamTimeContext) {
             return this.upstreamTimeContext.tick(...arguments);
         } else {
@@ -58,7 +58,7 @@ class IndependentTimeContext extends TimeContext {
         }
     }
 
-    clockOffsets(offsets) {
+    clockOffsets(_offsets) {
         if (this.upstreamTimeContext) {
             return this.upstreamTimeContext.clockOffsets(...arguments);
         } else {
@@ -74,11 +74,11 @@ class IndependentTimeContext extends TimeContext {
         }
     }
 
-    timeOfInterest(newTOI) {
+    timeOfInterest(_newTOI) {
         return this.globalTimeContext.timeOfInterest(...arguments);
     }
 
-    timeSystem(timeSystemOrKey, bounds) {
+    timeSystem(_timeSystemOrKey, _bounds) {
         return this.globalTimeContext.timeSystem(...arguments);
     }
 

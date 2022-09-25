@@ -780,7 +780,7 @@ export default {
                 }
                 ));
 
-            Promise.all(searchPromises).catch(reason => {
+            Promise.all(searchPromises).catch(_reason => {
                 // search aborted
             }).finally(() => {
                 this.searchLoading = false;
@@ -871,7 +871,7 @@ export default {
         calculateHeights() {
             const RECHECK = 100;
 
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve, _reject) => {
 
                 let checkHeights = () => {
                     let treeTopMargin = this.getElementStyleValue(this.$refs.mainTree, 'marginTop');

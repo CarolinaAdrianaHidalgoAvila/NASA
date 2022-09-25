@@ -35,7 +35,7 @@ export default {
         }
     },
     methods: {
-        onClick(event) {
+        onClick(_event) {
             const self = this;
 
             if ((self.options.isEditing === undefined || self.options.isEditing) && self.options.dialog) {
@@ -45,7 +45,7 @@ export default {
                     .then(changes => {
                         self.$emit('change', {...changes}, self.options);
                     })
-                    .catch(e => {
+                    .catch(_e => {
                         // canceled, do nothing
                     });
             }

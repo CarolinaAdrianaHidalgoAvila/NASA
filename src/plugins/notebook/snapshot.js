@@ -38,7 +38,7 @@ export default class Snapshot {
         const object = createNotebookImageDomainObject(fullSizeImageURL);
         const thumbnailImage = { src: thumbnailImageURL || '' };
         const snapshot = {
-            fullSizeImageObjectIdentifier: object.identifier,
+            fullSizeImageObjectidentifier: object.identifier,
             thumbnailImage
         };
         createNewEmbed(snapshotMeta, snapshot).then(embed => {

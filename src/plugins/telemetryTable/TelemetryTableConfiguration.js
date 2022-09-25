@@ -71,8 +71,8 @@ define([
             this.columns[objectKeyString].splice(position, 0, column);
         }
 
-        removeColumnsForObject(objectIdentifier) {
-            let objectKeyString = this.openmct.objects.makeKeyString(objectIdentifier);
+        removeColumnsForObject(objectidentifier) {
+            let objectKeyString = this.openmct.objects.makeKeyString(objectidentifier);
             let columnsToRemove = this.columns[objectKeyString];
 
             delete this.columns[objectKeyString];

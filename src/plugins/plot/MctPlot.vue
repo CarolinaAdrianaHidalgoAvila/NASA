@@ -536,8 +536,8 @@ export default {
         },
 
         compositionPathContainsId(domainObjectToClear) {
-            return domainObjectToClear.composition.some((compositionIdentifier) => {
-                return this.openmct.objects.areIdsEqual(compositionIdentifier, this.domainObject.identifier);
+            return domainObjectToClear.composition.some((compositionidentifier) => {
+                return this.openmct.objects.areIdsEqual(compositionidentifier, this.domainObject.identifier);
             });
         },
 

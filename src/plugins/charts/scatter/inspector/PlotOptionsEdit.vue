@@ -139,12 +139,12 @@ export default {
                 this.unobserve();
             }
         },
-        addSeries(series, index) {
+        addSeries(series, _index) {
             this.$set(this.plotSeries, this.plotSeries.length, series);
             this.setupOptions();
         },
-        removeSeries(seriesIdentifier) {
-            const index = this.plotSeries.findIndex(plotSeries => this.openmct.objects.areIdsEqual(seriesIdentifier, plotSeries.identifier));
+        removeSeries(seriesidentifier) {
+            const index = this.plotSeries.findIndex(plotSeries => this.openmct.objects.areIdsEqual(seriesidentifier, plotSeries.identifier));
             if (index >= 0) {
                 this.$delete(this.plotSeries, index);
                 this.setupOptions();
@@ -201,7 +201,7 @@ export default {
 
                 if (this.yKey === undefined) {
                     update = true;
-                    yKeyOptionIndex = this.yKeyOptions.findIndex((option, index) => index !== xKeyOptionIndex);
+                    yKeyOptionIndex = this.yKeyOptions.findIndex((_option, index) => index !== xKeyOptionIndex);
                     this.yKey = this.yKeyOptions[yKeyOptionIndex].value;
                 }
 

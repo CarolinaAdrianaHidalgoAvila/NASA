@@ -77,7 +77,7 @@ export default {
         };
     },
     mounted() {
-        this.conditionSetIdentifier = this.openmct.objects.makeKeyString(this.domainObject.identifier);
+        this.conditionSetidentifier = this.openmct.objects.makeKeyString(this.domainObject.identifier);
         this.testData = {
             applied: false,
             conditionTestInputs: this.domainObject.configuration.conditionTestData || []

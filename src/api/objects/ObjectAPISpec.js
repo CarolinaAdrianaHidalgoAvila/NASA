@@ -39,18 +39,18 @@ describe("The Object API", () => {
     });
 
     describe("The save function", () => {
-        it("Rejects if no provider available", async () => {
-            let rejected = false;
+        it("_rejects if no provider available", async () => {
+            let _rejected = false;
             objectAPI.providers = {};
             objectAPI.fallbackProvider = null;
 
             try {
                 await objectAPI.save(mockDomainObject);
             } catch (error) {
-                rejected = true;
+                _rejected = true;
             }
 
-            expect(rejected).toBe(true);
+            expect(_rejected).toBe(true);
         });
         describe("when a provider is available", () => {
             let mockProvider;
@@ -92,7 +92,7 @@ describe("The Object API", () => {
                 });
 
                 it("on create", () => {
-                    mockProvider.create.and.returnValue(Promise.reject(new openmct.objects.errors.Conflict("Test Conflict error")));
+                    mockProvider.create.and.returnValue(Promise._reject(new openmct.objects.errors.Conflict("Test Conflict error")));
 
                     return objectAPI.save(mockDomainObject).catch(() => {
                         expect(openmct.notifications.error).toHaveBeenCalledWith(`Conflict detected while saving ${TEST_NAMESPACE}:${TEST_KEY}`);
@@ -101,7 +101,7 @@ describe("The Object API", () => {
                 });
 
                 it("on update", () => {
-                    mockProvider.update.and.returnValue(Promise.reject(new openmct.objects.errors.Conflict("Test Conflict error")));
+                    mockProvider.update.and.returnValue(Promise._reject(new openmct.objects.errors.Conflict("Test Conflict error")));
                     mockDomainObject.persisted = Date.now() - FIFTEEN_MINUTES;
                     mockDomainObject.modified = Date.now();
 
@@ -130,7 +130,7 @@ describe("The Object API", () => {
                     "invoke"
                 ]);
                 mockInterceptor.appliesTo.and.returnValue(true);
-                mockInterceptor.invoke.and.callFake((identifier, object) => {
+                mockInterceptor.invoke.and.callFake((_identifier, object) => {
                     return Object.assign({
                         changed: true
                     }, object);
@@ -141,7 +141,7 @@ describe("The Object API", () => {
                     "invoke"
                 ]);
                 anotherMockInterceptor.appliesTo.and.returnValue(true);
-                anotherMockInterceptor.invoke.and.callFake((identifier, object) => {
+                anotherMockInterceptor.invoke.and.callFake((_identifier, object) => {
                     return Object.assign({
                         alsoChanged: true
                     }, object);
@@ -152,7 +152,7 @@ describe("The Object API", () => {
                     "invoke"
                 ]);
                 notApplicableMockInterceptor.appliesTo.and.returnValue(false);
-                notApplicableMockInterceptor.invoke.and.callFake((identifier, object) => {
+                notApplicableMockInterceptor.invoke.and.callFake((_identifier, object) => {
                     return Object.assign({
                         shouldNotBeChanged: true
                     }, object);
@@ -185,7 +185,7 @@ describe("The Object API", () => {
             });
 
             it("displays a notification in the event of an error", () => {
-                mockProvider.get.and.returnValue(Promise.reject());
+                mockProvider.get.and.returnValue(Promise._reject());
 
                 return objectAPI.get(mockDomainObject.identifier).catch(() => {
                     expect(openmct.notifications.error).toHaveBeenCalledWith(`Failed to retrieve object ${TEST_NAMESPACE}:${TEST_KEY}`);
@@ -241,7 +241,7 @@ describe("The Object API", () => {
 
                 return () => {};
             });
-            mockProvider.observe.and.callFake((id, callback) => {
+            mockProvider.observe.and.callFake((_id, callback) => {
                 if (callbacks.length === 0) {
                     callbacks.push(callback);
                 } else {

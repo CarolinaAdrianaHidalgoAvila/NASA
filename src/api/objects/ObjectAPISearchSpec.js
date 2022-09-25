@@ -103,11 +103,11 @@ describe("The Object API Search Function", () => {
     describe("The in-memory search indexer", () => {
         let openmct;
         let mockDomainObject1;
-        let mockIdentifier1;
+        let mockidentifier1;
         let mockDomainObject2;
-        let mockIdentifier2;
+        let mockidentifier2;
         let mockDomainObject3;
-        let mockIdentifier3;
+        let mockidentifier3;
 
         beforeEach((done) => {
             openmct = createOpenMct();
@@ -120,32 +120,32 @@ describe("The Object API Search Function", () => {
             spyOn(openmct.objects.inMemorySearchProvider, "localSearchForObjects").and.callThrough();
 
             openmct.on('start', async () => {
-                mockIdentifier1 = {
+                mockidentifier1 = {
                     key: 'some-object',
                     namespace: 'foo'
                 };
                 mockDomainObject1 = {
                     type: 'clock',
                     name: 'fooRabbit',
-                    identifier: mockIdentifier1
+                    identifier: mockidentifier1
                 };
-                mockIdentifier2 = {
+                mockidentifier2 = {
                     key: 'some-other-object',
                     namespace: 'foo'
                 };
                 mockDomainObject2 = {
                     type: 'clock',
                     name: 'fooBear',
-                    identifier: mockIdentifier2
+                    identifier: mockidentifier2
                 };
-                mockIdentifier3 = {
+                mockidentifier3 = {
                     key: 'yet-another-object',
                     namespace: 'foo'
                 };
                 mockDomainObject3 = {
                     type: 'clock',
                     name: 'redBear',
-                    identifier: mockIdentifier3
+                    identifier: mockidentifier3
                 };
                 await openmct.objects.inMemorySearchProvider.index(mockDomainObject1);
                 await openmct.objects.inMemorySearchProvider.index(mockDomainObject2);

@@ -20,14 +20,14 @@
  * at runtime from the About dialog for additional information.
  *****************************************************************************/
 
-import { createMyItemsIdentifier } from "./createMyItemsIdentifier";
+import { createMyItemsidentifier } from "./createMyItemsidentifier";
 import myItemsInterceptor from "./myItemsInterceptor";
 
 const MY_ITEMS_DEFAULT_NAME = 'My Items';
 
 export default function MyItemsPlugin(name = MY_ITEMS_DEFAULT_NAME, namespace = '', priority = undefined) {
     return function install(openmct) {
-        const identifier = createMyItemsIdentifier(namespace);
+        const identifier = createMyItemsidentifier(namespace);
 
         if (priority === undefined) {
             priority = openmct.priority.LOW;

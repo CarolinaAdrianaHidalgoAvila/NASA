@@ -229,12 +229,12 @@ export default {
                 this.unobserve();
             }
         },
-        addSeries(series, index) {
+        addSeries(series, _index) {
             this.$set(this.plotSeries, this.plotSeries.length, series);
             this.setupOptions();
         },
-        removeSeries(seriesIdentifier) {
-            const index = this.plotSeries.findIndex(plotSeries => this.openmct.objects.areIdsEqual(seriesIdentifier, plotSeries.identifier));
+        removeSeries(seriesidentifier) {
+            const index = this.plotSeries.findIndex(plotSeries => this.openmct.objects.areIdsEqual(seriesidentifier, plotSeries.identifier));
             if (index >= 0) {
                 this.$delete(this.plotSeries, index);
                 this.setupOptions();
@@ -320,7 +320,7 @@ export default {
                             update = true;
                             this.yKey = 'none';
                         } else {
-                            yKeyOptionIndex = this.yKeyOptions.findIndex((option, index) => index !== xKeyOptionIndex);
+                            yKeyOptionIndex = this.yKeyOptions.findIndex((_option, index) => index !== xKeyOptionIndex);
                             if (yKeyOptionIndex > -1) {
                                 update = true;
                                 this.yKey = this.yKeyOptions[yKeyOptionIndex].value;
@@ -388,10 +388,10 @@ export default {
                 yKey: this.yKey
             });
         },
-        updateInterpolation(event) {
+        updateInterpolation(_event) {
             this.openmct.objects.mutate(this.domainObject, `configuration.useInterpolation`, this.useInterpolation);
         },
-        updateBar(event) {
+        updateBar(_event) {
             this.openmct.objects.mutate(this.domainObject, `configuration.useBar`, this.useBar);
         }
     }
