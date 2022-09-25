@@ -123,7 +123,7 @@ export default {
                 this.itemsSelected = selection.length;
                 this.resetDomainObject();
 
-                return;
+                continue;
             } else {
                 this.multiSelect = false;
                 this.domainObject = selection[0][0].context.item;
