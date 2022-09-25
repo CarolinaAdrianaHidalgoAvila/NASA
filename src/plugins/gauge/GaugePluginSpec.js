@@ -140,7 +140,9 @@ describe('Gauge plugin', () => {
             testObjectProvider.get.and.returnValue(Promise.resolve(gaugeViewObject));
             testObjectProvider.create.and.returnValue(Promise.resolve(gaugeViewObject));
             openmct.objects.addProvider('test-namespace', testObjectProvider);
-            testObjectProvider.observe.and.returnValue(() => {});
+            testObjectProvider.observe.and.returnValue(() => {
+                //this is intencional
+            });
             testObjectProvider.create.and.returnValue(Promise.resolve(true));
             testObjectProvider.update.and.returnValue(Promise.resolve(true));
 
@@ -276,7 +278,9 @@ describe('Gauge plugin', () => {
             testObjectProvider.get.and.returnValue(Promise.resolve(gaugeViewObject));
             testObjectProvider.create.and.returnValue(Promise.resolve(gaugeViewObject));
             openmct.objects.addProvider('test-namespace', testObjectProvider);
-            testObjectProvider.observe.and.returnValue(() => {});
+            testObjectProvider.observe.and.returnValue(() => {
+                //this is intencional
+            });
             testObjectProvider.create.and.returnValue(Promise.resolve(true));
             testObjectProvider.update.and.returnValue(Promise.resolve(true));
 
@@ -412,7 +416,9 @@ describe('Gauge plugin', () => {
             testObjectProvider.get.and.returnValue(Promise.resolve(gaugeViewObject));
             testObjectProvider.create.and.returnValue(Promise.resolve(gaugeViewObject));
             openmct.objects.addProvider('test-namespace', testObjectProvider);
-            testObjectProvider.observe.and.returnValue(() => {});
+            testObjectProvider.observe.and.returnValue(() => {
+                //this is intencional
+            });
             testObjectProvider.create.and.returnValue(Promise.resolve(true));
             testObjectProvider.update.and.returnValue(Promise.resolve(true));
 
@@ -538,7 +544,9 @@ describe('Gauge plugin', () => {
             testObjectProvider.get.and.returnValue(Promise.resolve(gaugeViewObject));
             testObjectProvider.create.and.returnValue(Promise.resolve(gaugeViewObject));
             openmct.objects.addProvider('test-namespace', testObjectProvider);
-            testObjectProvider.observe.and.returnValue(() => {});
+            testObjectProvider.observe.and.returnValue(() => {
+                //this is intencional
+            });
             testObjectProvider.create.and.returnValue(Promise.resolve(true));
             testObjectProvider.update.and.returnValue(Promise.resolve(true));
 
@@ -621,7 +629,9 @@ describe('Gauge plugin', () => {
             testObjectProvider.get.and.returnValue(Promise.resolve(gaugeViewObject));
             testObjectProvider.create.and.returnValue(Promise.resolve(gaugeViewObject));
             openmct.objects.addProvider('test-namespace', testObjectProvider);
-            testObjectProvider.observe.and.returnValue(() => {});
+            testObjectProvider.observe.and.returnValue(() => {
+                //this is intencional
+            });
             testObjectProvider.create.and.returnValue(Promise.resolve(true));
             testObjectProvider.update.and.returnValue(Promise.resolve(true));
 
@@ -713,7 +723,9 @@ describe('Gauge plugin', () => {
             testObjectProvider.get.and.returnValue(Promise.resolve(gaugeViewObject));
             testObjectProvider.create.and.returnValue(Promise.resolve(gaugeViewObject));
             openmct.objects.addProvider('test-namespace', testObjectProvider);
-            testObjectProvider.observe.and.returnValue(() => {});
+            testObjectProvider.observe.and.returnValue(() => {
+                //this is intencional
+            });
             testObjectProvider.create.and.returnValue(Promise.resolve(true));
             testObjectProvider.update.and.returnValue(Promise.resolve(true));
 

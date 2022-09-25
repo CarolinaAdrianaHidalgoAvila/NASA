@@ -71,7 +71,9 @@ export default {
         toggleSnapshot: {
             type: Function,
             default() {
-                return () => {};
+                return () => {
+                    //this is intencional
+                };
             }
         }
     },

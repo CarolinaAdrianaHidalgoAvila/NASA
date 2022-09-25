@@ -63,8 +63,10 @@ const faultManagementProvider = {
     request() {
         return Promise.resolve([aFault]);
     },
-    subscribe(_domainObject, _callback) {
-        return () => {};
+    subscribe(domainObject, callback) {
+        return () => {
+            //this is intencional
+        };
     },
     supportsRequest(domainObject) {
         return domainObject.type === 'faultManagement';
@@ -111,7 +113,9 @@ describe('The Fault Management API', () => {
         spyOn(faultManagementProvider, 'subscribe').and.callThrough();
         spyOn(faultManagementProvider, 'supportsSubscribe').and.callThrough();
 
-        let unsubscribe = openmct.faults.subscribe(faultDomainObject, () => {});
+        let unsubscribe = openmct.faults.subscribe(faultDomainObject, () => {
+            //this is intencional
+        });
 
         expect(unsubscribe).toEqual(jasmine.any(Function));
         expect(faultManagementProvider.supportsSubscribe).toHaveBeenCalledWith(faultDomainObject);
