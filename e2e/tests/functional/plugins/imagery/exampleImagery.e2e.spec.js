@@ -352,7 +352,7 @@ test.describe('Example Imagery in Time Strip', () => {
         // Navigate to timestrip
         await page.goto(timeStripObject.url);
     });
-    test('Clicking a thumbnail loads the image in large view', async ({ page, browserName }) => {
+    test('Clicking a thumbnail loads the image in large view', async ({ page }) => {
         test.info().annotations.push({
             type: 'issue',
             description: 'https://github.com/nasa/openmct/issues/5632'
