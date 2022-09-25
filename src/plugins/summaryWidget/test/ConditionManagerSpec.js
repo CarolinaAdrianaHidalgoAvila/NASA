@@ -220,9 +220,9 @@ define(['../src/ConditionManager'], function (ConditionManager) {
                 const req = {
                     object: obj
                 };
-                req.promise = new Promise(function (resolve, reject) {
+                req.promise = new Promise(function (resolve, _reject) {
                     req.resolve = resolve;
-                    req.reject = reject;
+                    req._reject = _reject;
                 });
                 telemetryRequests.push(req);
 

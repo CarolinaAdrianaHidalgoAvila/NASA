@@ -87,8 +87,8 @@ define([
 
                     let keyString = openmct.objects.makeKeyString(childDomainObject.identifier);
                     let clonedComposition = Object.assign([], migratedObject.composition);
-                    clonedComposition.forEach((objIdentifier, index) => {
-                        if (openmct.objects.makeKeyString(objIdentifier) === keyString) {
+                    clonedComposition.forEach((objidentifier, index) => {
+                        if (openmct.objects.makeKeyString(objidentifier) === keyString) {
                             migratedObject.composition[index] = plotObject.identifier;
                         }
                     });

@@ -74,12 +74,12 @@ const faultManagementProvider = {
     supportsSubscribe(domainObject) {
         return domainObject.type === 'faultManagement';
     },
-    acknowledgeFault(fault, { comment = '' }) {
+    acknowledgeFault(_fault, { _comment = '' }) {
         return Promise.resolve({
             success: true
         });
     },
-    shelveFault(fault, shelveData) {
+    shelveFault(_fault, _shelveData) {
         return Promise.resolve({
             success: true
         });

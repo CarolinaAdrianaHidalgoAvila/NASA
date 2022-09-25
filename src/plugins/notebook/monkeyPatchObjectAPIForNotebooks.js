@@ -18,7 +18,7 @@ export default function (openmct) {
             if (error instanceof openmct.objects.errors.Conflict) {
                 result = resolveConflicts(localMutable, openmct);
             } else {
-                result = Promise.reject(error);
+                result = Promise._reject(error);
             }
         } finally {
             if (isNewMutable) {

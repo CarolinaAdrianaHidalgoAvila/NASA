@@ -168,7 +168,7 @@ define([
                     appliesTo: function (object) {
                         return object.type === 'custom-object-type';
                     },
-                    load: function (object) {
+                    load: function (_object) {
                         return Promise.resolve([
                             {
                                 namespace: 'custom',

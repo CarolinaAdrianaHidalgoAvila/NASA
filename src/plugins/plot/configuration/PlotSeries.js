@@ -568,11 +568,11 @@ export default class PlotSeries extends Model {
 
 /** @typedef {any} TODO */
 
-/** @typedef {{key: string, namespace: string}} Identifier */
+/** @typedef {{key: string, namespace: string}} identifier */
 
 /**
 @typedef {{
-    identifier: Identifier
+    identifier: identifier
     name: string
     unit: string
     xKey: string

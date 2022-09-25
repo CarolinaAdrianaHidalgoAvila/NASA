@@ -273,7 +273,7 @@ define([
      * @memberof module:openmct.CompositionCollection#
      * @name remove
      */
-    CompositionCollection.prototype.reorder = function (oldIndex, newIndex, skipMutate) {
+    CompositionCollection.prototype.reorder = function (oldIndex, newIndex, _skipMutate) {
         this.provider.reorder(this.domainObject, oldIndex, newIndex);
     };
 

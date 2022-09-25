@@ -90,7 +90,7 @@ describe("the goToOriginalAction plugin", () => {
     });
 
     function waitForNavigation(navigated) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, _reject) => {
             const start = Date.now();
 
             checkNavigated();
@@ -101,7 +101,7 @@ describe("the goToOriginalAction plugin", () => {
                 if (navigated()) {
                     resolve();
                 } else if (elapsed >= jasmine.DEFAULT_TIMEOUT_INTERVAL - 1000) {
-                    reject("didn't navigate in time");
+                    _reject("didn't navigate in time");
                 } else {
                     setTimeout(checkNavigated);
                 }

@@ -69,7 +69,7 @@ export default {
                 return defaultElement;
             }
 
-            const focusButton = this.$refs.buttons.filter((button, index) => {
+            const focusButton = this.$refs.buttons.filter((_button, index) => {
                 if (this.buttons[index].emphasis) {
                     this.focusIndex = index;
                 }

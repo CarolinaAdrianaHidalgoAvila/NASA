@@ -20,7 +20,7 @@
  * at runtime from the About dialog for additional information.
  *****************************************************************************/
 
-define(['./TypeRegistry', './Type'], function (TypeRegistry, Type) {
+define(['./TypeRegistry', './Type'], function (TypeRegistry, _Type) {
     describe('The Type API', function () {
         let typeRegistryInstance;
 

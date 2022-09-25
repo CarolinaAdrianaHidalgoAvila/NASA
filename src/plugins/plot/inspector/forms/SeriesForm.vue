@@ -278,9 +278,9 @@ export default {
         },
         dynamicPathForKey(key) {
             return function (object, model) {
-                const modelIdentifier = model.get('identifier');
+                const modelidentifier = model.get('identifier');
                 const index = object.configuration.series.findIndex(s => {
-                    return _.isEqual(s.identifier, modelIdentifier);
+                    return _.isEqual(s.identifier, modelidentifier);
                 });
 
                 return 'configuration.series[' + index + '].' + key;

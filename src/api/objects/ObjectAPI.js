@@ -33,7 +33,7 @@ import InMemorySearchProvider from './InMemorySearchProvider';
 /**
  * Uniquely identifies a domain object.
  *
- * @typedef Identifier
+ * @typedef identifier
  * @property {string} namespace the namespace to/from which this domain
  *           object should be loaded/stored.
  * @property {string} key a unique identifier for the domain object
@@ -51,7 +51,7 @@ import InMemorySearchProvider from './InMemorySearchProvider';
  * individual types of domain objects may add more as they see fit.
  *
  * @typedef DomainObject
- * @property {module:openmct.ObjectAPI~Identifier} identifier a key/namespace pair which
+ * @property {module:openmct.ObjectAPI~identifier} identifier a key/namespace pair which
  *           uniquely identifies this domain object
  * @property {string} type the type of domain object
  * @property {string} name the human-readable name for this domain object
@@ -59,7 +59,7 @@ import InMemorySearchProvider from './InMemorySearchProvider';
  *           object
  * @property {number} [modified] the time, in milliseconds since the UNIX
  *           epoch, at which this domain object was last modified
- * @property {module:openmct.ObjectAPI~Identifier[]} [composition] if
+ * @property {module:openmct.ObjectAPI~identifier[]} [composition] if
  *           present, this will be used by the default composition provider
  *           to load domain objects
  * @memberof module:openmct
@@ -153,7 +153,7 @@ export default class ObjectAPI {
      * @param {module:openmct.DomainObject} domainObject the domain object to
      *        create
      * @returns {Promise} a promise which will resolve when the domain object
-     *          has been created, or be rejected if it cannot be saved
+     *          has been created, or be _rejected if it cannot be saved
      */
 
     /**
@@ -164,7 +164,7 @@ export default class ObjectAPI {
      * @param {module:openmct.DomainObject} domainObject the domain object to
      *        update
      * @returns {Promise} a promise which will resolve when the domain object
-     *          has been updated, or be rejected if it cannot be saved
+     *          has been updated, or be _rejected if it cannot be saved
      */
 
     /**
@@ -175,7 +175,7 @@ export default class ObjectAPI {
      * @param {module:openmct.DomainObject} domainObject the domain object to
      *        delete
      * @returns {Promise} a promise which will resolve when the domain object
-     *          has been deleted, or be rejected if it cannot be deleted
+     *          has been deleted, or be _rejected if it cannot be deleted
      */
 
     /**
@@ -186,7 +186,7 @@ export default class ObjectAPI {
      * @param {string} key the key for the domain object to load
      * @param {AbortController.signal} abortSignal (optional) signal to abort fetch requests
      * @returns {Promise} a promise which will resolve when the domain object
-     *          has been saved, or be rejected if it cannot be saved
+     *          has been saved, or be _rejected if it cannot be saved
      */
 
     get(identifier, abortSignal) {
@@ -345,24 +345,24 @@ export default class ObjectAPI {
      * @param {module:openmct.DomainObject} domainObject the domain object to
      *        save
      * @returns {Promise} a promise which will resolve when the domain object
-     *          has been saved, or be rejected if it cannot be saved
+     *          has been saved, or be _rejected if it cannot be saved
      */
     save(domainObject) {
         let provider = this.getProvider(domainObject.identifier);
         let savedResolve;
-        let savedReject;
+        let saved_reject;
         let result;
 
         if (!this.isPersistable(domainObject.identifier)) {
-            result = Promise.reject('Object provider does not support saving');
+            result = Promise._reject('Object provider does not support saving');
         } else if (this.#hasAlreadyBeenPersisted(domainObject)) {
             result = Promise.resolve(true);
         } else {
             const persistedTime = Date.now();
             if (domainObject.persisted === undefined) {
-                result = new Promise((resolve, reject) => {
+                result = new Promise((resolve, _reject) => {
                     savedResolve = resolve;
-                    savedReject = reject;
+                    saved_reject = _reject;
                 });
                 domainObject.persisted = persistedTime;
                 const newObjectPromise = provider.create(domainObject);
@@ -371,10 +371,10 @@ export default class ObjectAPI {
                         this.mutate(domainObject, 'persisted', persistedTime);
                         savedResolve(response);
                     }).catch((error) => {
-                        savedReject(error);
+                        saved_reject(error);
                     });
                 } else {
-                    result = Promise.reject(`[ObjectAPI][save] Object provider returned ${newObjectPromise} when creating new object.`);
+                    result = Promise._reject(`[ObjectAPI][save] Object provider returned ${newObjectPromise} when creating new object.`);
                 }
             } else {
                 domainObject.persisted = persistedTime;
@@ -412,7 +412,7 @@ export default class ObjectAPI {
 
     /**
      * Add a root-level object.
-     * @param {module:openmct.ObjectAPI~Identifier|array|function} identifier an identifier or
+     * @param {module:openmct.ObjectAPI~identifier|array|function} identifier an identifier or
      *        an array of identifiers for root level objects, or a function that returns a
      *        promise for an identifier or an array of root level objects.
      * @param {module:openmct.PriorityAPI~priority|Number} priority a number representing
@@ -562,7 +562,7 @@ export default class ObjectAPI {
     }
 
     /**
-     * @param module:openmct.ObjectAPI~Identifier identifier An object identifier
+     * @param module:openmct.ObjectAPI~identifier identifier An object identifier
      * @returns {boolean} true if the object can be mutated, otherwise returns false
      */
     supportsMutation(identifier) {
@@ -590,7 +590,7 @@ export default class ObjectAPI {
     }
 
     /**
-     * @param {module:openmct.ObjectAPI~Identifier} identifier
+     * @param {module:openmct.ObjectAPI~identifier} identifier
      * @returns {string} A string representation of the given identifier, including namespace and key
      */
     makeKeyString(identifier) {
@@ -599,7 +599,7 @@ export default class ObjectAPI {
 
     /**
      * @param {string} keyString A string representation of the given identifier, that is, a namespace and key separated by a colon.
-     * @returns {module:openmct.ObjectAPI~Identifier} An identifier object
+     * @returns {module:openmct.ObjectAPI~identifier} An identifier object
      */
     parseKeyString(keyString) {
         return utils.parseKeyString(keyString);
@@ -607,16 +607,16 @@ export default class ObjectAPI {
 
     /**
      * Given any number of identifiers, will return true if they are all equal, otherwise false.
-     * @param {module:openmct.ObjectAPI~Identifier[]} identifiers
+     * @param {module:openmct.ObjectAPI~identifier[]} identifiers
      */
     areIdsEqual(...identifiers) {
-        const firstIdentifier = utils.parseKeyString(identifiers[0]);
+        const firstidentifier = utils.parseKeyString(identifiers[0]);
 
         return identifiers.map(utils.parseKeyString)
             .every(identifier => {
-                return identifier === firstIdentifier
-                    || (identifier.namespace === firstIdentifier.namespace
-                        && identifier.key === firstIdentifier.key);
+                return identifier === firstidentifier
+                    || (identifier.namespace === firstidentifier.namespace
+                        && identifier.key === firstidentifier.key);
             });
     }
 
@@ -647,7 +647,7 @@ export default class ObjectAPI {
 
     /**
      * Given an identifier, constructs the original path by walking up its parents
-     * @param {module:openmct.ObjectAPI~Identifier} identifier
+     * @param {module:openmct.ObjectAPI~identifier} identifier
      * @param {Array<module:openmct.DomainObject>} path an array of path objects
      * @returns {Promise<Array<module:openmct.DomainObject>>} a promise containing an array of domain objects
      */

@@ -23,7 +23,7 @@
 import StaticModelProvider from './StaticModelProvider';
 
 export default function StaticRootPlugin(options) {
-    const rootIdentifier = {
+    const rootidentifier = {
         namespace: options.namespace,
         key: 'root'
     };
@@ -36,7 +36,7 @@ export default function StaticRootPlugin(options) {
                 return response.json();
             })
             .then(function (importData) {
-                cachedProvider = new StaticModelProvider(importData, rootIdentifier);
+                cachedProvider = new StaticModelProvider(importData, rootidentifier);
 
                 return cachedProvider;
             });
@@ -51,7 +51,7 @@ export default function StaticRootPlugin(options) {
     }
 
     return function install(openmct) {
-        openmct.objects.addRoot(rootIdentifier);
+        openmct.objects.addRoot(rootidentifier);
         openmct.objects.addProvider(options.namespace, {
             get: function (identifier) {
                 return getProvider().then(function (provider) {

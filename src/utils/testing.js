@@ -89,7 +89,7 @@ export function resetApplicationState(openmct) {
     }
 
     if (window.location.hash !== '#' && window.location.hash !== '') {
-        promise = new Promise((resolve, reject) => {
+        promise = new Promise((resolve, _reject) => {
             window.addEventListener('hashchange', cleanup);
             window.location.hash = '#';
 

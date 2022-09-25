@@ -5,7 +5,7 @@ export default {
         };
     },
     methods: {
-        toggleCheckBox(event) {
+        toggleCheckBox(_event) {
             this.isChecked = !this.isChecked;
 
             const data = {

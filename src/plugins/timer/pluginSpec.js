@@ -35,7 +35,7 @@ describe("Timer plugin:", () => {
     let timerDomainObject;
 
     function setupTimer() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, _reject) => {
             timerDomainObject = {
                 identifier: {
                     key: 'timer',

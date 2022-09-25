@@ -132,7 +132,7 @@ export default class TelemetryAPI {
     /**
      * @private
      */
-    findRequestProvider(domainObject) {
+    findRequestProvider(_domainObject) {
         const args = Array.prototype.slice.apply(arguments);
         function supportsDomainObject(provider) {
             return provider.supportsRequest.apply(provider, args);
@@ -279,13 +279,13 @@ export default class TelemetryAPI {
         arguments[1] = await this.applyRequestInterceptors(domainObject, arguments[1]);
 
         return provider.request.apply(provider, arguments)
-            .catch((rejected) => {
-                if (rejected.name !== 'AbortError') {
+            .catch((_rejected) => {
+                if (_rejected.name !== 'AbortError') {
                     this.openmct.notifications.error('Error requesting telemetry data, see console for details');
-                    console.error(rejected);
+                    console.error(_rejected);
                 }
 
-                return Promise.reject(rejected);
+                return Promise._reject(_rejected);
             }).finally(() => {
                 this.requestAbortControllers.delete(abortController);
             });

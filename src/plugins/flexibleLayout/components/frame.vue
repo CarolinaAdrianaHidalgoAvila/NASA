@@ -96,12 +96,12 @@ export default {
         }
     },
     mounted() {
-        if (this.frame.domainObjectIdentifier) {
+        if (this.frame.domainObjectidentifier) {
             let domainObjectPromise;
-            if (this.openmct.objects.supportsMutation(this.frame.domainObjectIdentifier)) {
-                domainObjectPromise = this.openmct.objects.getMutable(this.frame.domainObjectIdentifier);
+            if (this.openmct.objects.supportsMutation(this.frame.domainObjectidentifier)) {
+                domainObjectPromise = this.openmct.objects.getMutable(this.frame.domainObjectidentifier);
             } else {
-                domainObjectPromise = this.openmct.objects.get(this.frame.domainObjectIdentifier);
+                domainObjectPromise = this.openmct.objects.get(this.frame.domainObjectidentifier);
             }
 
             domainObjectPromise.then((object) => {

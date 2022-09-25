@@ -15,7 +15,7 @@ function SimpleVuePlugin() {
             canView: function (d) {
                 return d.type === 'hello-world';
             },
-            view: function (domainObject) {
+            view: function (_domainObject) {
                 var vm;
 
                 return {
@@ -23,7 +23,7 @@ function SimpleVuePlugin() {
                         vm = new Vue(HelloWorld);
                         container.appendChild(vm.$mount().$el);
                     },
-                    destroy: function (container) {
+                    destroy: function (_container) {
                         vm.$destroy();
                     }
                 };

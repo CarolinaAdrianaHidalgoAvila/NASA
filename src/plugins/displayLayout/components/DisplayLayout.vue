@@ -85,7 +85,7 @@ import EditMarquee from './EditMarquee.vue';
 import DisplayLayoutGrid from './DisplayLayoutGrid.vue';
 import _ from 'lodash';
 
-const TELEMETRY_IDENTIFIER_FUNCTIONS = {
+const TELEMETRY_identifier_FUNCTIONS = {
     'table': (domainObject) => {
         return Promise.resolve(domainObject.composition);
     },
@@ -462,11 +462,9 @@ export default {
             let keyString = this.openmct.objects.makeKeyString(item.identifier);
 
             if (item.type === "telemetry-view") {
-                let count = this.telemetryViewMap[keyString] || 0;
-                this.telemetryViewMap[keyString] = ++count;
+                this.telemetryViewMap[keyString] = this.telemetryViewMap[keyString] + 1;
             } else if (item.type === "subobject-view") {
-                let count = this.objectViewMap[keyString] || 0;
-                this.objectViewMap[keyString] = ++count;
+                this.objectViewMap[keyString] = this.objectViewMap[keyString] + 1;
             }
         },
         removeItem(selectedItems) {
@@ -801,7 +799,7 @@ export default {
         },
         mergeMultipleOverlayPlots(selection, viewType) {
             let overlayPlots = selection.map(selectedItem => selectedItem[0].context.item);
-            let overlayPlotIdentifiers = overlayPlots.map(overlayPlot => overlayPlot.identifier);
+            let overlayPlotidentifiers = overlayPlots.map(overlayPlot => overlayPlot.identifier);
             let firstOverlayPlot = overlayPlots[0];
             let firstLayoutItem = selection[0][0].context.layoutItem;
             let position = [firstLayoutItem.x, firstLayoutItem.y];
@@ -809,7 +807,7 @@ export default {
                 name: 'Merged Overlay Plots',
                 identifier: firstOverlayPlot.identifier
             };
-            this.createNewDomainObject(mockDomainObject, overlayPlotIdentifiers, viewType).then((newDomainObject) => {
+            this.createNewDomainObject(mockDomainObject, overlayPlotidentifiers, viewType).then((newDomainObject) => {
                 let newDomainObjectKeyString = this.openmct.objects.makeKeyString(newDomainObject.identifier);
                 let domainObjectKeyString = this.openmct.objects.makeKeyString(this.domainObject.identifier);
 
@@ -826,8 +824,8 @@ export default {
                 this.initSelectIndex = this.layoutItems.length - 1;
             });
         },
-        getTelemetryIdentifiers(domainObject) {
-            let method = TELEMETRY_IDENTIFIER_FUNCTIONS[domainObject.type];
+        getTelemetryidentifiers(domainObject) {
+            let method = TELEMETRY_identifier_FUNCTIONS[domainObject.type];
 
             if (method) {
                 return method(domainObject, this.openmct);
@@ -847,7 +845,7 @@ export default {
                     this.addItem(layoutType, newDomainObject, position);
                 });
             } else {
-                this.getTelemetryIdentifiers(domainObject).then((identifiers) => {
+                this.getTelemetryidentifiers(domainObject).then((identifiers) => {
                     if (viewType === 'telemetry-view') {
                         identifiers.forEach((identifier, index) => {
                             let positionX = position[0] + (index * DUPLICATE_OFFSET);

@@ -159,7 +159,7 @@
 import FontStyleEditor from '@/ui/inspector/styles/FontStyleEditor.vue';
 import StyleEditor from "./StyleEditor.vue";
 import PreviewAction from "@/ui/preview/PreviewAction.js";
-import { getApplicableStylesForItem, getConsolidatedStyleValues, getConditionSetIdentifierForItem } from "@/plugins/condition/utils/styleUtils";
+import { getApplicableStylesForItem, getConsolidatedStyleValues, getConditionSetidentifierForItem } from "@/plugins/condition/utils/styleUtils";
 import ConditionError from "@/plugins/condition/components/ConditionError.vue";
 import ConditionDescription from "@/plugins/condition/components/ConditionDescription.vue";
 
@@ -267,8 +267,8 @@ export default {
         if (!this.isMultipleSelection) {
             let objectStyles = this.getObjectStyles();
             this.initializeStaticStyle(objectStyles);
-            if (objectStyles && objectStyles.conditionSetIdentifier) {
-                this.openmct.objects.get(objectStyles.conditionSetIdentifier).then(this.initialize);
+            if (objectStyles && objectStyles.conditionSetidentifier) {
+                this.openmct.objects.get(objectStyles.conditionSetidentifier).then(this.initialize);
                 this.conditionalStyles = objectStyles.styles;
             }
         } else {
@@ -342,7 +342,7 @@ export default {
         hasConditionalStyle(domainObject, layoutItem) {
             const id = layoutItem ? layoutItem.id : undefined;
 
-            return getConditionSetIdentifierForItem(domainObject, id) !== undefined;
+            return getConditionSetidentifierForItem(domainObject, id) !== undefined;
         },
         getObjectsAndItemsFromSelection() {
             let domainObject;
@@ -421,7 +421,7 @@ export default {
                 && (key !== 'fontStyle')
                 && (key !== 'defaultConditionId')
                 && (key !== 'selectedConditionId')
-                && (key !== 'conditionSetIdentifier');
+                && (key !== 'conditionSetidentifier');
         },
         registerListener(domainObject) {
             let id = this.openmct.objects.makeKeyString(domainObject.identifier);
@@ -618,15 +618,15 @@ export default {
         },
         removeConditionalStyles(domainObjectStyles, itemId) {
             if (itemId && domainObjectStyles[itemId]) {
-                domainObjectStyles[itemId].conditionSetIdentifier = undefined;
-                delete domainObjectStyles[itemId].conditionSetIdentifier;
+                domainObjectStyles[itemId].conditionSetidentifier = undefined;
+                delete domainObjectStyles[itemId].conditionSetidentifier;
                 domainObjectStyles[itemId].selectedConditionId = undefined;
                 domainObjectStyles[itemId].defaultConditionId = undefined;
                 domainObjectStyles[itemId].styles = undefined;
                 delete domainObjectStyles[itemId].styles;
             } else {
-                domainObjectStyles.conditionSetIdentifier = undefined;
-                delete domainObjectStyles.conditionSetIdentifier;
+                domainObjectStyles.conditionSetidentifier = undefined;
+                delete domainObjectStyles.conditionSetidentifier;
                 domainObjectStyles.selectedConditionId = undefined;
                 domainObjectStyles.defaultConditionId = undefined;
                 domainObjectStyles.styles = undefined;
@@ -679,7 +679,7 @@ export default {
             }
 
             if (this.conditionSetDomainObject) {
-                objectStyle.conditionSetIdentifier = this.conditionSetDomainObject.identifier;
+                objectStyle.conditionSetidentifier = this.conditionSetDomainObject.identifier;
             }
 
             let domainObjectStyles = (domainObject.configuration && domainObject.configuration.objectStyles) || {};

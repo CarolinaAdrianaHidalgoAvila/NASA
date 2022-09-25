@@ -45,7 +45,7 @@ export default class RemoveAction {
     }
 
     showConfirmDialog(object) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, _reject) => {
             let dialog = this.openmct.overlays.dialog({
                 title: `Remove ${object.name}`,
                 iconClass: 'alert',
@@ -62,7 +62,7 @@ export default class RemoveAction {
                         label: 'Cancel',
                         callback: () => {
                             dialog.dismiss();
-                            reject();
+                            _reject();
                         }
                     }
                 ]

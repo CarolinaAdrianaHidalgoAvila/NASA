@@ -70,8 +70,8 @@ export default class ConditionManager extends EventEmitter {
         this.updateConditionTelemetryObjects();
     }
 
-    unsubscribeFromTelemetry(endpointIdentifier) {
-        const id = this.openmct.objects.makeKeyString(endpointIdentifier);
+    unsubscribeFromTelemetry(endpointidentifier) {
+        const id = this.openmct.objects.makeKeyString(endpointidentifier);
         if (!this.subscriptions[id]) {
             console.log('no subscription to remove');
 

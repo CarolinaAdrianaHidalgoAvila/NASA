@@ -171,13 +171,13 @@ export default {
             this.compositionObjects.push(child);
         },
 
-        removeChild(childIdentifier) {
-            const id = this.openmct.objects.makeKeyString(childIdentifier);
+        removeChild(childidentifier) {
+            const id = this.openmct.objects.makeKeyString(childidentifier);
 
             this.$delete(this.tickWidthMap, id);
 
             const configIndex = this.domainObject.configuration.series.findIndex((seriesConfig) => {
-                return this.openmct.objects.areIdsEqual(seriesConfig.identifier, childIdentifier);
+                return this.openmct.objects.areIdsEqual(seriesConfig.identifier, childidentifier);
             });
             if (configIndex > -1) {
                 this.domainObject.configuration.series.splice(configIndex, 1);

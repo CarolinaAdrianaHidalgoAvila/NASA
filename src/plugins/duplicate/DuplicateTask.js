@@ -193,7 +193,7 @@ export default class DuplicateTask {
 
         await allComposeesDuplicated;
 
-        clonedParent = this.rewriteIdentifiers(clonedParent, idMappings);
+        clonedParent = this.rewriteidentifiers(clonedParent, idMappings);
         this.clones.push(clonedParent);
 
         return clonedParent;
@@ -205,7 +205,7 @@ export default class DuplicateTask {
      * duplicating.
      * @private
      */
-    rewriteIdentifiers(clonedParent, childIdMappings) {
+    rewriteidentifiers(clonedParent, childIdMappings) {
         for (let { newId, oldId } of childIdMappings) {
             let newIdKeyString = this.openmct.objects.makeKeyString(newId);
             let oldIdKeyString = this.openmct.objects.makeKeyString(oldId);

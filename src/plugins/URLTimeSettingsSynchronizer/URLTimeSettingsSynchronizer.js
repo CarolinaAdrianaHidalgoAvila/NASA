@@ -134,7 +134,7 @@ export default class URLTimeSettingsSynchronizer {
         }
     }
 
-    updateBounds(bounds, isTick) {
+    updateBounds(_bounds, isTick) {
         if (!isTick) {
             this.setUrlFromTimeApi();
         }

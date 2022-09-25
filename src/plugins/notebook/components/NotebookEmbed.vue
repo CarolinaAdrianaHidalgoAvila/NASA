@@ -158,8 +158,8 @@ export default {
 
             painterroInstance.intialize();
 
-            const fullSizeImageObjectIdentifier = this.embed.snapshot.fullSizeImageObjectIdentifier;
-            if (!fullSizeImageObjectIdentifier) {
+            const fullSizeImageObjectidentifier = this.embed.snapshot.fullSizeImageObjectidentifier;
+            if (!fullSizeImageObjectidentifier) {
                 // legacy image data stored in embed
                 painterroInstance.show(this.embed.snapshot.src);
 
@@ -174,7 +174,7 @@ export default {
                 return;
             }
 
-            this.openmct.objects.get(fullSizeImageObjectIdentifier)
+            this.openmct.objects.get(fullSizeImageObjectidentifier)
                 .then(object => {
                     painterroInstance.show(object.configuration.fullSizeImageURL);
                 });
@@ -225,8 +225,8 @@ export default {
             removeDialog.show();
         },
         openSnapshot() {
-            const fullSizeImageObjectIdentifier = this.embed.snapshot.fullSizeImageObjectIdentifier;
-            if (!fullSizeImageObjectIdentifier) {
+            const fullSizeImageObjectidentifier = this.embed.snapshot.fullSizeImageObjectidentifier;
+            if (!fullSizeImageObjectidentifier) {
                 // legacy image data stored in embed
                 this.openSnapshotOverlay(this.embed.snapshot.src);
 
@@ -241,7 +241,7 @@ export default {
                 return;
             }
 
-            this.openmct.objects.get(fullSizeImageObjectIdentifier)
+            this.openmct.objects.get(fullSizeImageObjectidentifier)
                 .then(object => {
                     this.openSnapshotOverlay(object.configuration.fullSizeImageURL);
                 });
@@ -323,7 +323,7 @@ export default {
 
                 this.snapshotContainer.updateSnapshot(snapshot);
             } else {
-                updateNotebookImageDomainObject(this.openmct, this.embed.snapshot.fullSizeImageObjectIdentifier, snapshotObject.fullSizeImage);
+                updateNotebookImageDomainObject(this.openmct, this.embed.snapshot.fullSizeImageObjectidentifier, snapshotObject.fullSizeImage);
             }
         }
     }

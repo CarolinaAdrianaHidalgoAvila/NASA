@@ -40,7 +40,7 @@ export default {
     data: function () {
         return {
             conditionalLabel: '',
-            conditionSetIdentifier: null,
+            conditionSetidentifier: null,
             domainObjectLabel: '',
             url: null,
             urlDefined: false,
@@ -56,7 +56,7 @@ export default {
         }
     },
     watch: {
-        conditionSetIdentifier: {
+        conditionSetidentifier: {
             handler(newValue, oldValue) {
                 if (!oldValue || !newValue || !this.openmct.objects.areIdsEqual(newValue, oldValue)) {
                     return;
@@ -76,7 +76,7 @@ export default {
         }
     },
     beforeDestroy() {
-        this.conditionSetIdentifier = null;
+        this.conditionSetidentifier = null;
 
         if (this.unlisten) {
             this.unlisten();
@@ -86,11 +86,11 @@ export default {
     },
     methods: {
         async listenToConditionSetChanges() {
-            if (!this.conditionSetIdentifier) {
+            if (!this.conditionSetidentifier) {
                 return;
             }
 
-            const conditionSetDomainObject = await this.openmct.objects.get(this.conditionSetIdentifier);
+            const conditionSetDomainObject = await this.openmct.objects.get(this.conditionSetidentifier);
             this.stopListeningToConditionSetChanges();
 
             if (!conditionSetDomainObject) {
@@ -113,7 +113,7 @@ export default {
             }
         },
         updateConditionLabel([latestDatum]) {
-            if (!this.conditionSetIdentifier) {
+            if (!this.conditionSetidentifier) {
                 this.stopListeningToConditionSetChanges();
 
                 return;
@@ -136,12 +136,12 @@ export default {
                 this.url = url;
             }
 
-            const conditionSetIdentifier = domainObject.configuration?.objectStyles?.conditionSetIdentifier;
-            if (conditionSetIdentifier && this.conditionSetIdentifier !== conditionSetIdentifier) {
-                this.conditionSetIdentifier = conditionSetIdentifier;
+            const conditionSetidentifier = domainObject.configuration?.objectStyles?.conditionSetidentifier;
+            if (conditionSetidentifier && this.conditionSetidentifier !== conditionSetidentifier) {
+                this.conditionSetidentifier = conditionSetidentifier;
             }
 
-            const useConditionSetOutputAsLabel = this.conditionSetIdentifier && domainObject.configuration.useConditionSetOutputAsLabel;
+            const useConditionSetOutputAsLabel = this.conditionSetidentifier && domainObject.configuration.useConditionSetOutputAsLabel;
             if (this.useConditionSetOutputAsLabel !== useConditionSetOutputAsLabel) {
                 this.useConditionSetOutputAsLabel = useConditionSetOutputAsLabel;
             }

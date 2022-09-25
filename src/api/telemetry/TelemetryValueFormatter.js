@@ -37,7 +37,7 @@ define([
             format: function (x) {
                 return x;
             },
-            validate: function (x) {
+            validate: function (_x) {
                 return true;
             }
         };

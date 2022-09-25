@@ -77,11 +77,11 @@ export default class Editor extends EventEmitter {
         this.editing = false;
         this.emit('isEditing', false);
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, _reject) => {
             const transaction = this.openmct.objects.getActiveTransaction();
             transaction.cancel()
                 .then(resolve)
-                .catch(reject)
+                .catch(_reject)
                 .finally(() => {
                     this.openmct.objects.endTransaction();
                 });
