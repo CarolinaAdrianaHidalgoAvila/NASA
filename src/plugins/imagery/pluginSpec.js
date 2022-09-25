@@ -211,7 +211,6 @@ describe("The Imagery View Layouts", () => {
         // This is hacky, we should find a better approach here.
         setTimeout(() => {
             //Cleanup code that needs to happen before dom elements start being destroyed
-            cleanupFirst.forEach(cleanup => cleanup());
             cleanupFirst = [];
             document.body.removeChild(parent);
 
