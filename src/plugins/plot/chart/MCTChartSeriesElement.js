@@ -74,10 +74,12 @@ export default class MCTChartSeriesElement {
     }
 
     /** @abstract */
-    removePoint(index) {}
+    removePoint(index) {// This is intentional
+    }
 
     /** @abstract */
-    addPoint(point, index) {}
+    addPoint(_point, _index) {// This is intentional
+    }
 
     remove(point, index, series) {
         const vertexCount = this.vertexCountForPointAtIndex(index);

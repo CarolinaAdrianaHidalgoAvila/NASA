@@ -381,6 +381,7 @@ export default {
             return this.moveIndex !== targetIndex;
         },
         destroy() {
+        // This is intentional
         },
         removeCondition() {
             this.$emit('removeCondition', this.condition.id);

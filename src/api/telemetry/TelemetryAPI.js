@@ -543,7 +543,9 @@ export default class TelemetryAPI {
         const provider = this.findLimitEvaluator(domainObject);
         if (!provider) {
             return {
-                evaluate: function () {}
+                evaluate: function () {
+                    // This is intentional
+                }
             };
         }
 

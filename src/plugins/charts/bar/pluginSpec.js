@@ -96,9 +96,12 @@ describe("the plugin", function () {
         document.body.appendChild(element);
 
         spyOn(window, 'ResizeObserver').and.returnValue({
-            observe() {},
-            unobserve() {},
-            disconnect() {}
+            observe() {// This is intentional
+            },
+            unobserve() {// This is intentional
+            },
+            disconnect() {// This is intentional
+            }
         });
 
         openmct.time.timeSystem("utc", {

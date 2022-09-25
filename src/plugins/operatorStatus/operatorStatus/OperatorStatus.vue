@@ -182,7 +182,9 @@ export default {
                 return status;
             }
         },
-        noop() {}
+        noop() {
+        // This is intentional
+        }
     }
 };
 </script>

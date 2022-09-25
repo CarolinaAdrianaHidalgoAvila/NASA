@@ -165,8 +165,10 @@ describe('the plugin', function () {
                 constructor(cb) {
                     resizeCallback = cb;
                 }
-                observe() { }
-                disconnect() { }
+                observe() {// This is intentional
+                 }
+                disconnect() {// This is intentional
+                 }
             }
 
             mockComposition = new EventEmitter();

@@ -393,12 +393,17 @@ define(['../src/ConditionManager'], function (ConditionManager) {
             const mockRules = {
                 default: {
                     getProperty: function () {}
+                // This is intentional}
                 },
                 rule0: {
-                    getProperty: function () {}
+                    getProperty: function () {
+                        // This is intentional
+                    }
                 },
                 rule1: {
-                    getProperty: function () {}
+                    getProperty: function () {
+                        // This is intentional
+                    }
                 }
             };
 

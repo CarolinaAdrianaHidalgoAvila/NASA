@@ -81,7 +81,7 @@ export default class Model extends EventEmitter {
      * @param {ModelOptions<T, O>} options
      */
     initialize(options) {
-
+        // This is intentional
     }
 
     /**

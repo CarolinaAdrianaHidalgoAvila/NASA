@@ -189,8 +189,10 @@ describe("The Imagery View Layouts", () => {
         document.body.appendChild(parent);
 
         spyOn(window, 'ResizeObserver').and.returnValue({
-            observe() {},
-            disconnect() {}
+            observe() {// This is intentional
+            },
+            disconnect() {// This is intentional
+            }
         });
 
         spyOn(openmct.objects, 'get').and.returnValue(Promise.resolve(imageryObject));
