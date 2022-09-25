@@ -33,7 +33,7 @@
 * - @unstable annotation
 * - await, expect, test, describe syntax
 * - Writing a custom function for a test suite
-* - Test stub for unfinished test coverage (test.fixme)
+* - Test stub for unfinished test coverage (test)
 *
 * The structure should follow
 * 1. imports

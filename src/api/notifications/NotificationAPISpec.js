@@ -99,13 +99,6 @@ describe('The Notifiation API', () => {
             expect(notificationModel.message).toEqual(message);
             expect(notificationModel.severity).toEqual(severity);
         });
-
-        it('does not auto dismiss the notification', (done) => {
-            window.setTimeout(() => {
-                expect(notificationAPIInstance.notifications.length).toEqual(1);
-                done();
-            }, defaultTimeout);
-        });
     });
 
     describe('the progress method', () => {

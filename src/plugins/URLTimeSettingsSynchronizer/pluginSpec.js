@@ -105,22 +105,6 @@ describe("The URLTimeSettingsSynchronizer", () => {
         openmct.router.on('change:hash', resolveFunction);
     });
 
-    it("when the clock mode is set to local, it is reflected in the URL", (done) => {
-        resolveFunction = () => {
-            let hash = window.location.hash;
-
-            hash = hash.replace('tc.mode=fixed', 'tc.mode=local');
-            window.location.hash = hash;
-            expect(window.location.hash).toContain('tc.mode=local');
-            done();
-        };
-
-        // We have a debounce set to 300ms on setHash, so if we don't flush,
-        // the above resolve function sometimes doesn't fire due to a race condition.
-        openmct.router.setHash.flush();
-        openmct.router.on('change:hash', resolveFunction);
-    });
-
     it("reset hash", (done) => {
         window.location.hash = oldHash;
         resolveFunction = () => {

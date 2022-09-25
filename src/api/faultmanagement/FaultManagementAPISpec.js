@@ -78,11 +78,6 @@ const faultManagementProvider = {
         return Promise.resolve({
             success: true
         });
-    },
-    shelveFault(_fault, _shelveData) {
-        return Promise.resolve({
-            success: true
-        });
     }
 };
 
@@ -127,22 +122,13 @@ describe('The Fault Management API', () => {
         expect(openmct.faults.supportsActions()).toBeTrue();
     });
 
-    it('will allow you to acknowledge a fault', async () => {
+    it('will allow you to acknowledge/shelve  a fault', async () => {
         spyOn(faultManagementProvider, 'acknowledgeFault').and.callThrough();
 
         let ackResponse = await openmct.faults.acknowledgeFault(aFault, aComment);
 
         expect(faultManagementProvider.acknowledgeFault).toHaveBeenCalledWith(aFault, aComment);
         expect(ackResponse.success).toBeTrue();
-    });
-
-    it('will allow you to shelve a fault', async () => {
-        spyOn(faultManagementProvider, 'shelveFault').and.callThrough();
-
-        let shelveResponse = await openmct.faults.shelveFault(aFault, aComment);
-
-        expect(faultManagementProvider.shelveFault).toHaveBeenCalledWith(aFault, aComment);
-        expect(shelveResponse.success).toBeTrue();
     });
 
 });

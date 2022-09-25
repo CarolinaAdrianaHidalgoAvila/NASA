@@ -379,13 +379,6 @@ describe("the plugin", function () {
                 ]
             ];
 
-            mockComposition = new EventEmitter();
-            mockComposition.load = () => {
-                mockComposition.emit('add', testDomainObject);
-
-                return [testDomainObject];
-            };
-
             spyOn(openmct.composition, 'get').and.returnValue(mockComposition);
 
             viewContainer = document.createElement('div');

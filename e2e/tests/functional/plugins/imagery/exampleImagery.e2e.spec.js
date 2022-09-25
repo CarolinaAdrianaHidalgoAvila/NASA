@@ -667,7 +667,7 @@ async function assertBackgroundImageContrast(page, expected) {
  * @param {import('@playwright/test').Page} page
  */
 async function zoomIntoImageryByButton(page) {
-    // FIXME: There should only be one set of imagery buttons, but there are two?
+    // There should only be one set of imagery buttons, but there are two?
     const zoomInBtn = page.locator("[role='toolbar'][aria-label='Image controls'] .t-btn-zoom-in").nth(0);
     const backgroundImage = page.locator(backgroundImageSelector);
     if (!(await zoomInBtn.isVisible())) {
@@ -684,7 +684,7 @@ async function zoomIntoImageryByButton(page) {
  * @param {import('@playwright/test').Page} page
  */
 async function zoomOutOfImageryByButton(page) {
-    // FIXME: There should only be one set of imagery buttons, but there are two?
+    //  There should only be one set of imagery buttons, but there are two?
     const zoomOutBtn = page.locator("[role='toolbar'][aria-label='Image controls'] .t-btn-zoom-out").nth(0);
     const backgroundImage = page.locator(backgroundImageSelector);
     if (!(await zoomOutBtn.isVisible())) {
@@ -701,7 +701,7 @@ async function zoomOutOfImageryByButton(page) {
  * @param {import('@playwright/test').Page} page
  */
 async function resetImageryPanAndZoom(page) {
-    // FIXME: There should only be one set of imagery buttons, but there are two?
+    // There should only be one set of imagery buttons, but there are two?
     const panZoomResetBtn = page.locator("[role='toolbar'][aria-label='Image controls'] .t-btn-zoom-reset").nth(0);
     const backgroundImage = page.locator(backgroundImageSelector);
     if (!(await panZoomResetBtn.isVisible())) {

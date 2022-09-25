@@ -202,7 +202,8 @@ async function getHashUrlToDomainObject(page, uuid) {
 
         // Drop the vestigial '/ROOT' if it exists
         if (url.includes('/ROOT')) {
-            url = url.split('/ROOT').join('');
+            // it is not used more
+            //url = url.split('/ROOT').join('');
         }
     }, uuid);
 }

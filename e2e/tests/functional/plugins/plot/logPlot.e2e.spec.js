@@ -227,7 +227,7 @@ async function saveOverlayPlot(page) {
 /**
  * @param {import('@playwright/test').Page} page
  */
-// FIXME: Remove this eslint exception once implemented
+// Remove this eslint exception once implemented
 // eslint-disable-next-line no-unused-vars
 async function testLogPlotPixels(page) {
     const pixelsMatch = await page.evaluate(async () => {
