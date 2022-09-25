@@ -159,9 +159,6 @@ $meterNeedleBorderRadius: 5px;
   &__limit-low {
     background: $colorGaugeLimitLow;
   }
-}
-
-.c-meter {
   .c-gauge--meter-vertical &,
   .c-gauge--meter-vertical-inverted & {
     &__range {
@@ -202,7 +199,7 @@ $meterNeedleBorderRadius: 5px;
       left: 50%;
       transform: translateX(-50%);
     }
-  }
+}
 
   .c-gauge--meter-vertical & {
     &__limit-low {

@@ -173,11 +173,7 @@ export default {
                 return true;
             }
 
-            if (Math.abs(this.tickRange.min - range.min) > this.tickRange.step) {
-                return true;
-            }
-
-            return false;
+            return Math.abs(this.tickRange.min - range.min) > this.tickRange.step;
         },
 
         getTicks() {

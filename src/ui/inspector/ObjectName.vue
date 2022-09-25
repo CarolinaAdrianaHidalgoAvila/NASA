@@ -115,7 +115,7 @@ export default {
             if (selection.length === 0 || selection[0].length === 0) {
                 this.resetDomainObject();
 
-                return;
+                //return;
             }
 
             if (selection.length > 1) {
@@ -123,7 +123,7 @@ export default {
                 this.itemsSelected = selection.length;
                 this.resetDomainObject();
 
-                continue;
+                //return;
             } else {
                 this.multiSelect = false;
                 this.domainObject = selection[0][0].context.item;

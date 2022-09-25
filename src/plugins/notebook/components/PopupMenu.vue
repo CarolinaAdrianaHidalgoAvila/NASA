@@ -63,7 +63,7 @@ export default {
             this.menuItems = null;
             document.removeEventListener('click', this.hideMenuItems);
 
-            continue;
+            //return;
         },
         showMenuItems($event) {
             if (this.menuItems) {

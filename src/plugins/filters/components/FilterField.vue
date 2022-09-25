@@ -99,11 +99,7 @@ export default {
             this.isEditing = isEditing;
         },
         isChecked(comparator, value) {
-            if (this.persistedFilters[comparator] && this.persistedFilters[comparator].includes(value)) {
-                return true;
-            } else {
-                return false;
-            }
+            return this.persistedFilters[comparator] && this.persistedFilters[comparator].includes(value);
         },
         persistedValue(comparator) {
             return this.persistedFilters && this.persistedFilters[comparator];

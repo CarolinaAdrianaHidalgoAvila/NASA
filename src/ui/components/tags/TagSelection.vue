@@ -138,11 +138,7 @@ export default {
         },
         tagSelected(autoField) {
             const tagAdded = autoField.model.options.find(option => {
-                if (option.name === autoField.value) {
-                    return true;
-                }
-
-                return false;
+                return option.name === autoField.value
             });
             if (tagAdded) {
                 this.$emit('tagAdded', tagAdded.id);

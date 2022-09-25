@@ -69,22 +69,6 @@
         width: 70%;
     }
 
-    &__page-view {
-        // Holds __header, __drag-area and __entries
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: column;
-        width: 100%;
-
-        > * {
-            flex: 0 0 auto;
-
-            + * {
-                margin-top: $interiorMargin;
-            }
-        }
-    }
-
     > * + * {
         margin-top: $interiorMargin;
     }
@@ -154,6 +138,19 @@
 
     /***** PAGE VIEW */
     &__page-view {
+         // Holds __header, __drag-area and __entries
+         display: flex;
+         flex: 1 1 auto;
+         flex-direction: column;
+         width: 100%;
+ 
+         > * {
+             flex: 0 0 auto;
+ 
+             + * {
+                 margin-top: $interiorMargin;
+             }
+         }
         &__header {
             display: flex;
             flex-wrap: wrap; // Allows wrapping in mobile portrait and narrow placements
