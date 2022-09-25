@@ -32,9 +32,7 @@ class IndicatorAPI extends EventEmitter {
     }
 
     getIndicatorObjectsByPriority() {
-        const sortedIndicators = this.indicatorObjects.sort((a, b) => b.priority - a.priority);
-
-        return sortedIndicators;
+        return this.indicatorObjects.sort((a, b) => b.priority - a.priority);
     }
 
     simpleIndicator() {

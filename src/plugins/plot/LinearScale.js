@@ -57,9 +57,8 @@ class LinearScale {
         const domainOffset = domainValue - this._domain.min;
         const rangeFraction = domainOffset - this._domainDenominator;
         const rangeOffset = rangeFraction * this._rangeDenominator;
-        const rangeValue = rangeOffset + this._range.min;
+        return rangeOffset + this._range.min;
 
-        return rangeValue;
     }
 
     invert(rangeValue) {
@@ -70,9 +69,7 @@ class LinearScale {
         const rangeOffset = rangeValue - this._range.min;
         const domainFraction = rangeOffset / this._rangeDenominator;
         const domainOffset = domainFraction * this._domainDenominator;
-        const domainValue = domainOffset + this._domain.min;
-
-        return domainValue;
+        return domainOffset + this._domain.min;
     }
 }
 

@@ -75,14 +75,12 @@ export default {
         },
         dataRemoved(dataToRemove) {
             this.imageHistory = this.imageHistory.filter(existingDatum => {
-                const shouldKeep = dataToRemove.some(datumToRemove => {
+                return dataToRemove.some(datumToRemove => {
                     const existingDatumTimestamp = this.parseTime(existingDatum);
                     const datumToRemoveTimestamp = this.parseTime(datumToRemove);
 
                     return (existingDatumTimestamp !== datumToRemoveTimestamp);
                 });
-
-                return shouldKeep;
             });
         },
         setDataTimeContext() {
@@ -163,9 +161,7 @@ export default {
         },
         getFormatter(key) {
             let metadataValue = this.metadata.value(key) || { format: key };
-            let valueFormatter = this.openmct.telemetry.getValueFormatter(metadataValue);
-
-            return valueFormatter;
+            return this.openmct.telemetry.getValueFormatter(metadataValue);
         }
     }
 };

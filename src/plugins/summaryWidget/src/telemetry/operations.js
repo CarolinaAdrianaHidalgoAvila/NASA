@@ -25,7 +25,7 @@ define([
 ], function (
 
 ) {
-    const OPERATIONS = {
+    return {
         equalTo: {
             operation: function (input) {
                 return input[0] === input[1];
@@ -214,6 +214,4 @@ define([
             }
         }
     };
-
-    return OPERATIONS;
 });

@@ -144,14 +144,12 @@ export default class AnnotationAPI extends EventEmitter {
 
     getAvailableTags() {
         if (this.availableTags) {
-            const rearrangedToArray = Object.keys(this.availableTags).map(tagKey => {
+          return Object.keys(this.availableTags).map(tagKey => {
                 return {
                     id: tagKey,
                     ...this.availableTags[tagKey]
                 };
             });
-
-            return rearrangedToArray;
         } else {
             return [];
         }
@@ -182,9 +180,7 @@ export default class AnnotationAPI extends EventEmitter {
                 contentText,
                 targets
             };
-            const newAnnotation = await this.create(annotationCreationArguments);
-
-            return newAnnotation;
+           return this.create(annotationCreationArguments);
         } else {
             const tagArray = [tag, ...existingAnnotation.tags];
             this.openmct.objects.mutate(existingAnnotation, 'tags', tagArray);
@@ -214,7 +210,7 @@ export default class AnnotationAPI extends EventEmitter {
             return [];
         }
 
-        const matchingTags = Object.keys(this.availableTags).filter(tagKey => {
+       return Object.keys(this.availableTags).filter(tagKey => {
             if (this.availableTags[tagKey] && this.availableTags[tagKey].label) {
                 return this.availableTags[tagKey].label.toLowerCase().includes(query.toLowerCase());
             }
@@ -222,11 +218,10 @@ export default class AnnotationAPI extends EventEmitter {
             return false;
         });
 
-        return matchingTags;
     }
 
     #addTagMetaInformationToResults(results, matchingTagKeys) {
-        const tagsAddedToResults = results.map(result => {
+        return results.map(result => {
             const fullTagModels = result.tags.map(tagKey => {
                 const tagModel = this.availableTags[tagKey];
                 tagModel.tagID = tagKey;
@@ -240,12 +235,10 @@ export default class AnnotationAPI extends EventEmitter {
                 ...result
             };
         });
-
-        return tagsAddedToResults;
     }
 
     async #addTargetModelsToResults(results) {
-        const modelAddedToResults = await Promise.all(results.map(async result => {
+        return Promise.all(results.map(async result => {
             const targetModels = await Promise.all(Object.keys(result.targets).map(async (targetID) => {
                 const targetModel = await this.openmct.objects.get(targetID);
                 const targetKeyString = this.openmct.objects.makeKeyString(targetModel.identifier);
@@ -262,8 +255,6 @@ export default class AnnotationAPI extends EventEmitter {
                 ...result
             };
         }));
-
-        return modelAddedToResults;
     }
 
     /**
@@ -277,10 +268,8 @@ export default class AnnotationAPI extends EventEmitter {
         const searchResults = (await Promise.all(this.openmct.objects.search(matchingTagKeys, abortController, this.openmct.objects.SEARCH_TYPES.TAGS))).flat();
         const appliedTagSearchResults = this.#addTagMetaInformationToResults(searchResults, matchingTagKeys);
         const appliedTargetsModels = await this.#addTargetModelsToResults(appliedTagSearchResults);
-        const resultsWithValidPath = appliedTargetsModels.filter(result => {
+        return appliedTargetsModels.filter(result => {
             return this.openmct.objects.isReachable(result.targetModels?.[0]?.originalPath);
         });
-
-        return resultsWithValidPath;
     }
 }

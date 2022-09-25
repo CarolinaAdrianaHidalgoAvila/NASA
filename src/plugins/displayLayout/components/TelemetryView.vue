@@ -152,9 +152,7 @@ export default {
         },
         unit() {
             let value = this.item.value;
-            let unit = this.metadata ? this.metadata.value(value).unit : '';
-
-            return unit;
+            return this.metadata ? this.metadata.value(value).unit : '';
         },
         styleObject() {
             let size;

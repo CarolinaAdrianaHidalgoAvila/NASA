@@ -113,12 +113,10 @@ define(
             }
 
             sortCollection(rows) {
-                const sortedRows = _.orderBy(
+                return _.orderBy(
                     rows,
                     row => row.getParsedValue(this.sortOptions.key), this.sortOptions.direction
                 );
-
-                return sortedRows;
             }
 
             mergeSortedRows(rows) {

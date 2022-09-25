@@ -150,11 +150,10 @@ export default {
             });
         },
         getBoundsForTimeSystem(timeSystem) {
-            const currentBounds = this.timeContext.bounds();
+            return this.timeContext.bounds();
 
             //TODO: Some kind of translation via an offset? of current bounds to target timeSystem
-            return currentBounds;
-        },
+                },
         updateViewBounds(bounds) {
             let currentTimeSystem = this.timeSystems.find(item => item.timeSystem.key === this.openmct.time.timeSystem().key);
             if (currentTimeSystem) {

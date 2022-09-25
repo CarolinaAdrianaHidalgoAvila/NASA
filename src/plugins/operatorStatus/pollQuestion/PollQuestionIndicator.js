@@ -27,7 +27,7 @@ import PollQuestionComponent from './PollQuestion.vue';
 export default class PollQuestionIndicator extends AbstractStatusIndicator {
     createPopupComponent() {
         const indicator = this.getIndicator();
-        const pollQuestionElement = new Vue({
+        return new Vue({
             components: {
                 PollQuestion: PollQuestionComponent
             },
@@ -44,8 +44,6 @@ export default class PollQuestionIndicator extends AbstractStatusIndicator {
             },
             template: '<poll-question :positionX="positionX" :positionY="positionY" />'
         }).$mount();
-
-        return pollQuestionElement;
     }
 
     createIndicator() {

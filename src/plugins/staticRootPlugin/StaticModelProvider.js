@@ -93,22 +93,18 @@ class StaticModelProvider {
             return namespace;
         } else if (leafKey === 'location') {
             if (idMap.get(leafValue)) {
-                const newLocationidentifier = objectUtils.makeKeyString({
+                return objectUtils.makeKeyString({
                     namespace,
                     key: idMap.get(leafValue)
                 });
-
-                return newLocationidentifier;
             }
 
             return null;
         } else if (idMap.get(leafValue)) {
-            const newidentifier = objectUtils.makeKeyString({
+            return objectUtils.makeKeyString({
                 namespace,
                 key: idMap.get(leafValue)
             });
-
-            return newidentifier;
         } else {
             return leafValue;
         }
@@ -128,9 +124,7 @@ class StaticModelProvider {
             idMap.set(originalId, newId);
         });
 
-        const newTree = this.parseTreeLeaf(null, objectTree, idMap, namespace);
-
-        return newTree;
+        return this.parseTreeLeaf(null, objectTree, idMap, namespace);
     }
 
     /**
