@@ -35,11 +35,11 @@ export default function ScatterPlotViewProvider(openmct) {
         key: SCATTER_PLOT_VIEW,
         name: 'Scatter Plot',
         cssClass: 'icon-telemetry',
-        canView(domainObject, objectPath) {
+        canView(domainObject, _objectPath) {
             return domainObject && domainObject.type === SCATTER_PLOT_KEY;
         },
 
-        canEdit(domainObject, objectPath) {
+        canEdit(domainObject, _objectPath) {
             return domainObject && domainObject.type === SCATTER_PLOT_KEY;
         },
 

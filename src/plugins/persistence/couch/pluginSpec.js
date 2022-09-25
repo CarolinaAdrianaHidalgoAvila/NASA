@@ -32,7 +32,7 @@ describe('the plugin', () => {
     let provider;
     let testPath = 'http://localhost:9990/openmct';
     let options;
-    let mockIdentifierService;
+    let mockidentifierService;
     let mockDomainObject;
 
     beforeEach((done) => {
@@ -53,17 +53,17 @@ describe('the plugin', () => {
         openmct = createOpenMct();
 
         openmct.$injector = jasmine.createSpyObj('$injector', ['get']);
-        mockIdentifierService = jasmine.createSpyObj(
+        mockidentifierService = jasmine.createSpyObj(
             'identifierService',
             ['parse']
         );
-        mockIdentifierService.parse.and.returnValue({
+        mockidentifierService.parse.and.returnValue({
             getSpace: () => {
                 return 'mct';
             }
         });
 
-        openmct.$injector.get.and.returnValue(mockIdentifierService);
+        openmct.$injector.get.and.returnValue(mockidentifierService);
 
         openmct.install(new CouchPlugin(options));
 

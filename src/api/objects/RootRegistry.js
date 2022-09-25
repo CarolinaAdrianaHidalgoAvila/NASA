@@ -49,12 +49,12 @@ export default class RootRegistry {
     }
 
     _isValid(rootItem) {
-        if (utils.isIdentifier(rootItem) || typeof rootItem === 'function') {
+        if (utils.isidentifier(rootItem) || typeof rootItem === 'function') {
             return true;
         }
 
         if (Array.isArray(rootItem)) {
-            return rootItem.every(utils.isIdentifier);
+            return rootItem.every(utils.isidentifier);
         }
 
         return false;

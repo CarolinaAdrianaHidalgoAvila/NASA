@@ -73,7 +73,7 @@
                 >
                 </div>
                 <img
-                    alt="#"
+                    alt="#c-imagery__main-image__image"
                     ref="focusedImage"
                     class="c-imagery__main-image__image js-imageryView-image "
                     :src="imageUrl"
@@ -83,7 +83,6 @@
                     }"
                     :data-openmct-image-timestamp="time"
                     :data-openmct-object-keystring="keyString"
-                    alt="c-imagery__main-image__image"
                 >
                 <div
                     v-if="imageUrl"
@@ -942,12 +941,10 @@ export default {
                 return;
             }
 
-            let index = this.focusedImageIndex;
-
-            if (index === this.imageHistory.length - 1) {
+            if (this.focusedImageIndex === this.imageHistory.length - 1) {
                 this.thumbnailClicked(this.imageHistory.length - 2);
             } else {
-                this.thumbnailClicked(--index);
+                this.thumbnailClicked(--this.focusedImageIndex);
             }
         },
         resetImage() {

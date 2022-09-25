@@ -32,7 +32,7 @@
 
     var subscriptions = {};
 
-    function workSubscriptions(timestamp) {
+    function workSubscriptions(_timestamp) {
         var now = Date.now();
         var nextWork = Math.min.apply(Math, Object.values(subscriptions).map(function (subscription) {
             return subscription(now);

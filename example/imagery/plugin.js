@@ -229,7 +229,7 @@ function getLadProvider() {
             return domainObject.type === 'example.imagery'
                 && options.strategy === 'latest';
         },
-        request: (domainObject, options) => {
+        request: (domainObject, _options) => {
             const delay = getImageLoadDelay(domainObject);
             const datum = pointForTimestamp(Date.now(), domainObject.name, getImageSamples(domainObject.configuration), delay);
 

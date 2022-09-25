@@ -71,7 +71,7 @@ define(['../src/SummaryWidget'], function (SummaryWidget) {
 
             mockObjectService = {};
             mockObjectService.getObjects = jasmine.createSpy('objectService');
-            mockObjectService.getObjects.and.returnValue(new Promise(function (resolve, reject) {
+            mockObjectService.getObjects.and.returnValue(new Promise(function (resolve, _reject) {
                 resolve({
                     'testNamespace:testKey': mockOldDomainObject
                 });

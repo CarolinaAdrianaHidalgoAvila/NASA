@@ -89,17 +89,17 @@ class CouchObjectProvider {
             this.indicator.setIndicatorToState(state);
         } else {
             let objectChanges = event.data.objectChanges;
-            const objectIdentifier = {
+            const objectidentifier = {
                 namespace: this.namespace,
                 key: objectChanges.id
             };
-            let keyString = this.openmct.objects.makeKeyString(objectIdentifier);
+            let keyString = this.openmct.objects.makeKeyString(objectidentifier);
             //TODO: Optimize this so that we don't 'get' the object if it's current revision (from this.objectQueue) is the same as the one we already have.
             let observersForObject = this.observers[keyString];
 
             if (observersForObject) {
                 observersForObject.forEach(async (observer) => {
-                    const updatedObject = await this.get(objectIdentifier);
+                    const updatedObject = await this.get(objectidentifier);
                     if (this.isSynchronizedObject(updatedObject)) {
                         observer(updatedObject);
                     }
@@ -593,9 +593,9 @@ class CouchObjectProvider {
      */
     #getIntermediateResponse() {
         let intermediateResponse = {};
-        intermediateResponse.promise = new Promise(function (resolve, reject) {
+        intermediateResponse.promise = new Promise(function (resolve, _reject) {
             intermediateResponse.resolve = resolve;
-            intermediateResponse.reject = reject;
+            intermediateResponse._reject = _reject;
         });
 
         return intermediateResponse;
@@ -657,7 +657,7 @@ class CouchObjectProvider {
             this.request(key, "PUT", document).then((response) => {
                 this.#checkResponse(response, queued.intermediateResponse, key);
             }).catch(error => {
-                queued.intermediateResponse.reject(error);
+                queued.intermediateResponse._reject(error);
                 this.objectQueue[key].pending = false;
             });
         }
@@ -676,7 +676,7 @@ class CouchObjectProvider {
             this.request(key, "PUT", document).then((response) => {
                 this.#checkResponse(response, queued.intermediateResponse, key);
             }).catch((error) => {
-                queued.intermediateResponse.reject(error);
+                queued.intermediateResponse._reject(error);
                 this.objectQueue[key].pending = false;
             });
         }

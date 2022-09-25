@@ -174,7 +174,7 @@ export default {
         }
     },
     mounted() {
-        this.buildIdentifierMap();
+        this.buildidentifierMap();
         this.composition = this.openmct.composition.get(this.domainObject);
         this.composition.on('remove', this.removeChildObject);
         this.composition.on('add', this.addFrame);
@@ -185,10 +185,10 @@ export default {
         this.composition.off('add', this.addFrame);
     },
     methods: {
-        buildIdentifierMap() {
+        buildidentifierMap() {
             this.containers.forEach(container => {
                 container.frames.forEach(frame => {
-                    let keystring = this.openmct.objects.makeKeyString(frame.domainObjectIdentifier);
+                    let keystring = this.openmct.objects.makeKeyString(frame.domainObjectidentifier);
                     this.identifierMap[keystring] = true;
                 });
             });
@@ -207,7 +207,7 @@ export default {
                 remove associated domainObjects from composition
             */
             container.frames.forEach(f => {
-                this.removeFromComposition(f.domainObjectIdentifier);
+                this.removeFromComposition(f.domainObjectidentifier);
             });
 
             this.containers.splice(containerIndex, 1);
@@ -263,7 +263,7 @@ export default {
                 .frames
                 .filter((f => f.id === frameId))[0];
 
-            this.removeFromComposition(frame.domainObjectIdentifier);
+            this.removeFromComposition(frame.domainObjectidentifier);
 
             this.$nextTick().then(() => {
                 sizeToFill(container.frames);
@@ -348,16 +348,16 @@ export default {
             this.persist();
         },
         removeChildObject(identifier) {
-            let removeIdentifier = this.openmct.objects.makeKeyString(identifier);
+            let removeidentifier = this.openmct.objects.makeKeyString(identifier);
 
-            this.identifierMap[removeIdentifier] = undefined;
-            delete this.identifierMap[removeIdentifier];
+            this.identifierMap[removeidentifier] = undefined;
+            delete this.identifierMap[removeidentifier];
 
             this.containers.forEach(container => {
                 container.frames = container.frames.filter(frame => {
-                    let frameIdentifier = this.openmct.objects.makeKeyString(frame.domainObjectIdentifier);
+                    let frameidentifier = this.openmct.objects.makeKeyString(frame.domainObjectidentifier);
 
-                    return removeIdentifier !== frameIdentifier;
+                    return removeidentifier !== frameidentifier;
                 });
             });
 

@@ -126,24 +126,24 @@ export function getConditionalStyleForItem(domainObject, id) {
     let domainObjectStyles = domainObject && domainObject.configuration && domainObject.configuration.objectStyles;
     if (domainObjectStyles) {
         if (id) {
-            if (domainObjectStyles[id] && domainObjectStyles[id].conditionSetIdentifier) {
+            if (domainObjectStyles[id] && domainObjectStyles[id].conditionSetidentifier) {
                 return domainObjectStyles[id].styles;
             }
-        } else if (domainObjectStyles.conditionSetIdentifier) {
+        } else if (domainObjectStyles.conditionSetidentifier) {
             return domainObjectStyles.styles;
         }
     }
 }
 
-export function getConditionSetIdentifierForItem(domainObject, id) {
+export function getConditionSetidentifierForItem(domainObject, id) {
     let domainObjectStyles = domainObject && domainObject.configuration && domainObject.configuration.objectStyles;
     if (domainObjectStyles) {
         if (id) {
-            if (domainObjectStyles[id] && domainObjectStyles[id].conditionSetIdentifier) {
-                return domainObjectStyles[id].conditionSetIdentifier;
+            if (domainObjectStyles[id] && domainObjectStyles[id].conditionSetidentifier) {
+                return domainObjectStyles[id].conditionSetidentifier;
             }
-        } else if (domainObjectStyles.conditionSetIdentifier) {
-            return domainObjectStyles.conditionSetIdentifier;
+        } else if (domainObjectStyles.conditionSetidentifier) {
+            return domainObjectStyles.conditionSetidentifier;
         }
     }
 }

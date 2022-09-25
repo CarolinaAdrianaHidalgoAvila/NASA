@@ -12,7 +12,7 @@ define([
         let isRoutingInProgress = false;
 
         openmct.router.route(/^\/browse\/?$/, navigateToFirstChildOfRoot);
-        openmct.router.route(/^\/browse\/(.*)$/, (path, results, params) => {
+        openmct.router.route(/^\/browse\/(.*)$/, (_path, results, params) => {
             isRoutingInProgress = true;
             let navigatePath = results[1];
             clearMutationListeners();
@@ -22,7 +22,7 @@ define([
 
         openmct.router.on('change:params', onParamsChanged);
 
-        function onParamsChanged(newParams, oldParams, changed) {
+        function onParamsChanged(_newParams, _oldParams, changed) {
             if (isRoutingInProgress) {
                 return;
             }

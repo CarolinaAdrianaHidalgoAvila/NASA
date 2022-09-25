@@ -82,14 +82,14 @@ export default class ImportAsJSONAction {
      * @param {object} seen
      */
     _deepInstantiate(parent, tree, seen) {
-        let objectIdentifiers = this._getObjectReferenceIds(parent);
+        let objectidentifiers = this._getObjectReferenceIds(parent);
 
-        if (objectIdentifiers.length) {
+        if (objectidentifiers.length) {
             let newObj;
 
             seen.push(parent.id);
 
-            objectIdentifiers.forEach(async (childId) => {
+            objectidentifiers.forEach(async (childId) => {
                 const keystring = this.openmct.objects.makeKeyString(childId);
                 if (!tree[keystring] || seen.includes(keystring)) {
                     return;
@@ -109,20 +109,20 @@ export default class ImportAsJSONAction {
      * @returns [identifiers]
      */
     _getObjectReferenceIds(parent) {
-        let objectIdentifiers = [];
+        let objectidentifiers = [];
 
         let parentComposition = this.openmct.composition.get(parent);
         if (parentComposition) {
-            objectIdentifiers = Array.from(parentComposition.domainObject.composition);
+            objectidentifiers = Array.from(parentComposition.domainObject.composition);
         }
 
         //conditional object styles are not saved on the composition, so we need to check for them
-        let parentObjectReference = parent.configuration?.objectStyles?.conditionSetIdentifier;
+        let parentObjectReference = parent.configuration?.objectStyles?.conditionSetidentifier;
         if (parentObjectReference) {
-            objectIdentifiers.push(parentObjectReference);
+            objectidentifiers.push(parentObjectReference);
         }
 
-        return objectIdentifiers;
+        return objectidentifiers;
     }
     /**
      * @private
@@ -130,7 +130,7 @@ export default class ImportAsJSONAction {
      * @param {string} namespace
      * @returns {object}
      */
-    _generateNewIdentifiers(tree, namespace) {
+    _generateNewidentifiers(tree, namespace) {
         // For each domain object in the file, generate new ID, replace in tree
         Object.keys(tree.openmct).forEach(domainObjectId => {
             const newId = {
@@ -152,7 +152,7 @@ export default class ImportAsJSONAction {
      */
     async _importObjectTree(domainObject, objTree) {
         const namespace = domainObject.identifier.namespace;
-        const tree = this._generateNewIdentifiers(objTree, namespace);
+        const tree = this._generateNewidentifiers(objTree, namespace);
         const rootId = tree.rootId;
 
         const rootModel = tree.openmct[rootId];

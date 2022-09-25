@@ -568,10 +568,10 @@ export default {
         },
         isDefaultNotebook() {
             const defaultNotebook = getDefaultNotebook();
-            const defaultNotebookIdentifier = defaultNotebook && defaultNotebook.identifier;
+            const defaultNotebookidentifier = defaultNotebook && defaultNotebook.identifier;
 
-            return defaultNotebookIdentifier !== null
-                && this.openmct.objects.areIdsEqual(defaultNotebookIdentifier, this.domainObject.identifier);
+            return defaultNotebookidentifier !== null
+                && this.openmct.objects.areIdsEqual(defaultNotebookidentifier, this.domainObject.identifier);
         },
         getDefaultSectionId() {
             return this.isDefaultNotebook()

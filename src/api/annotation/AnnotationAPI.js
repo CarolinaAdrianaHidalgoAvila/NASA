@@ -79,13 +79,13 @@ export default class AnnotationAPI extends EventEmitter {
     * @property {ANNOTATION_TYPES} annotationType the type of annotation to create
     * @property {Tag[]} tags
     * @property {String} contentText
-    * @property {import('../objects/ObjectAPI').Identifier[]} targets
+    * @property {import('../objects/ObjectAPI').identifier[]} targets
     */
     /**
     * @method create
     * @param {CreateAnnotationOptions} options
     * @returns {Promise<import('../objects/ObjectAPI').DomainObject>} a promise which will resolve when the domain object
-    *          has been created, or be rejected if it cannot be saved
+    *          has been created, or be _rejected if it cannot be saved
     */
     async create({name, domainObject, annotationType, tags, contentText, targets}) {
         if (!Object.keys(this.ANNOTATION_TYPES).includes(annotationType)) {

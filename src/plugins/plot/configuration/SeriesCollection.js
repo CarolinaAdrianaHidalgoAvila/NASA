@@ -53,7 +53,7 @@ export default class SeriesCollection extends Collection {
     }
     trackPersistedConfig(domainObject) {
         domainObject.configuration.series.forEach(function (seriesConfig) {
-            const series = this.byIdentifier(seriesConfig.identifier);
+            const series = this.byidentifier(seriesConfig.identifier);
             if (series) {
                 series.persistedConfig = seriesConfig;
             }
@@ -164,12 +164,12 @@ export default class SeriesCollection extends Collection {
             this.palette.return(oldColor);
         }
     }
-    byIdentifier(identifier) {
+    byidentifier(identifier) {
         return this.filter(function (series) {
-            const seriesIdentifier = series.get('identifier');
+            const seriesidentifier = series.get('identifier');
 
-            return seriesIdentifier.namespace === identifier.namespace
-                    && seriesIdentifier.key === identifier.key;
+            return seriesidentifier.namespace === identifier.namespace
+                    && seriesidentifier.key === identifier.key;
         })[0];
     }
 }

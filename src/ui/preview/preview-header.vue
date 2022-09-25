@@ -106,7 +106,7 @@ export default {
         };
     },
     watch: {
-        actionCollection(actionCollection) {
+        actionCollection(_actionCollection) {
             if (this.actionCollection) {
                 this.unlistenToActionCollection();
             }

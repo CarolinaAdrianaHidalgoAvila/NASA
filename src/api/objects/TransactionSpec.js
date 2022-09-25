@@ -50,7 +50,7 @@ describe("Transaction Class", () => {
         expect(Object.keys(transaction.dirtyObjects).length).toEqual(3);
 
         transaction.cancel()
-            .then(success => {
+            .then(_success => {
                 expect(Object.keys(transaction.dirtyObjects).length).toEqual(0);
             }).finally(done);
     });
@@ -63,7 +63,7 @@ describe("Transaction Class", () => {
         spyOn(objectAPI, 'save').and.callThrough();
 
         transaction.commit()
-            .then(success => {
+            .then(_success => {
                 expect(Object.keys(transaction.dirtyObjects).length).toEqual(0);
                 expect(objectAPI.save.calls.count()).toEqual(3);
             }).finally(done);

@@ -35,7 +35,7 @@ export default class ExportAsJSONAction {
         this.group = "json";
         this.priority = 1;
 
-        this.externalIdentifiers = [];
+        this.externalidentifiers = [];
         this.tree = {};
         this.calls = 0;
         this.idMap = {};
@@ -96,7 +96,7 @@ export default class ExportAsJSONAction {
         if (child.location !== this._getId(parent)
             && !Object.keys(this.tree).includes(child.location)
             && this._getId(child) !== this._getId(this.root)
-            || this.externalIdentifiers.includes(this._getId(child))) {
+            || this.externalidentifiers.includes(this._getId(child))) {
 
             return true;
         }
@@ -110,7 +110,7 @@ export default class ExportAsJSONAction {
      * @returns {object}
      */
     _rewriteLink(child, parent) {
-        this.externalIdentifiers.push(this._getId(child));
+        this.externalidentifiers.push(this._getId(child));
         const index = parent.composition.findIndex(id => {
             return _.isEqual(child.identifier, id);
         });
@@ -137,7 +137,7 @@ export default class ExportAsJSONAction {
      */
     _rewriteLinkForReference(child, parent) {
         const childId = this._getId(child);
-        this.externalIdentifiers.push(childId);
+        this.externalidentifiers.push(childId);
         const copyOfChild = JSON.parse(JSON.stringify(child));
 
         copyOfChild.identifier.key = uuid();
@@ -146,9 +146,9 @@ export default class ExportAsJSONAction {
 
         this.idMap[childId] = newIdString;
         copyOfChild.location = null;
-        parent.configuration.objectStyles.conditionSetIdentifier = copyOfChild.identifier;
+        parent.configuration.objectStyles.conditionSetidentifier = copyOfChild.identifier;
         this.tree[newIdString] = copyOfChild;
-        this.tree[parentId].configuration.objectStyles.conditionSetIdentifier = copyOfChild.identifier;
+        this.tree[parentId].configuration.objectStyles.conditionSetidentifier = copyOfChild.identifier;
 
         return copyOfChild;
     }
@@ -191,7 +191,7 @@ export default class ExportAsJSONAction {
     _write(parent) {
         this.calls++;
         //conditional object styles are not saved on the composition, so we need to check for them
-        let childObjectReferenceId = parent.configuration?.objectStyles?.conditionSetIdentifier;
+        let childObjectReferenceId = parent.configuration?.objectStyles?.conditionSetidentifier;
 
         const composition = this.openmct.composition.get(parent);
         if (composition !== undefined) {

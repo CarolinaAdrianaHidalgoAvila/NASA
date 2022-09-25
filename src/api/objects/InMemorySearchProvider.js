@@ -130,9 +130,9 @@ class InMemorySearchProvider {
      */
     getIntermediateResponse() {
         let intermediateResponse = {};
-        intermediateResponse.promise = new Promise(function (resolve, reject) {
+        intermediateResponse.promise = new Promise(function (resolve, _reject) {
             intermediateResponse.resolve = resolve;
-            intermediateResponse.reject = reject;
+            intermediateResponse._reject = _reject;
         });
 
         return intermediateResponse;
@@ -302,8 +302,8 @@ class InMemorySearchProvider {
         }
     }
 
-    onCompositionRemoved(domainObjectToRemoveIdentifier) {
-        const keyString = this.openmct.objects.makeKeyString(domainObjectToRemoveIdentifier);
+    onCompositionRemoved(domainObjectToRemoveidentifier) {
+        const keyString = this.openmct.objects.makeKeyString(domainObjectToRemoveidentifier);
         if (this.indexedIds[keyString]) {
             // we store the unobserve function in the indexedId map
             this.indexedIds[keyString]();

@@ -81,12 +81,12 @@ define([],
                         this.handleError();
                     }
                 })
-                .catch(error => {
+                .catch(_error => {
                     this.handleError();
                 });
         };
 
-        URLIndicator.prototype.handleError = function (e) {
+        URLIndicator.prototype.handleError = function (_e) {
             this.setIndicatorToState(DISCONNECTED);
         };
 

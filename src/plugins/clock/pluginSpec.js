@@ -35,7 +35,7 @@ describe("Clock plugin:", () => {
     let clockDomainObject;
 
     function setupClock(enableClockIndicator) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, __reject) => {
             clockDomainObject = {
                 identifier: {
                     key: 'clock',

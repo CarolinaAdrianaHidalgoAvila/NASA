@@ -100,9 +100,9 @@ describe('ConditionManager', () => {
         mockAngularComponents();
         mockListener = jasmine.createSpy('mockListener');
         loader = {};
-        loader.promise = new Promise(function (resolve, reject) {
+        loader.promise = new Promise(function (resolve, _reject) {
             loader.resolve = resolve;
-            loader.reject = reject;
+            loader._reject = _reject;
         });
 
         mockComposition = jasmine.createSpyObj('compositionCollection', [
@@ -125,13 +125,13 @@ describe('ConditionManager', () => {
         openmct.composition.get.and.returnValue(mockComposition);
 
         openmct.objects = jasmine.createSpyObj('objects', ['get', 'makeKeyString', 'observe', 'mutate']);
-        openmct.objects.get.and.returnValues(new Promise(function (resolve, reject) {
+        openmct.objects.get.and.returnValues(new Promise(function (resolve, _reject) {
             resolve(conditionSetDomainObject);
-        }), new Promise(function (resolve, reject) {
+        }), new Promise(function (resolve, _reject) {
             resolve(mockCondition1);
-        }), new Promise(function (resolve, reject) {
+        }), new Promise(function (resolve, _reject) {
             resolve(mockCondition2);
-        }), new Promise(function (resolve, reject) {
+        }), new Promise(function (resolve, _reject) {
             resolve(mockDefaultCondition);
         }));
         openmct.objects.makeKeyString.and.returnValue(conditionSetDomainObject.identifier.key);

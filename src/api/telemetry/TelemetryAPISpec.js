@@ -98,7 +98,7 @@ describe('Telemetry API', function () {
             expect(telemetryProvider.subscribe).not.toHaveBeenCalled();
             expect(unsubscribe).toEqual(jasmine.any(Function));
 
-            telemetryAPI.request(domainObject).then((response) => {
+            telemetryAPI.request(domainObject).then((_response) => {
                 expect(telemetryProvider.supportsRequest)
                     .toHaveBeenCalledWith(domainObject, jasmine.any(Object));
                 expect(telemetryProvider.request).not.toHaveBeenCalled();
@@ -207,7 +207,7 @@ describe('Telemetry API', function () {
             const unsubFuncs = [];
             const notifiers = [];
             telemetryProvider.supportsSubscribe.and.returnValue(true);
-            telemetryProvider.subscribe.and.callFake(function (obj, cb) {
+            telemetryProvider.subscribe.and.callFake(function (_obj, cb) {
                 const unsubFunc = jasmine.createSpy('unsubscribe ' + unsubFuncs.length);
                 unsubFuncs.push(unsubFunc);
                 notifiers.push(cb);
@@ -631,7 +631,7 @@ describe('Telemetery', () => {
         telemetryAPI = openmct.telemetry;
 
         telemetryProvider = {
-            request: (obj, options) => {
+            request: (_obj, options) => {
                 watchedSignal = options.signal;
 
                 return Promise.resolve();

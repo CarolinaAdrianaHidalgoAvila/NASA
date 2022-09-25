@@ -662,10 +662,7 @@ export default {
                 return;
             }
 
-            let limits = {
-                high: 0,
-                low: 0
-            };
+            let limits;
             if (telemetryLimit.CRITICAL) {
                 limits = telemetryLimit.CRITICAL;
             } else if (telemetryLimit.DISTRESS) {
