@@ -23,7 +23,6 @@
 import {createOpenMct, resetApplicationState} from "utils/testing";
 import Vue from "vue";
 import BarGraphPlugin from "./plugin";
-import BarGraph from './BarGraphPlot.vue';
 import EventEmitter from "EventEmitter";
 import { BAR_GRAPH_VIEW, BAR_GRAPH_KEY } from './BarGraphConstants';
 
@@ -128,7 +127,6 @@ describe("the plugin", function () {
     describe("The bar graph view", () => {
         let barGraphObject;
         // eslint-disable-next-line no-unused-vars
-        let component;
         let mockComposition;
 
         beforeEach(async () => {
@@ -158,18 +156,6 @@ describe("the plugin", function () {
 
             let viewContainer = document.createElement("div");
             child.append(viewContainer);
-            component = new Vue({
-                el: viewContainer,
-                components: {
-                    BarGraph
-                },
-                provide: {
-                    openmct: openmct,
-                    domainObject: barGraphObject,
-                    composition: openmct.composition.get(barGraphObject)
-                },
-                template: "<BarGraph></BarGraph>"
-            });
 
             await Vue.nextTick();
         });
@@ -230,7 +216,6 @@ describe("the plugin", function () {
     describe("The spectral plot view for telemetry objects with array values", () => {
         let barGraphObject;
         // eslint-disable-next-line no-unused-vars
-        let component;
         let mockComposition;
 
         beforeEach(async () => {
@@ -263,18 +248,6 @@ describe("the plugin", function () {
 
             let viewContainer = document.createElement("div");
             child.append(viewContainer);
-            component = new Vue({
-                el: viewContainer,
-                components: {
-                    BarGraph
-                },
-                provide: {
-                    openmct: openmct,
-                    domainObject: barGraphObject,
-                    composition: openmct.composition.get(barGraphObject)
-                },
-                template: "<BarGraph></BarGraph>"
-            });
 
             await Vue.nextTick();
         });

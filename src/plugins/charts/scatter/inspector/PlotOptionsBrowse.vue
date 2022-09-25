@@ -100,7 +100,7 @@ export default {
                 this.unobserve();
             }
         },
-        addSeries(series, index) {
+        addSeries(series, _index) {
             this.$set(this.plotSeries, this.plotSeries.length, series);
             this.setAxesLabels();
         },

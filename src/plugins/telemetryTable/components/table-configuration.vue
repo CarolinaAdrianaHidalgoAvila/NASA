@@ -116,8 +116,8 @@ export default {
             this.addColumnsForObject(domainObject, true);
             this.updateHeaders(this.tableConfiguration.getAllHeaders());
         },
-        removeObject(objectIdentifier) {
-            this.tableConfiguration.removeColumnsForObject(objectIdentifier, true);
+        removeObject(objectidentifier) {
+            this.tableConfiguration.removeColumnsForObject(objectidentifier, true);
             this.updateHeaders(this.tableConfiguration.getAllHeaders());
         },
         toggleEdit(isEditing) {

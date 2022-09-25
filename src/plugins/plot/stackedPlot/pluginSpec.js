@@ -225,7 +225,7 @@ describe("the plugin", function () {
                                 border: ''
                             }
                         },
-                        conditionSetIdentifier: {
+                        conditionSetidentifier: {
                             namespace: '',
                             key: 'testConditionSetId'
                         },

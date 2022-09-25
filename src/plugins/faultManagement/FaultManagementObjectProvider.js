@@ -51,6 +51,6 @@ export default class FaultManagementObjectProvider {
             return Promise.resolve(this.rootObject);
         }
 
-        return Promise.reject();
+        return Promise._reject();
     }
 }

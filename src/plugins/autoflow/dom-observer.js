@@ -27,7 +27,7 @@ define([], function () {
     }
 
     DOMObserver.prototype.when = function (latchFunction) {
-        return new Promise(function (resolve, reject) {
+        return new Promise(function (resolve, __reject) {
             //Test latch function at least once
             if (latchFunction()) {
                 resolve();

@@ -38,7 +38,7 @@ export default class LADTableView {
         return this.component.$refs.ladTable.getViewContext();
     }
 
-    destroy(element) {
+    destroy(_element) {
         this.component.$destroy();
         this.component = undefined;
     }

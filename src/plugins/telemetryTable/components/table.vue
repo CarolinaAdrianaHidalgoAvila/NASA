@@ -544,7 +544,7 @@ export default {
                 this.updatingView = true;
                 requestAnimationFrame(() => {
                     let start = 0;
-                    let end = VISIBLE_ROW_COUNT;
+                    let end;
                     let tableRows = this.table.tableRows.getRows();
                     let tableRowsLength = tableRows.length;
 
@@ -746,8 +746,8 @@ export default {
             this.updateHeaders();
             this.$nextTick().then(this.calculateColumnWidths);
         },
-        removeObject(objectIdentifier) {
-            let objectKeyString = this.openmct.objects.makeKeyString(objectIdentifier);
+        removeObject(objectidentifier) {
+            let objectKeyString = this.openmct.objects.makeKeyString(objectidentifier);
             delete this.sizingRows[objectKeyString];
             this.updateHeaders();
             this.$nextTick().then(this.calculateColumnWidths);

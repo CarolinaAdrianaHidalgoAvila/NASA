@@ -163,7 +163,7 @@ ${font}`;
                 Do you want to continue?
             `;
 
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve, _reject) => {
                 let dialog = this.openmct.overlays.dialog({
                     title: 'Delete Saved Style',
                     iconClass: 'alert',
@@ -180,7 +180,7 @@ ${font}`;
                             label: 'Cancel',
                             callback: () => {
                                 dialog.dismiss();
-                                reject();
+                                _reject();
                             }
                         }
                     ]

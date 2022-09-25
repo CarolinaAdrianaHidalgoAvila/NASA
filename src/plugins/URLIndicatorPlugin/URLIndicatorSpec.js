@@ -29,9 +29,9 @@ define(
     ],
     function (
         testingUtils,
-        URLIndicator,
+        _URLIndicator,
         URLIndicatorPlugin,
-        MCT
+        _MCT
     ) {
         describe("The URLIndicator", function () {
             let openmct;

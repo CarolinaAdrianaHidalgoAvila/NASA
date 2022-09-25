@@ -93,7 +93,7 @@ class ImageExporter {
         }).then(canvas => {
             dialog.dismiss();
 
-            return new Promise(function (resolve, reject) {
+            return new Promise(function (resolve, __reject) {
                 if (thumbnailSize) {
                     const thumbnail = self.getThumbnail(canvas, mimeType, thumbnailSize);
 

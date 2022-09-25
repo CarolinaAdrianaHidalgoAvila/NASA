@@ -21,13 +21,13 @@
  *****************************************************************************/
 
 function inSelectionPath(openmct, domainObject) {
-    const domainObjectIdentifier = domainObject.identifier;
+    const domainObjectidentifier = domainObject.identifier;
 
     return openmct.selection.get().some(selectionPath => {
         return selectionPath.some(objectInPath => {
-            const objectInPathIdentifier = objectInPath.context.item.identifier;
+            const objectInPathidentifier = objectInPath.context.item.identifier;
 
-            return openmct.objects.areIdsEqual(objectInPathIdentifier, domainObjectIdentifier);
+            return openmct.objects.areIdsEqual(objectInPathidentifier, domainObjectidentifier);
         });
     });
 }

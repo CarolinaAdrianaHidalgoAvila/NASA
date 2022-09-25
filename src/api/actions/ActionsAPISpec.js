@@ -60,7 +60,7 @@ describe('The Actions API', () => {
             description: 'This is a test action for view',
             group: 'action',
             priority: 9,
-            appliesTo: (objectPath, view = {}) => {
+            appliesTo: (_objectPath, view = {}) => {
                 if (view.getViewContext) {
                     let viewContext = view.getViewContext();
 

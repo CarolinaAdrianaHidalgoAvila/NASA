@@ -57,7 +57,7 @@ define([
         };
     };
 
-    StateGeneratorProvider.prototype.supportsRequest = function (domainObject, options) {
+    StateGeneratorProvider.prototype.supportsRequest = function (domainObject, _options) {
         return domainObject.type === 'example.state-generator';
     };
 

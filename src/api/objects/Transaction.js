@@ -48,7 +48,7 @@ export default class Transaction {
     }
 
     createDirtyObjectPromise(object, action) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, _reject) => {
             action(object)
                 .then((success) => {
                     const key = this.objectAPI.makeKeyString(object.identifier);
@@ -56,7 +56,7 @@ export default class Transaction {
                     delete this.dirtyObjects[key];
                     resolve(success);
                 })
-                .catch(reject);
+                .catch(_reject);
         });
     }
 

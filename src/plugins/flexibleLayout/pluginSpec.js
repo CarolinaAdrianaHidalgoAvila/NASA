@@ -113,7 +113,7 @@ describe('the plugin', function () {
                             'id': 'deb9f839-80ad-4ccf-a152-5c763ceb7d7e',
                             frames: [{
                                 id: "329bf482-d0dc-486a-aae0-6176276bd315",
-                                'domainObjectIdentifier': {
+                                'domainObjectidentifier': {
                                     'namespace': '',
                                     'key': '55122607-e65e-44d5-9c9d-9c31a914ca89'
                                 },
@@ -127,7 +127,7 @@ describe('the plugin', function () {
                             'id': 'deb9f839-80ad-4ccf-a152-5c763ceb7d7f',
                             frames: [{
                                 id: "329bf482-d0dc-486a-aae0-6176276bd316",
-                                'domainObjectIdentifier': {
+                                'domainObjectidentifier': {
                                     'namespace': '',
                                     'key': '55122607-e65e-44d5-9c9d-9c31a914ca90'
                                 },

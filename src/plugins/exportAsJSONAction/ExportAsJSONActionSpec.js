@@ -328,7 +328,7 @@ describe('Export as JSON plugin', () => {
             composition: [],
             configuration: {
                 objectStyles: {
-                    conditionSetIdentifier: {
+                    conditionSetidentifier: {
                         key: 'child',
                         namespace: ''
                     }

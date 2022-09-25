@@ -5,7 +5,7 @@ export default {
         };
     },
     methods: {
-        toggle(event) {
+        toggle(_event) {
             if (this.open) {
                 if (this.isOpening) {
                     // Prevent document event handler from closing immediately

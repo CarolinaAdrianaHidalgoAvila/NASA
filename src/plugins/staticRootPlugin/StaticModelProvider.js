@@ -23,15 +23,15 @@
 /**
  * Transforms an import json blob into a object map that can be used to
  * provide objects.  Rewrites root identifier in import data with provided
- * rootIdentifier, and rewrites all child object identifiers so that they
- * exist in the same namespace as the rootIdentifier.
+ * rootidentifier, and rewrites all child object identifiers so that they
+ * exist in the same namespace as the rootidentifier.
  */
 import objectUtils from 'objectUtils';
 
 class StaticModelProvider {
-    constructor(importData, rootIdentifier) {
+    constructor(importData, rootidentifier) {
         this.objectMap = {};
-        this.rewriteModel(importData, rootIdentifier);
+        this.rewriteModel(importData, rootidentifier);
     }
 
     /**
@@ -49,13 +49,13 @@ class StaticModelProvider {
     parseObjectLeaf(objectLeaf, idMap, namespace) {
         Object.keys(objectLeaf).forEach((nodeKey) => {
             if (idMap.get(nodeKey)) {
-                const newIdentifier = objectUtils.makeKeyString({
+                const newidentifier = objectUtils.makeKeyString({
                     namespace,
                     key: idMap.get(nodeKey)
                 });
-                objectLeaf[newIdentifier] = { ...objectLeaf[nodeKey] };
+                objectLeaf[newidentifier] = { ...objectLeaf[nodeKey] };
                 delete objectLeaf[nodeKey];
-                objectLeaf[newIdentifier] = this.parseTreeLeaf(newIdentifier, objectLeaf[newIdentifier], idMap, namespace);
+                objectLeaf[newidentifier] = this.parseTreeLeaf(newidentifier, objectLeaf[newidentifier], idMap, namespace);
             } else {
                 objectLeaf[nodeKey] = this.parseTreeLeaf(nodeKey, objectLeaf[nodeKey], idMap, namespace);
             }
@@ -93,36 +93,36 @@ class StaticModelProvider {
             return namespace;
         } else if (leafKey === 'location') {
             if (idMap.get(leafValue)) {
-                const newLocationIdentifier = objectUtils.makeKeyString({
+                const newLocationidentifier = objectUtils.makeKeyString({
                     namespace,
                     key: idMap.get(leafValue)
                 });
 
-                return newLocationIdentifier;
+                return newLocationidentifier;
             }
 
             return null;
         } else if (idMap.get(leafValue)) {
-            const newIdentifier = objectUtils.makeKeyString({
+            const newidentifier = objectUtils.makeKeyString({
                 namespace,
                 key: idMap.get(leafValue)
             });
 
-            return newIdentifier;
+            return newidentifier;
         } else {
             return leafValue;
         }
     }
 
-    rewriteObjectIdentifiers(importData, rootIdentifier) {
-        const namespace = rootIdentifier.namespace;
+    rewriteObjectidentifiers(importData, rootidentifier) {
+        const namespace = rootidentifier.namespace;
         const idMap = new Map();
         const objectTree = importData.openmct;
 
         Object.keys(objectTree).forEach((originalId, index) => {
             let newId = index.toString();
             if (originalId === importData.rootId) {
-                newId = rootIdentifier.key;
+                newId = rootidentifier.key;
             }
 
             idMap.set(originalId, newId);
@@ -147,8 +147,8 @@ class StaticModelProvider {
     }
 
     /* Set the root location correctly for a top-level object */
-    setRootLocation(objectMap, rootIdentifier) {
-        objectMap[objectUtils.makeKeyString(rootIdentifier)].location = 'ROOT';
+    setRootLocation(objectMap, rootidentifier) {
+        objectMap[objectUtils.makeKeyString(rootidentifier)].location = 'ROOT';
 
         return objectMap;
     }
@@ -157,10 +157,10 @@ class StaticModelProvider {
      * Takes importData (as provided by the ImportExport plugin) and exposes
      * an object provider to fetch those objects.
      */
-    rewriteModel(importData, rootIdentifier) {
-        const oldFormatObjectMap = this.rewriteObjectIdentifiers(importData, rootIdentifier);
+    rewriteModel(importData, rootidentifier) {
+        const oldFormatObjectMap = this.rewriteObjectidentifiers(importData, rootidentifier);
         const newFormatObjectMap = this.convertToNewObjects(oldFormatObjectMap);
-        this.objectMap = this.setRootLocation(newFormatObjectMap, rootIdentifier);
+        this.objectMap = this.setRootLocation(newFormatObjectMap, rootidentifier);
     }
 }
 

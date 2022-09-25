@@ -27,7 +27,7 @@ import remoteClockRequestInterceptor from './requestInterceptor';
  * application based on a time providing telemetry domainObject.
  *
  * @param {openmct} Object Instance of OpenMCT
- * @param {module:openmct.ObjectAPI~Identifier} identifier An object identifier for
+ * @param {module:openmct.ObjectAPI~identifier} identifier An object identifier for
  * the time providing telemetry domainObject
  * @constructor
  */

@@ -213,7 +213,7 @@ describe('the plugin', function () {
 
                 // the function called by the resize observer is debounced 500ms,
                 // this is to account for that
-                let promise = new Promise((resolve, reject) => {
+                let promise = new Promise((resolve, _reject) => {
                     setTimeout(resolve, 501);
                 });
 

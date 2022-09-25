@@ -169,7 +169,7 @@ xdescribe("AutoflowTabularPlugin", () => {
 
                     return mockUnsubscribes[key];
                 });
-                mockmct.telemetry.request.and.callFake((obj, request) => {
+                mockmct.telemetry.request.and.callFake((obj, _request) => {
                     const key = obj.identifier.key;
 
                     return Promise.resolve([testHistories[key]]);
@@ -310,7 +310,7 @@ xdescribe("AutoflowTabularPlugin", () => {
                 });
 
                 return waitsForChange().then(() => {
-                    testKeys.forEach((datum, index) => {
+                    testKeys.forEach((_datum, index) => {
                         const $cell = testContainer.querySelector(".l-autoflow-row").eq(index).find(".r");
                         expect($cell.hasClass(testClass)).toBe(true);
                     });

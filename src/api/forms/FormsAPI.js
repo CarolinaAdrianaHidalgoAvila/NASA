@@ -112,9 +112,9 @@ export default class FormsAPI extends EventEmitter {
 
         const self = this;
 
-        const promise = new Promise((resolve, reject) => {
+        const promise = new Promise((resolve, _reject) => {
             onSave = onFormAction(resolve);
-            onDismiss = onFormAction(reject);
+            onDismiss = onFormAction(_reject);
         });
 
         const vm = new Vue({

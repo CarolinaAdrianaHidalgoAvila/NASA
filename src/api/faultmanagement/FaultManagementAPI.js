@@ -35,7 +35,7 @@ export default class FaultManagementAPI {
 
     request(domainObject) {
         if (!this.provider?.supportsRequest(domainObject)) {
-            return Promise.reject();
+            return Promise._reject();
         }
 
         return this.provider.request(domainObject);
@@ -43,7 +43,7 @@ export default class FaultManagementAPI {
 
     subscribe(domainObject, callback) {
         if (!this.provider?.supportsSubscribe(domainObject)) {
-            return Promise.reject();
+            return Promise._reject();
         }
 
         return this.provider.subscribe(domainObject, callback);

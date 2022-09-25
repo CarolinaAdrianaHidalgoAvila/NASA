@@ -66,7 +66,7 @@ define([
     /**
      * @private
      */
-    DefaultCompositionProvider.prototype.supportsComposition = function (parent, child) {
+    DefaultCompositionProvider.prototype.supportsComposition = function (parent, _child) {
         return this.publicAPI.composition.supportsComposition(parent);
     };
 
@@ -89,8 +89,8 @@ define([
      * object.
      * @param {module:openmct.DomainObject} domainObject the domain object
      *        for which to load composition
-     * @returns {Promise.<Array.<module:openmct.Identifier>>} a promise for
-     *          the Identifiers in this composition
+     * @returns {Promise.<Array.<module:openmct.identifier>>} a promise for
+     *          the identifiers in this composition
      * @memberof module:openmct.CompositionProvider#
      * @method load
      */

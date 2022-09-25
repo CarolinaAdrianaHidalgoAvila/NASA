@@ -115,7 +115,7 @@ export default {
         },
         isInvalid() {
             return Object.entries(this.invalidProperties)
-                .some(([key, value]) => {
+                .some(([_key, value]) => {
                     return value;
                 });
         },

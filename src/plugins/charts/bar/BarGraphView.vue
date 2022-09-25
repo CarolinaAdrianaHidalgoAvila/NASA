@@ -206,7 +206,7 @@ export default {
             }
 
             let isInTrace = false;
-            const newTrace = this.trace.map((currentTrace, index) => {
+            const newTrace = this.trace.map((currentTrace, _index) => {
                 if (currentTrace.key !== key) {
                     return currentTrace;
                 }
@@ -253,7 +253,7 @@ export default {
             this.composition.on('remove', this.removeTelemetryObject);
             this.composition.load();
         },
-        refreshData(bounds, isTick) {
+        refreshData(_bounds, isTick) {
             if (!isTick) {
                 const telemetryObjects = Object.values(this.telemetryObjects);
                 telemetryObjects.forEach((telemetryObject) => {

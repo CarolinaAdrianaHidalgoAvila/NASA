@@ -181,7 +181,7 @@ export default {
             this.composition.on('remove', this.removeTelemetryObject);
             this.composition.load();
         },
-        reloadTelemetryOnBoundsChange(bounds, isTick) {
+        reloadTelemetryOnBoundsChange(_bounds, isTick) {
             if (!isTick) {
                 this.reloadTelemetry();
             }

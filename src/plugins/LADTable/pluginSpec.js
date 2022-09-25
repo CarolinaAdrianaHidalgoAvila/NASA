@@ -128,7 +128,7 @@ describe("The LAD Table", () => {
             }).not.toThrow();
         });
 
-        it("should reject non-telemtry producing objects", () => {
+        it("should _reject non-telemtry producing objects", () => {
             expect(() => {
                 ladTableCompositionCollection.add(mockObj.ladTable);
             }).toThrow();
@@ -324,7 +324,7 @@ describe("The LAD Table Set", () => {
             }).not.toThrow();
         });
 
-        it("should reject non lad table objects", () => {
+        it("should _reject non lad table objects", () => {
             expect(() => {
                 ladTableSetCompositionCollection.add(mockObj.telemetry);
             }).toThrow();

@@ -241,7 +241,7 @@ describe("GrandSearch", () => {
 
     it("should not use InMemorySearch provider if object provider provides search", async () => {
         // eslint-disable-next-line require-await
-        mockObjectProvider.search = async (query, abortSignal, searchType) => {
+        mockObjectProvider.search = async (_query, _abortSignal, searchType) => {
             if (searchType === openmct.objects.SEARCH_TYPES.OBJECTS) {
                 return mockNewObject;
             } else {
@@ -249,7 +249,7 @@ describe("GrandSearch", () => {
             }
         };
 
-        mockObjectProvider.supportsSearchType = (someType) => {
+        mockObjectProvider.supportsSearchType = (_someType) => {
             return true;
         };
 
