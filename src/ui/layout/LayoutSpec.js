@@ -49,7 +49,7 @@ describe('Open MCT Layout:', () => {
 
     describe('the pane:', () => {
         it('is displayed on layout load', async () => {
-            await createLayout();
+            createLayout();
             await Vue.nextTick();
 
             Object.entries(components).forEach(([name, component]) => {
@@ -66,7 +66,7 @@ describe('Open MCT Layout:', () => {
         it('is collapsed on layout load if specified by a hide param', async () => {
             setHideParams();
 
-            await createLayout();
+            createLayout();
             await Vue.nextTick();
 
             Object.entries(components).forEach(([name, component]) => {
@@ -77,7 +77,7 @@ describe('Open MCT Layout:', () => {
         });
 
         it('on toggle collapses if expanded', async () => {
-            await createLayout();
+            createLayout();
             toggleCollapseButtons();
             await Vue.nextTick();
 
@@ -95,7 +95,7 @@ describe('Open MCT Layout:', () => {
         it('on toggle expands if collapsed', async () => {
             setHideParams();
 
-            await createLayout();
+            createLayout();
             toggleExpandButtons();
             await Vue.nextTick();
 
@@ -111,12 +111,12 @@ describe('Open MCT Layout:', () => {
         });
     });
 
-    async function createLayout() {
+    function createLayout() {
         const el = document.createElement('div');
         const child = document.createElement('div');
         el.appendChild(child);
 
-        element = await new Vue({
+        element = new Vue({
             el,
             components: {
                 Layout

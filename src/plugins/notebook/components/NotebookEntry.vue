@@ -329,12 +329,7 @@ export default {
         },
         updateEmbed(newEmbed) {
             this.entry.embeds.some(e => {
-                const found = (e.id === newEmbed.id);
-                if (found) {
-                    e = newEmbed;
-                }
-
-                return found;
+                return e.id === newEmbed.id;
             });
 
             this.timestampAndUpdate();

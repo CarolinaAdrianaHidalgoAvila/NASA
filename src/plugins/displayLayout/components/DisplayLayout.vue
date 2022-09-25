@@ -462,11 +462,9 @@ export default {
             let keyString = this.openmct.objects.makeKeyString(item.identifier);
 
             if (item.type === "telemetry-view") {
-                let count = this.telemetryViewMap[keyString] || 0;
-                this.telemetryViewMap[keyString] = ++count;
+                this.telemetryViewMap[keyString] = this.telemetryViewMap[keyString] + 1;
             } else if (item.type === "subobject-view") {
-                let count = this.objectViewMap[keyString] || 0;
-                this.objectViewMap[keyString] = ++count;
+                this.objectViewMap[keyString] = this.objectViewMap[keyString] + 1;
             }
         },
         removeItem(selectedItems) {

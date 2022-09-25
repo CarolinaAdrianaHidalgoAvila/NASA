@@ -281,7 +281,7 @@ define([
         const ruleIds = Object.keys(this.rulesById);
 
         while (ruleIds.includes('rule' + ruleCount)) {
-            ruleCount = ++ruleCount;
+            ruleCount++;
         }
 
         ruleId = 'rule' + ruleCount;

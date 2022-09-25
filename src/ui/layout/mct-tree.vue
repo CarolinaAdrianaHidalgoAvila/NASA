@@ -822,7 +822,7 @@ export default {
             this.updatingView = true;
             requestAnimationFrame(() => {
                 let start = 0;
-                let end = this.pageThreshold;
+                let end;
                 let allItemsCount = this.focusedItems.length;
 
                 if (allItemsCount < this.pageThreshold) {
