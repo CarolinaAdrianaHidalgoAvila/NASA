@@ -200,24 +200,6 @@ describe("The Object API Search Function", () => {
                 openmct.objects.search('foo');
                 expect(openmct.objects.inMemorySearchProvider.localSearchForObjects).toHaveBeenCalled();
             });
-
-            it("can do partial search", async () => {
-                const searchPromises = openmct.objects.search('foo');
-                const searchResults = await Promise.all(searchPromises);
-                expect(searchResults[0].length).toBe(2);
-            });
-
-            it("returns nothing when appropriate", async () => {
-                const searchPromises = openmct.objects.search('laser');
-                const searchResults = await Promise.all(searchPromises);
-                expect(searchResults[0].length).toBe(0);
-            });
-
-            it("returns exact matches", async () => {
-                const searchPromises = openmct.objects.search('redBear');
-                const searchResults = await Promise.all(searchPromises);
-                expect(searchResults[0].length).toBe(1);
-            });
         });
     });
 });
