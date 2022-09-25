@@ -89,11 +89,7 @@ test.describe('Performance tests', () => {
     /  - ElementResourceTiming
     /  - Interaction Timing
     */
-<<<<<<< HEAD
     test('Notebook Search, Add Entry, Update Entry are performant', async ({ page}) => {
-=======
-    test('Notebook Search, Add Entry, Update Entry are performant', async ({ page, _browser }) => {
->>>>>>> 0b81ddb7faf98fba601b6df2f171df1e166e2b98
         const client = await page.context().newCDPSession(page);
         // Tell the DevTools session to record performance metrics
         // https://chromedevtools.github.io/devtools-protocol/tot/Performance/#method-getMetrics

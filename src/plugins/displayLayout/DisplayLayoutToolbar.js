@@ -531,7 +531,7 @@ define(['lodash'], function (_) {
                 }
 
                 function unitsOnly(items) {
-                    let results = items.filter((item) => {
+                    return items.filter((item) => {
                         let currentItem = item[0];
                         let metadata = openmct.telemetry.getMetadata(currentItem.context.item);
                         if (!metadata) {
@@ -545,8 +545,6 @@ define(['lodash'], function (_) {
 
                         return hasUnits > 0;
                     });
-
-                    return results;
                 }
 
                 function getViewSwitcherMenu(selectedParent, selectionPath, selection) {

@@ -144,23 +144,19 @@ describe('the inspector', () => {
     function getDetailsElements() {
         const inspectorDetailsSection = appHolder
             .querySelector(`${INSPECTOR_SELECTOR_PREFIX}section`);
-        const details = inspectorDetailsSection
+        return inspectorDetailsSection
             .querySelectorAll(`${INSPECTOR_SELECTOR_PREFIX}row`);
-
-        return details;
     }
 
     function getDetails() {
         const detailsElements = getDetailsElements();
-        const details = Array.from(detailsElements)
+        return Array.from(detailsElements)
             .map(element => {
                 return {
                     name: getText(element, 'label'),
                     value: getText(element, 'value')
                 };
             });
-
-        return details;
     }
 
     function getText(element, selectorSuffix) {

@@ -94,11 +94,7 @@ test.describe('Performance tests', () => {
     /  - ElementResourceTiming
     /  - Interaction Timing
     */
-<<<<<<< HEAD
     test('Embedded View Large for Imagery is performant in Fixed Time', async ({ page }) => {
-=======
-    test('Embedded View Large for Imagery is performant in Fixed Time', async ({ page, _browser }) => {
->>>>>>> 0b81ddb7faf98fba601b6df2f171df1e166e2b98
         const client = await page.context().newCDPSession(page);
         // Tell the DevTools session to record performance metrics
         // https://chromedevtools.github.io/devtools-protocol/tot/Performance/#method-getMetrics

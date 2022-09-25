@@ -99,9 +99,7 @@
         });
         tagsToRemoveFromIndex.forEach(tagToRemoveFromIndex => {
             indexedAnnotationsByTag[tagToRemoveFromIndex] = indexedAnnotationsByTag[tagToRemoveFromIndex].filter(indexedAnnotation => {
-                const shouldKeep = indexedAnnotation.keyString !== keyString;
-
-                return shouldKeep;
+                return indexedAnnotation.keyString !== keyString;
             });
         });
     }

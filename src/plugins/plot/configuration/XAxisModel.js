@@ -98,7 +98,7 @@ export default class XAxisModel extends Model {
         const format = options.openmct.telemetry.getFormatter(timeSystem.timeFormat);
 
         /** @type {XAxisModelType} */
-        const defaultModel = {
+        return {
             name: timeSystem.name,
             key: timeSystem.key,
             format: format.format.bind(format),
@@ -108,8 +108,6 @@ export default class XAxisModel extends Model {
             },
             frozen: false
         };
-
-        return defaultModel;
     }
 }
 

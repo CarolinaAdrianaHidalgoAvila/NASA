@@ -417,15 +417,13 @@ export default {
             const imageHeightAndWidth = this.sizedImageHeight !== 0
                 && this.sizedImageWidth !== 0;
 
-            const display = this.focusedImage !== undefined
+          return this.focusedImage !== undefined
                 && this.focusedImageNaturalAspectRatio !== undefined
                 && this.imageContainerWidth !== undefined
                 && this.imageContainerHeight !== undefined
                 && imageHeightAndWidth
                 && this.zoomFactor === 1
                 && this.imagePanned !== true;
-
-            return display;
         },
         isSpacecraftPositionFresh() {
             let isFresh = undefined;

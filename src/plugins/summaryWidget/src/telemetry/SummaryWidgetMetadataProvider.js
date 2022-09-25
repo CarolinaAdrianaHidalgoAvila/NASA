@@ -60,7 +60,7 @@ define([
                 };
             });
 
-        const metadata = {
+        return {
             // Generally safe assumption is that we have one domain per timeSystem.
             values: this.getDomains().concat([
                 {
@@ -110,8 +110,6 @@ define([
                 }
             ])
         };
-
-        return metadata;
     };
 
     return SummaryWidgetMetadataProvider;

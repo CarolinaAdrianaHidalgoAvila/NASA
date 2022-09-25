@@ -20,9 +20,7 @@ export default {
                 return '#' + this.navigateToPath;
             }
 
-            let url = objectPathToUrl(this.openmct, this.objectPath);
-
-            return url;
+            return objectPathToUrl(this.openmct, this.objectPath);
         }
     }
 };

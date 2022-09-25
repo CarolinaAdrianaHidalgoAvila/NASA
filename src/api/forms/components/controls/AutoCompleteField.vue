@@ -108,7 +108,7 @@ export default {
         filteredOptions() {
             const fullOptions = this.options || [];
             if (this.showFilteredOptions) {
-                const optionsFiltered = fullOptions
+                return fullOptions
                     .filter(option => {
                         if (option.name && this.field) {
                             return option.name.toLowerCase().indexOf(this.field.toLowerCase()) >= 0;
@@ -122,19 +122,15 @@ export default {
                             color: option.color
                         };
                     });
-
-                return optionsFiltered;
             }
 
-            const optionsFiltered = fullOptions.map((option, index) => {
+            return fullOptions.map((option, index) => {
                 return {
                     optionId: index,
                     name: option.name,
                     color: option.color
                 };
             });
-
-            return optionsFiltered;
         }
     },
     watch: {
