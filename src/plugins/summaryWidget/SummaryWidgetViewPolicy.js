@@ -31,6 +31,7 @@ define([
      * any view other than normal summary widget view.
      */
     function SummaryWidgetViewPolicy() {
+        //This is intentional
     }
 
     SummaryWidgetViewPolicy.prototype.allow = function (view, domainObject) {

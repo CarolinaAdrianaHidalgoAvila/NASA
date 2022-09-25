@@ -74,7 +74,7 @@ define([
         };
 
     function SinewaveLimitProvider() {
-
+         //This is intentional
     }
 
     SinewaveLimitProvider.prototype.supportsLimits = function (domainObject) {

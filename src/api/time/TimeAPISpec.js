@@ -158,11 +158,6 @@ describe("The Time API", function () {
         expect(api.timeOfInterest()).toBeUndefined();
     });
 
-    it("Maintains delta during tick", function () {
-    });
-
-    it("Allows registered time system to be activated", function () {
-    });
 
     it("Allows a registered tick source to be activated", function () {
         const mockTickSource = jasmine.createSpyObj("mockTickSource", [

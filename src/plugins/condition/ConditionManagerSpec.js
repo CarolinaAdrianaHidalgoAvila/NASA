@@ -135,8 +135,11 @@ describe('ConditionManager', () => {
             resolve(mockDefaultCondition);
         }));
         openmct.objects.makeKeyString.and.returnValue(conditionSetDomainObject.identifier.key);
-        openmct.objects.observe.and.returnValue(function () {});
-        openmct.objects.mutate.and.returnValue(function () {});
+        openmct.objects.observe.and.returnValue(function () {//This is intentional
+        });
+        openmct.objects.mutate.and.returnValue(function () {
+            //This is intentional
+        });
 
         mockTimeSystems = {
             key: 'utc'

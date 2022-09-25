@@ -27,7 +27,7 @@ define([
 ) {
 
     function StateGeneratorProvider() {
-
+         //This is intentional
     }
 
     function pointForTimestamp(timestamp, duration, name) {

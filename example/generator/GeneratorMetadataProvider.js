@@ -130,7 +130,7 @@ define([
     };
 
     function GeneratorMetadataProvider() {
-
+        //This is intentional
     }
 
     GeneratorMetadataProvider.prototype.supportsMetadata = function (domainObject) {
