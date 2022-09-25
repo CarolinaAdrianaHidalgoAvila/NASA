@@ -188,9 +188,7 @@ class InMemorySearchProvider {
         modelResults.hits = await Promise.all(event.data.results.map(async (hit) => {
             if (hit && hit.keyString) {
                 const identifier = this.openmct.objects.parseKeyString(hit.keyString);
-                const domainObject = await this.openmct.objects.get(identifier);
-
-                return domainObject;
+                return this.openmct.objects.get(identifier);
             }
         }));
 
@@ -437,9 +435,7 @@ class InMemorySearchProvider {
         });
         tagsToRemoveFromIndex.forEach(tagToRemoveFromIndex => {
             this.localIndexedAnnotationsByTag[tagToRemoveFromIndex] = this.localIndexedAnnotationsByTag[tagToRemoveFromIndex].filter(indexedAnnotation => {
-                const shouldKeep = indexedAnnotation.keyString !== keyString;
-
-                return shouldKeep;
+                return indexedAnnotation.keyString !== keyString;
             });
         });
     }

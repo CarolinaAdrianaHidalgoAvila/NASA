@@ -425,9 +425,7 @@ async function performImageryViewOperationsAndAssert(page) {
     // The imagery view should be updated when new images come in
     const imageCount = await page.locator('.c-imagery__thumb').count();
     await expect.poll(async () => {
-        const newImageCount = await page.locator('.c-imagery__thumb').count();
-
-        return newImageCount;
+        return page.locator('.c-imagery__thumb').count();
     }, {
         message: "verify that old images are discarded",
         timeout: 7 * 1000

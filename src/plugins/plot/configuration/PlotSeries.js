@@ -326,9 +326,7 @@ export default class PlotSeries extends Model {
         const highDistance = highPoint
             ? this.getXVal(highPoint) - indexVal
             : Number.POSITIVE_INFINITY;
-        const nearestPoint = highDistance < lowDistance ? highPoint : lowPoint;
-
-        return nearestPoint;
+        return highDistance < lowDistance ? highPoint : lowPoint;
     }
     /**
      * Override this to implement plot series loading functionality.  Must return

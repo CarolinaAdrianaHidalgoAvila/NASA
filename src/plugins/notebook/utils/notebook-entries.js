@@ -160,9 +160,7 @@ export function getNotebookEntries(domainObject, selectedSection, selectedPage) 
         return;
     }
 
-    const specificEntries = entries[selectedSection.id][selectedPage.id];
-
-    return specificEntries;
+    return entries[selectedSection.id][selectedPage.id];
 }
 
 export function getEntryPosById(entryId, domainObject, selectedSection, selectedPage) {

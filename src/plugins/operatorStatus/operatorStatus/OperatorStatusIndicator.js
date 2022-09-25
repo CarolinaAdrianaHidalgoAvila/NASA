@@ -27,7 +27,7 @@ import OperatorStatusComponent from './OperatorStatus.vue';
 export default class OperatorStatusIndicator extends AbstractStatusIndicator {
     createPopupComponent() {
         const indicator = this.getIndicator();
-        const popupElement = new Vue({
+        return new Vue({
             components: {
                 OperatorStatus: OperatorStatusComponent
             },
@@ -44,8 +44,6 @@ export default class OperatorStatusIndicator extends AbstractStatusIndicator {
             },
             template: '<operator-status :positionX="positionX" :positionY="positionY" />'
         }).$mount();
-
-        return popupElement;
     }
 
     createIndicator() {

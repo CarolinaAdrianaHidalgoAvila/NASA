@@ -89,9 +89,7 @@ export default {
             return this.mode + 'History';
         },
         historyForCurrentTimeSystem() {
-            const history = this[this.currentHistory][this.timeSystem.key];
-
-            return history;
+            return this[this.currentHistory][this.timeSystem.key];
         },
         storageKey() {
             let key = LOCAL_STORAGE_HISTORY_KEY_FIXED;
@@ -246,15 +244,11 @@ export default {
             const configuration = configurations.find(option => {
                 return option.presets && option.name.toLowerCase() === this.mode;
             });
-            const presets = configuration ? configuration.presets : [];
-
-            return presets;
+            return configuration ? configuration.presets : [];
         },
         loadRecords(configurations) {
             const configuration = configurations.find(option => option.records);
-            const maxRecordsLength = configuration ? configuration.records : DEFAULT_RECORDS_LENGTH;
-
-            return maxRecordsLength;
+            return configuration ? configuration.records : DEFAULT_RECORDS_LENGTH;
         },
         formatTime(time) {
             let format = this.timeSystem.timeFormat;

@@ -259,9 +259,7 @@ export default {
                 .filter(option => option.timeSystem === this.timeSystem.key)
                 .find(option => option.limit);
 
-            const limit = configuration ? configuration.limit : undefined;
-
-            return limit;
+            return configuration ? configuration.limit : undefined;
         },
         handleValidationResults(input, validationResult) {
             if (validationResult.valid !== true) {

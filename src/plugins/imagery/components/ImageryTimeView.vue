@@ -169,9 +169,7 @@ export default {
             const metadata = this.openmct.telemetry.getMetadata(this.domainObject);
 
             let metadataValue = metadata.value(key) || { format: key };
-            let valueFormatter = this.openmct.telemetry.getValueFormatter(metadataValue);
-
-            return valueFormatter;
+            return this.openmct.telemetry.getValueFormatter(metadataValue);
         },
         updatePlotImagery(clearAllImagery) {
             this.clearPreviousImagery(clearAllImagery);
