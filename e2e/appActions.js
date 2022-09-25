@@ -178,11 +178,9 @@ async function openObjectTreeContextMenu(page, url) {
  */
 async function getFocusedObjectUuid(page) {
     const UUIDv4Regexp = /[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}/gi;
-    const focusedObjectUuid = await page.evaluate((regexp) => {
+    return page.evaluate((regexp) => {
         return window.location.href.split('?')[0].match(regexp).at(-1);
     }, UUIDv4Regexp);
-
-    return focusedObjectUuid;
 }
 
 /**
@@ -196,7 +194,7 @@ async function getFocusedObjectUuid(page) {
  * @returns {Promise<string>} the url of the object
  */
 async function getHashUrlToDomainObject(page, uuid) {
-    const hashUrl = await page.evaluate(async (objectUuid) => {
+        return page.evaluate(async (objectUuid) => {
         const path = await window.openmct.objects.getOriginalPath(objectUuid);
         let url = './#/browse/' + [...path].reverse()
             .map((object) => window.openmct.objects.makeKeyString(object.identifier))
@@ -206,11 +204,7 @@ async function getHashUrlToDomainObject(page, uuid) {
         if (url.includes('/ROOT')) {
             url = url.split('/ROOT').join('');
         }
-
-        return url;
     }, uuid);
-
-    return hashUrl;
 }
 
 /**
@@ -222,7 +216,7 @@ async function getHashUrlToDomainObject(page, uuid) {
  */
 async function _isInEditMode(page, identifier) {
     // eslint-disable-next-line no-return-await
-    return await page.evaluate((objectIdentifier) => window.openmct.objects.isTransactionActive(objectIdentifier), identifier);
+    return page.evaluate((objectIdentifier) => window.openmct.objects.isTransactionActive(objectIdentifier), identifier);
 }
 
 /**
