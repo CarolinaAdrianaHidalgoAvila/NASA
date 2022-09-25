@@ -45,6 +45,7 @@ export default function (configuration) {
                 }
             ],
             initialize: function (domainObject) {
+                // This is intentional
             }
         });
         openmct.objectViews.addProvider(new PlanViewProvider(openmct));

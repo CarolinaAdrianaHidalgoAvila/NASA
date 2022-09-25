@@ -125,6 +125,7 @@ export default {
         }
     },
     mounted() {
+    // This is intentional
     },
     methods: {
         getAvailableTagByID(tagID) {

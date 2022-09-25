@@ -78,6 +78,7 @@ describe('The ActionCollection', () => {
                     return false;
                 },
                 invoke: () => {
+                    // This is intentional
                 }
             },
             'test-action-view': {
@@ -98,6 +99,7 @@ describe('The ActionCollection', () => {
                     return false;
                 },
                 invoke: () => {
+                    // This is intentional
                 }
             }
         };

@@ -50,6 +50,7 @@ describe('The Actions API', () => {
                 return false;
             },
             invoke: () => {
+                // This is intentional
             }
         };
         mockAction = {
@@ -69,6 +70,7 @@ describe('The Actions API', () => {
                 return false;
             },
             invoke: () => {
+                // This is intentional
             }
         };
         mockObjectPath = [

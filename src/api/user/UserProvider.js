@@ -23,14 +23,17 @@ export default class UserProvider {
     /**
      * @returns {Promise<User>} A promise that resolves with the currently logged in user
      */
-    getCurrentUser() {}
+    getCurrentUser() {// This is intentiona1
+    }
     /**
      * @returns {Boolean} true if a user is currently logged in, otherwise false
      */
-    isLoggedIn() {}
+    isLoggedIn() {// This is intentional2
+    }
     /**
     * @param {String} role
     * @returns {Promise<Boolean>} true if the current user has the given role
     */
-    hasRole(role) {}
+    hasRole(_role) {// This is intentional3
+    }
 }

@@ -54,7 +54,8 @@ export default {
         offsets: {
             type: Object,
             required: false,
-            default: () => {}
+            default: () => {// This is intentional
+            }
         },
         timeSystem: {
             type: Object,
@@ -168,7 +169,9 @@ export default {
                 description: 'Past timeframes, ordered by latest first',
                 isDisabled: true,
                 name: 'Past timeframes, ordered by latest first',
-                onItemClicked: () => {}
+                onItemClicked: () => {
+                // This is intentional
+                }
             });
 
             return history;

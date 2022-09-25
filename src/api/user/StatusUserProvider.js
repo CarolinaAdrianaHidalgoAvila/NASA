@@ -26,56 +26,68 @@ export default class StatusUserProvider extends UserProvider {
      * @param {('statusChange'|'pollQuestionChange')} event the name of the event to listen to
      * @param {Function} callback a function to invoke when this event occurs
      */
-    on(event, callback) {}
+    on(_event, _callback) { // This is intentional12
+    }
     /**
      * @param {('statusChange'|'pollQuestionChange')} event the name of the event to stop listen to
      * @param {Function} callback the callback function used to register the listener
      */
-    off(event, callback) {}
+    off(_event, _callback) { // This is intentional11
+    }
     /**
      * @returns {import("./StatusAPI").PollQuestion} the current status poll question
      */
-    async getPollQuestion() {}
+    async getPollQuestion() { // This is intentional10
+    }
     /**
      * @param {import("./StatusAPI").PollQuestion} pollQuestion a new poll question to set
      * @returns {Promise<Boolean>} true if operation was successful, otherwise false
      */
-    async setPollQuestion(pollQuestion) {}
+    async setPollQuestion(_pollQuestion) { // This is intentional9
+    }
     /**
      * @returns {Promise<Boolean>} true if the current user can set the poll question, otherwise false
      */
-    async canSetPollQuestion() {}
+    async canSetPollQuestion() { // This is intentional8
+    }
     /**
      * @returns {Promise<Array<import("./StatusAPI").Status>>} a list of the possible statuses that an operator can be in
      */
-    async getPossibleStatuses() {}
+    async getPossibleStatuses() { // This is intentional7
+    }
     /**
      * @param {import("./UserAPI").Role} role
      * @returns {Promise<import("./StatusAPI").Status}
      */
-    async getStatusForRole(role) {}
+    async getStatusForRole(_role) { // This is intentional6
+    }
     /**
      * @param {import("./UserAPI").Role} role
      * @returns {Promise<import("./StatusAPI").Status}
      */
-    async getDefaultStatusForRole(role) {}
+    async getDefaultStatusForRole(_role) { // This is intentional5
+    }
     /**
      * @param {import("./UserAPI").Role} role
      * @param {*} status
      * @returns {Promise<Boolean>} true if operation was successful, otherwise false.
      */
-    async setStatusForRole(role, status) {}
+    async setStatusForRole(_role, _status) { // This is intentional4
+    }
     /**
      * @param {import("./UserAPI").Role} role
      * @returns {Promise<Boolean} true if the user provider can provide status for the given role
      */
-    async canProvideStatusForRole(role) {}
+    async canProvideStatusForRole(_role) { // This is intentional3
+    }
     /**
      * @returns {Promise<Array<import("./UserAPI").Role>>} a list of all available status roles, if user permissions allow it.
      */
-    async getAllStatusRoles() {}
+    async getAllStatusRoles() { // This is intentional2
+    }
     /**
      * @returns {Promise<import("./UserAPI").Role>} the active status role for the currently logged in user
      */
-    async getStatusRoleForCurrentUser() {}
+    async getStatusRoleForCurrentUser() { // This is intentional1
+    }
 }

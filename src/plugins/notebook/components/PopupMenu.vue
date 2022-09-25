@@ -33,6 +33,7 @@ export default {
         };
     },
     mounted() {
+    // This is intentional
     },
     methods: {
         calculateMenuPosition(event, element) {
