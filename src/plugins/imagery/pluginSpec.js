@@ -83,7 +83,6 @@ describe("The Imagery View Layouts", () => {
     let originalRouterPath;
     let telemetryPromise;
     let telemetryPromiseResolve;
-    let cleanupFirst;
 
     let openmct;
     let parent;
@@ -158,7 +157,6 @@ describe("The Imagery View Layouts", () => {
 
     // this setups up the app
     beforeEach((done) => {
-        cleanupFirst = [];
 
         openmct = createOpenMct();
 
@@ -210,8 +208,6 @@ describe("The Imagery View Layouts", () => {
         // teardown, which causes problems
         // This is hacky, we should find a better approach here.
         setTimeout(() => {
-            //Cleanup code that needs to happen before dom elements start being destroyed
-            cleanupFirst = [];
             document.body.removeChild(parent);
 
             resetApplicationState(openmct).then(done).catch(done);
