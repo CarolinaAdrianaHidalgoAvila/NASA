@@ -39,7 +39,9 @@ export default class RemoveAction {
             if (this.inNavigationPath(object)) {
                 this.navigateTo(objectPath.slice(1));
             }
-        }).catch(() => {});
+        }).catch(() => {
+            //this is intencional
+        });
     }
 
     showConfirmDialog(object) {

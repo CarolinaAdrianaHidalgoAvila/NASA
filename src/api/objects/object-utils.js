@@ -62,7 +62,7 @@ define([
         let key = keyString;
         for (let i = 0; i < key.length; i++) {
             if (key[i] === "\\" && key[i + 1] === ":") {
-                i++; // skip escape character.
+                i++; // skip escape character
             } else if (key[i] === ":") {
                 key = key.slice(i + 1);
                 break;

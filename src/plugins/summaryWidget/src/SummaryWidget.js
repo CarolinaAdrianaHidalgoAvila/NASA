@@ -62,7 +62,9 @@ define([
 
         this.editing = false;
         this.container = '';
-        this.editListenerUnsubscribe = () => {};
+        this.editListenerUnsubscribe = () => {
+            //this is intencional
+        };
 
         this.outerWrapper = this.domElement.querySelector('.widget-edit-holder');
         this.ruleArea = this.domElement.querySelector('#ruleArea');

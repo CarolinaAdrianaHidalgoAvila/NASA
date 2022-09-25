@@ -239,7 +239,9 @@ describe("The Object API", () => {
                 callbacks[0](updatedTestObject);
                 callbacks.splice(0, 1);
 
-                return () => {};
+                return () => {
+                    //this is intencional
+                };
             });
             mockProvider.observe.and.callFake((id, callback) => {
                 if (callbacks.length === 0) {
@@ -248,7 +250,9 @@ describe("The Object API", () => {
                     callbacks[0] = callback;
                 }
 
-                return () => {};
+                return () => {
+                    //this is intencional
+                };
             });
 
             objectAPI.addProvider(TEST_NAMESPACE, mockProvider);

@@ -152,7 +152,9 @@ ${font}`;
                 .then(() => {
                     this.$emit('delete-style');
                 })
-                .catch(() => {});
+                .catch(() => {
+                    //this is intencional
+                });
         },
         showDeleteStyleDialog(style) {
             const message = `

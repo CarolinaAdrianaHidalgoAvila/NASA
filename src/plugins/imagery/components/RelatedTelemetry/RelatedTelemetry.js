@@ -117,7 +117,9 @@ export default class RelatedTelemetry {
                     this[key].listeners.remove(callback);
                 };
             } else {
-                return () => {};
+                return () => {
+                    //this is intencional
+                };
             }
         };
     }

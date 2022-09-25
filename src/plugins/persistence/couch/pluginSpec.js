@@ -178,6 +178,7 @@ describe('the plugin', () => {
             mockDomainObject.modified = mockDomainObject.persisted + 1;
             const updatedResult = await openmct.objects.save(mockDomainObject);
             openmct.objects.observe(mockDomainObject, '*', (updatedObject) => {
+                //this is intencional
             });
 
             expect(updatedResult).toBeTrue();

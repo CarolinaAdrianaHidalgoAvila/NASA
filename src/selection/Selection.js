@@ -227,7 +227,9 @@ define(
          */
         Selection.prototype.selectable = function (element, context, select) {
             if (!this.isSelectable(element)) {
-                return () => {};
+                return () => {
+                    //this is intencional
+                };
             }
 
             let selectable = {
