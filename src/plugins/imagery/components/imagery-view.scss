@@ -11,6 +11,27 @@
 }
 
 .c-imagery {
+    .h-local-controls--overlay-content {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: $interiorMargin; top: $interiorMargin;
+        z-index: 70;
+        background: $colorLocalControlOvrBg;
+        border-radius: $basicCr;
+        align-items: center;
+        padding: $interiorMargin $interiorMargin;
+
+        .s-status-taking-snapshot & {
+            display: none;
+        }
+    }
+    [class*='--menus-aligned'] {
+        > * + * {
+            button { margin-left: $interiorMarginSm; }
+        }
+    }
+
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -299,28 +320,7 @@
 }
 
 /*************************************** IMAGERY LOCAL CONTROLS*/
-.c-imagery {
-    .h-local-controls--overlay-content {
-        display: flex;
-        flex-direction: row;
-        position: absolute;
-        left: $interiorMargin; top: $interiorMargin;
-        z-index: 70;
-        background: $colorLocalControlOvrBg;
-        border-radius: $basicCr;
-        align-items: center;
-        padding: $interiorMargin $interiorMargin;
 
-        .s-status-taking-snapshot & {
-            display: none;
-        }
-    }
-    [class*='--menus-aligned'] {
-        > * + * {
-            button { margin-left: $interiorMarginSm; }
-        }
-    }
-}
 
 .c-image-controls {
     &__controls-wrapper {

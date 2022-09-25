@@ -17,14 +17,14 @@ export default function OverlayPlotCompositionPolicy(openmct) {
 
     return {
         allow: function (parent, child) {
-            const success=true;
+            let ans=true;
 
             if (parent.type === 'telemetry.plot.overlay'
                 && (hasNumericTelemetry(child) === false)) {
-                success=false;
+                ans=false;
             }
 
-            return success;
+            return ans;
         }
     };
 }

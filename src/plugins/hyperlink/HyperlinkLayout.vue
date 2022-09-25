@@ -42,12 +42,12 @@ export default {
     inject: ['domainObject'],
     computed: {
         isButton() {
-            const success= true;
+            let ans= true;
             if (this.domainObject.displayFormat === "link") {
-                success=false;
+                ans=false;
             }
 
-            return success;
+            return ans;
         },
         url() {
             return sanitizeUrl(this.domainObject.url);

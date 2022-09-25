@@ -23,12 +23,12 @@
 export default function ConditionSetCompositionPolicy(openmct) {
     return {
         allow: function (parent, child) {
-            const success = true;
+            let ans = true;
             if (parent.type === 'conditionSet' && !openmct.telemetry.isTelemetryObject(child)) {
-                success=false;
+                ans=false;
             }
 
-            return success;
+            return ans;
         }
     };
 }

@@ -17,14 +17,15 @@ export default function StackedPlotCompositionPolicy(openmct) {
 
     return {
         allow: function (parent, child) {
+            let ans=true;
 
             if ((parent.type === 'telemetry.plot.stacked')
                 && ((child.type !== 'telemetry.plot.overlay') && (hasNumericTelemetry(child) === false))
             ) {
-                return false;
+                ans=false;
             }
 
-            return true;
+            return ans;
         }
     };
 }

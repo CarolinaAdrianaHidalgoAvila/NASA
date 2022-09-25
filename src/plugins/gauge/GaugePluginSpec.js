@@ -75,12 +75,6 @@ describe('Gauge plugin', () => {
         expect(GaugeType.definition.creatable).toBeTrue();
     });
 
-    it('Gauge plugin is creatable', () => {
-        const GaugeType = openmct.types.get('gauge');
-
-        expect(GaugeType.definition.creatable).toBeTrue();
-    });
-
     it('Gauge form controller', () => {
         const gaugeController = openmct.forms.getFormControl('gauge-controller');
         expect(gaugeController).toBeDefined();
@@ -163,7 +157,7 @@ describe('Gauge plugin', () => {
             });
             spyOn(openmct.telemetry, 'getFormatMap').and.returnValue({
                 sin: {
-                    format: (datum) => {
+                    format: (_datum) => {
                         return randomValue;
                     }
                 }
@@ -301,7 +295,7 @@ describe('Gauge plugin', () => {
             });
             spyOn(openmct.telemetry, 'getFormatMap').and.returnValue({
                 sin: {
-                    format: (datum) => {
+                    format: (_datum) => {
                         return randomValue;
                     }
                 }

@@ -52,8 +52,6 @@ export function getHistoricLinkInFixedMode(openmct, bounds, historicLink) {
     openmct.time.getAllClocks().forEach(clock => {
         if (historicLink.includes(`tc.mode=${clock.key}`)) {
             historicLink.replace(`tc.mode=${clock.key}`, 'tc.mode=fixed');
-
-            return;
         }
     });
 

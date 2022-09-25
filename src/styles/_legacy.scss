@@ -146,10 +146,7 @@
     }
 }
 
-.widget-edit-holder {
-    // Hide edit area when in browse mode
-    display: none;
-}
+
 
 .widget-rule-header {
     display: flex;
@@ -176,9 +173,7 @@
     pointer-events: none;
 }
 
-.widget-rules-wrapper {
-    flex: 1 1 auto !important;
-}
+
 
 .widget-rule-content.expanded {
     overflow: visible !important;
@@ -325,6 +320,7 @@
 
 .widget-edit-holder {
     font-size: 0.8rem;
+    display: none
 }
 
 .widget-rules-wrapper {
@@ -332,6 +328,7 @@
     box-sizing: border-box;
     overflow-y: scroll;
     padding-right: $interiorMargin;
+    flex: 1 1 auto !important;
 }
 
 .l-widget-rule,
