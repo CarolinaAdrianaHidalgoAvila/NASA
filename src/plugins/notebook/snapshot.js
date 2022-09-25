@@ -107,7 +107,9 @@ export default class Snapshot {
 
     _navigateToNotebook(url = null) {
         if (!url) {
-            return () => {};
+            return () => {
+                //this is intencional
+            };
         }
 
         return () => {
