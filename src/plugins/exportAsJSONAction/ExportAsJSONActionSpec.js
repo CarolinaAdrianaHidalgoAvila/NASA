@@ -295,18 +295,6 @@ describe('Export as JSON plugin', () => {
             persisted: 1503598132428
         };
 
-        spyOn(openmct.composition, 'get').and.callFake(object => {
-            return {
-                load: () => {
-                    if (object.name === 'Parent') {
-                        return Promise.resolve([child]);
-                    }
-
-                    return Promise.resolve([]);
-                }
-            };
-        });
-
         spyOn(exportAsJSONAction, '_saveAs').and.callFake(completedTree => {
             expect(Object.keys(completedTree).length).toBe(2);
             expect(Object.prototype.hasOwnProperty.call(completedTree, 'openmct')).toBeTruthy();

@@ -32,7 +32,7 @@ export default class CreateWizard {
         this.properties = this.type.definition.form || [];
     }
 
-    addNotes(sections) {
+    addNotes(sectionsNotes) {
         const row = {
             control: 'textarea',
             cssClass: 'l-input-lg',
@@ -42,7 +42,7 @@ export default class CreateWizard {
             value: this.domainObject.notes
         };
 
-        sections.forEach(section => {
+        sectionsNotes.forEach(section => {
             if (section.name !== 'Properties') {
                 return;
             }
@@ -51,7 +51,7 @@ export default class CreateWizard {
         });
     }
 
-    addTitle(sections) {
+    addTitle(sectionsTitle) {
         const row = {
             control: 'textfield',
             cssClass: 'l-input-lg',
@@ -62,7 +62,7 @@ export default class CreateWizard {
             value: this.domainObject.name
         };
 
-        sections.forEach(section => {
+        sectionsTitle.forEach(section => {
             if (section.name !== 'Properties') {
                 return;
             }
