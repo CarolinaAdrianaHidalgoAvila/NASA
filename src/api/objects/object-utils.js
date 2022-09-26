@@ -57,19 +57,17 @@ define([
         if (isidentifier(keyString)) {
             return keyString;
         }
-        
+
         let namespace = '';
         let key = keyString;
         let skipEscapeCharCount = 0;
         for (let i = 0; i < key.length; i = i + 1 + skipEscapeCharCount) {
             if (key[i] === "\\" && key[i + 1] === ":") {
-                skipEscapeCharCount++
+                skipEscapeCharCount = 1
             } else if (key[i] === ":") {
-                skipEscapeCharCount--
                 key = key.slice(i + 1);
                 break;
             }
-
             namespace += key[i];
         }
 

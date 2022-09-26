@@ -125,7 +125,7 @@ describe('ConditionManager', () => {
         openmct.composition.get.and.returnValue(mockComposition);
 
         openmct.objects = jasmine.createSpyObj('objects', ['get', 'makeKeyString', 'observe', 'mutate']);
-        openmct.objects.get.and.returnValues(new Promise(function (resolve, _reject) {
+        /*openmct.objects.get.and.returnValues(new Promise(function (resolve, _reject) {
             resolve(conditionSetDomainObject);
         }), new Promise(function (resolve, _reject) {
             resolve(mockCondition1);
@@ -133,12 +133,16 @@ describe('ConditionManager', () => {
             resolve(mockCondition2);
         }), new Promise(function (resolve, _reject) {
             resolve(mockDefaultCondition);
-        }));
+        }));*/
+        openmct.objects.get.and.returnValues(
+        Promise.resolve(conditionSetDomainObject),
+        Promise.resolve(mockCondition1),
+        Promise.resolve(mockCondition2),
+        Promise.resolve(mockDefaultCondition) );
         openmct.objects.makeKeyString.and.returnValue(conditionSetDomainObject.identifier.key);
         openmct.objects.observe.and.returnValue(function () {//This is intentional
         });
-        openmct.objects.mutate.and.returnValue(function () {
-            //This is intentional
+        openmct.objects.mutate.and.returnValue(function () { //This is intentional
         });
 
         mockTimeSystems = {
