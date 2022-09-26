@@ -63,7 +63,7 @@ const faultManagementProvider = {
     request() {
         return Promise.resolve([aFault]);
     },
-    subscribe(domainObject, callback) {
+    subscribe(_domainObject, _callback) {
         return () => {
             //this is intencional
         };
@@ -87,7 +87,6 @@ describe('The Fault Management API', () => {
     beforeEach(() => {
         openmct = createOpenMct();
         openmct.install(openmct.plugins.FaultManagement());
-        // openmct.install(openmct.plugins.example.ExampleFaultSource());
         openmct.faults.addProvider(faultManagementProvider);
     });
 

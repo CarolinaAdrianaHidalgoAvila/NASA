@@ -125,15 +125,6 @@ describe('ConditionManager', () => {
         openmct.composition.get.and.returnValue(mockComposition);
 
         openmct.objects = jasmine.createSpyObj('objects', ['get', 'makeKeyString', 'observe', 'mutate']);
-        /*openmct.objects.get.and.returnValues(new Promise(function (resolve, _reject) {
-            resolve(conditionSetDomainObject);
-        }), new Promise(function (resolve, _reject) {
-            resolve(mockCondition1);
-        }), new Promise(function (resolve, _reject) {
-            resolve(mockCondition2);
-        }), new Promise(function (resolve, _reject) {
-            resolve(mockDefaultCondition);
-        }));*/
         openmct.objects.get.and.returnValues(
         Promise.resolve(conditionSetDomainObject),
         Promise.resolve(mockCondition1),

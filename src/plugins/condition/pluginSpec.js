@@ -961,10 +961,6 @@ describe('the plugin', function () {
                 }
             };
             openmct.$injector = jasmine.createSpyObj('$injector', ['get']);
-            // const mockTransactionService = jasmine.createSpyObj(
-            //     'transactionService',
-            //     ['commit']
-            // );
             openmct.telemetry = jasmine.createSpyObj('telemetry', ['isTelemetryObject', "subscribe", "getMetadata", "getValueFormatter", "request"]);
             openmct.telemetry.isTelemetryObject.and.returnValue(true);
             openmct.telemetry.subscribe.and.returnValue(function () {});
