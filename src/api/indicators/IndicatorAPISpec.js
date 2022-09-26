@@ -38,10 +38,11 @@ describe("The Indicator API", () => {
         element.classList.add(className);
         const textNode = document.createTextNode(label);
         element.appendChild(textNode);
-        return testIndicator = {
+        let testIndicator = {
             element,
             priority
         };
+        return testIndicator;
 
     }
 

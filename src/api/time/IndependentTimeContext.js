@@ -105,12 +105,12 @@ class IndependentTimeContext extends TimeContext {
             if (typeof keyOrClock === 'string') {
                 clock = this.globalTimeContext.clocks.get(keyOrClock);
                 if (clock === undefined) {
-                    throw "Unknown clock '" + keyOrClock + "'. Has it been registered with 'addClock'?";
+                    throw new Error ( "Unknown clock '" + keyOrClock + "'. Has it been registered with 'addClock'?");
                 }
             } else if (typeof keyOrClock === 'object') {
                 clock = keyOrClock;
                 if (!this.globalTimeContext.clocks.has(clock.key)) {
-                    throw "Unknown clock '" + keyOrClock.key + "'. Has it been registered with 'addClock'?";
+                    throw new Error ("Unknown clock '" + keyOrClock.key + "'. Has it been registered with 'addClock'?");
                 }
             }
 
@@ -136,7 +136,7 @@ class IndependentTimeContext extends TimeContext {
             }
 
         } else if (arguments.length === 1) {
-            throw "When setting the clock, clock offsets must also be provided";
+            throw new Error ("When setting the clock, clock offsets must also be provided");
         }
 
         return this.activeClock;

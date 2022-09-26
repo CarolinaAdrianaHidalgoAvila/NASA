@@ -37,7 +37,7 @@ export default class Editor extends EventEmitter {
      */
     edit() {
         if (this.editing === true) {
-            throw "Already editing";
+            throw new Error("Already editing");
         }
 
         this.editing = true;
