@@ -136,7 +136,7 @@ function getItemDefinition(itemType, ...options) {
     let itemView = ITEM_TYPE_VIEW_MAP[itemType];
 
     if (!itemView) {
-        throw `Invalid itemType: ${itemType}`;
+        throw new Error ( `Invalid itemType: ${itemType}`);
     }
 
     return itemView.makeDefinition(...options);
@@ -208,7 +208,7 @@ export default {
             }
         },
         layoutItems: {
-            handler(value) {
+            handler(_value) {
                 this.updateGrid();
             },
             deep: true
@@ -590,7 +590,7 @@ export default {
             this.mutate("configuration.items", layoutItems);
             this.$el.click();
         },
-        orderItem(position, selectedItems) {
+        orderItem(position, _selectedItems) {
             let delta = ORDERS[position];
             let indices = [];
             let items = [];
@@ -830,7 +830,7 @@ export default {
             if (method) {
                 return method(domainObject, this.openmct);
             } else {
-                throw 'No method identified for domainObject type';
+                throw new Error ( 'No method identified for domainObject type');
             }
         },
         switchViewType(context, viewType, selection) {

@@ -482,7 +482,7 @@ export default class ObjectAPI {
      */
     mutate(domainObject, path, value) {
         if (!this.supportsMutation(domainObject.identifier)) {
-            throw `Error: Attempted to mutate immutable object ${domainObject.name}`;
+            throw new Error (`Error: Attempted to mutate immutable object ${domainObject.name}`);
         }
 
         if (domainObject.isMutable) {

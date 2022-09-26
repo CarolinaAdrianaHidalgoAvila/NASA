@@ -57,7 +57,7 @@ define([
         if (isidentifier(keyString)) {
             return keyString;
         }
-
+        
         let namespace = '';
         let key = keyString;
         for (let i = 0; i < key.length; i++) {
