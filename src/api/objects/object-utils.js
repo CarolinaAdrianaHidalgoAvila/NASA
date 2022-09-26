@@ -60,10 +60,12 @@ define([
         
         let namespace = '';
         let key = keyString;
-        for (let i = 0; i < key.length; i++) {
+        let skipEscapeCharCount = 0;
+        for (let i = 0; i < key.length; i = i + 1 + skipEscapeCharCount) {
             if (key[i] === "\\" && key[i + 1] === ":") {
-                i++; // skip escape character
+                skipEscapeCharCount++
             } else if (key[i] === ":") {
+                skipEscapeCharCount--
                 key = key.slice(i + 1);
                 break;
             }
