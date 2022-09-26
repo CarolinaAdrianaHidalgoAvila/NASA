@@ -72,23 +72,23 @@ class TimeContext extends EventEmitter {
             let timeSystem;
 
             if (timeSystemOrKey === undefined) {
-                throw "Please provide a time system";
+                throw new Error ("Please provide a time system");
             }
 
             if (typeof timeSystemOrKey === 'string') {
                 timeSystem = this.timeSystems.get(timeSystemOrKey);
 
                 if (timeSystem === undefined) {
-                    throw "Unknown time system " + timeSystemOrKey + ". Has it been registered with 'addTimeSystem'?";
+                    throw new Error ("Unknown time system " + timeSystemOrKey + ". Has it been registered with 'addTimeSystem'?");
                 }
             } else if (typeof timeSystemOrKey === 'object') {
                 timeSystem = timeSystemOrKey;
 
                 if (!this.timeSystems.has(timeSystem.key)) {
-                    throw "Unknown time system " + timeSystem.key + ". Has it been registered with 'addTimeSystem'?";
+                    throw new Error ("Unknown time system " + timeSystem.key + ". Has it been registered with 'addTimeSystem'?");
                 }
             } else {
-                throw "Attempt to set invalid time system in Time API. Please provide a previously registered time system object or key";
+                throw new Error ("Attempt to set invalid time system in Time API. Please provide a previously registered time system object or key");
             }
 
             this.system = timeSystem;
@@ -307,12 +307,12 @@ class TimeContext extends EventEmitter {
             if (typeof keyOrClock === 'string') {
                 clock = this.clocks.get(keyOrClock);
                 if (clock === undefined) {
-                    throw "Unknown clock '" + keyOrClock + "'. Has it been registered with 'addClock'?";
+                    throw new Error ("Unknown clock '" + keyOrClock + "'. Has it been registered with 'addClock'?");
                 }
             } else if (typeof keyOrClock === 'object') {
                 clock = keyOrClock;
                 if (!this.clocks.has(clock.key)) {
-                    throw "Unknown clock '" + keyOrClock.key + "'. Has it been registered with 'addClock'?";
+                    throw new Error ("Unknown clock '" + keyOrClock.key + "'. Has it been registered with 'addClock'?");
                 }
             }
 
@@ -338,7 +338,7 @@ class TimeContext extends EventEmitter {
             }
 
         } else if (arguments.length === 1) {
-            throw "When setting the clock, clock offsets must also be provided";
+            throw new Error ("When setting the clock, clock offsets must also be provided");
         }
 
         return this.activeClock;
