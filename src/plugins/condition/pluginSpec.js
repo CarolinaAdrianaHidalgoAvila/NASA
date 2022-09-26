@@ -963,7 +963,8 @@ describe('the plugin', function () {
             openmct.$injector = jasmine.createSpyObj('$injector', ['get']);
             openmct.telemetry = jasmine.createSpyObj('telemetry', ['isTelemetryObject', "subscribe", "getMetadata", "getValueFormatter", "request"]);
             openmct.telemetry.isTelemetryObject.and.returnValue(true);
-            openmct.telemetry.subscribe.and.returnValue(function () {});
+            openmct.telemetry.subscribe.and.returnValue(function () { // This is intentional
+            });
             openmct.telemetry.getValueFormatter.and.returnValue({
                 parse: function (value) {
                     return value;
