@@ -118,7 +118,7 @@ export default {
         };
     },
     watch: {
-        defaultOutput(newOutput, oldOutput) {
+        defaultOutput(newOutput, _oldOutput) {
             this.$emit('updateDefaultOutput', newOutput);
         },
         testData: {

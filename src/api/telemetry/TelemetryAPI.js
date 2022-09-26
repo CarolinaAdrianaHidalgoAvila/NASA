@@ -327,7 +327,9 @@ export default class TelemetryAPI {
                         });
                     }, options);
             } else {
-                subscriber.unsubscribe = function () {};
+                subscriber.unsubscribe = function () { 
+                    // This is intentional
+                };
             }
         } else {
             subscriber.callbacks.push(callback);

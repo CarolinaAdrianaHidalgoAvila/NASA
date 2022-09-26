@@ -165,7 +165,7 @@ export default {
 
                         return newRange;
                     },
-                    validate: function validateRange(range, model) {
+                    validate: function validateRange(range, _model) {
                         if (!range) {
                             return 'Need range';
                         }

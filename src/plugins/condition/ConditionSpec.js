@@ -40,7 +40,9 @@ describe("The condition", function () {
         );
         mockTelemetryReceived = jasmine.createSpy('listener');
         conditionManager.on('telemetryReceived', mockTelemetryReceived);
-        conditionManager.updateConditionDescription.and.returnValue(function () {});
+        conditionManager.updateConditionDescription.and.returnValue(function () {
+             // This is intentional
+        });
 
         testTelemetryObject = {
             identifier: {
@@ -76,12 +78,15 @@ describe("The condition", function () {
             "test-object": testTelemetryObject
         };
         openmct.objects = jasmine.createSpyObj('objects', ['get', 'makeKeyString']);
-        openmct.objects.get.and.returnValue(new Promise(function (resolve, _reject) {
+        openmct.objects.get.and.returnValue(new Promise.resolve(function (resolve, _reject) {
             resolve(testTelemetryObject);
         })); openmct.objects.makeKeyString.and.returnValue(testTelemetryObject.identifier.key);
         openmct.telemetry = jasmine.createSpyObj('telemetry', ['isTelemetryObject', 'subscribe', 'getMetadata']);
         openmct.telemetry.isTelemetryObject.and.returnValue(true);
-        openmct.telemetry.subscribe.and.returnValue(function () {});
+        openmct.telemetry.subscribe.and.returnValue(function () {
+
+         // This is intentional
+        });
         openmct.telemetry.getMetadata.and.returnValue(testTelemetryObject.telemetry);
 
         mockTimeSystems = {

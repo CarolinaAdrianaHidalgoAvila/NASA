@@ -67,7 +67,7 @@ export default {
                 });
             }
         },
-        getCriterionErrors(criterion, index) {
+        getCriterionErrors(criterion, _index) {
             //It is sufficient to check for absence of telemetry here since the condition manager ensures that telemetry for a criterion is set if it exists
             const isInvalidTelemetry = !criterion.telemetry && (criterion.telemetry !== 'all' && criterion.telemetry !== 'any');
             if (isInvalidTelemetry) {

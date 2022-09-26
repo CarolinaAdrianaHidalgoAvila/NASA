@@ -188,7 +188,7 @@ export default {
     },
     watch: {
         telemetry: {
-            handler(newTelemetry, oldTelemetry) {
+            handler(_newTelemetry, _oldTelemetry) {
                 this.checkTelemetry();
             },
             deep: true

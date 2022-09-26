@@ -90,14 +90,6 @@ test.describe('Notebook page tests', () => {
     });
 });
 
-test.describe('Notebook search tests', () => {
-    test.skip('Can search for a single result', async ({ _page }) => {});
-    test.skip('Can search for many results', async ({ _page }) => {});
-    test.skip('Can search for new and recently modified entries', async ({ _page }) => {});
-    test.skip('Can search for section text', async ({ _page }) => {});
-    test.skip('Can search for page text', async ({ _page }) => {});
-    test.skip('Can search for entry text', async ({ _page }) => {});
-});
 
 
 

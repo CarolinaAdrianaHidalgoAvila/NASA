@@ -342,7 +342,7 @@ export default {
             this.dragStarted = false;
             this.$emit('dragComplete');
         },
-        dropCondition(event, targetIndex) {
+        dropCondition(_event, targetIndex) {
             if (!this.isDragging) {
                 return;
             }
