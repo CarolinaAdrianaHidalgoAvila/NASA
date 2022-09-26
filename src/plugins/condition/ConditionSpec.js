@@ -78,7 +78,7 @@ describe("The condition", function () {
             "test-object": testTelemetryObject
         };
         openmct.objects = jasmine.createSpyObj('objects', ['get', 'makeKeyString']);
-        openmct.objects.get.and.returnValue(new Promise.resolve(function (resolve, _reject) {
+        openmct.objects.get.and.returnValue(new Promise(function (resolve, _reject) {
             resolve(testTelemetryObject);
         })); openmct.objects.makeKeyString.and.returnValue(testTelemetryObject.identifier.key);
         openmct.telemetry = jasmine.createSpyObj('telemetry', ['isTelemetryObject', 'subscribe', 'getMetadata']);
